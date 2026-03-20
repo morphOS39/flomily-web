@@ -90,9 +90,9 @@ h1, h2, h3 {
 }
 
 .subline {
-    font-size: 1.15rem;
-    max-width: 560px;
-    margin: 0 auto 32px;
+    font-size: 1.35rem;
+    max-width: 600px;
+    margin: 0 auto 36px;
     opacity: 0.95;
     line-height: 1.6;
     font-weight: 500;
