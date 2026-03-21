@@ -64,7 +64,7 @@ h1, h2, h3 {
 .hero {
     background: linear-gradient(150deg, #2A9D8F 0%, #3DBBAD 40%, #5CC9BA 100%);
     color: #fff;
-    padding: 80px 0 100px;
+    padding: 60px 0 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -136,7 +136,7 @@ h1, h2, h3 {
 }
 
 .cta-secondary {
-    margin-top: 40px;
+    margin-top: 28px;
 }
 
 /* === Demo Animation === */
@@ -250,21 +250,21 @@ h1, h2, h3 {
 /* === Pain Points === */
 
 .pain {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--snow);
 }
 
 .pain h2 {
     text-align: center;
     font-size: 2.1rem;
-    margin-bottom: 44px;
+    margin-bottom: 32px;
 }
 
 .pain-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 16px;
-    margin-bottom: 44px;
+    margin-bottom: 32px;
 }
 
 .pain-card {
@@ -326,7 +326,7 @@ h1, h2, h3 {
 /* === Social Proof === */
 
 .social-proof {
-    padding: 60px 0;
+    padding: 40px 0;
     background: var(--warm-bg);
 }
 
@@ -370,14 +370,14 @@ h1, h2, h3 {
 /* === How it works === */
 
 .how {
-    padding: 80px 0;
+    padding: 60px 0;
     text-align: center;
     background: var(--warm-bg);
 }
 
 .how h2 {
     font-size: 2.1rem;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
 }
 
 .steps {
@@ -432,7 +432,7 @@ h1, h2, h3 {
 /* === Demo Carousel === */
 
 .demo-carousel-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--snow);
     text-align: center;
 }
@@ -887,7 +887,7 @@ h1, h2, h3 {
 /* === Calendar Compatibility === */
 
 .calendar-compat {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--snow);
 }
 
@@ -934,14 +934,14 @@ h1, h2, h3 {
 /* === Channels === */
 
 .channels {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--warm-bg);
 }
 
 .channels h2 {
     text-align: center;
     font-size: 2.1rem;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
 }
 
 .channel-grid {
@@ -993,7 +993,7 @@ h1, h2, h3 {
 /* === For whom === */
 
 .forwho {
-    padding: 60px 0;
+    padding: 40px 0;
     background: var(--snow);
 }
 
@@ -1034,14 +1034,14 @@ h1, h2, h3 {
 /* === Features === */
 
 .features {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--warm-bg);
 }
 
 .features h2 {
     text-align: center;
     font-size: 2.1rem;
-    margin-bottom: 44px;
+    margin-bottom: 32px;
 }
 
 .features-grid {
@@ -1101,7 +1101,7 @@ h1, h2, h3 {
 /* === Waitlist === */
 
 .waitlist {
-    padding: 80px 0;
+    padding: 60px 0;
     background: linear-gradient(150deg, #2A9D8F 0%, #3DBBAD 40%, #5CC9BA 100%);
     color: #fff;
     text-align: center;
