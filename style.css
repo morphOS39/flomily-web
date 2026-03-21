@@ -1172,15 +1172,15 @@ h1, h2, h3 {
 
 .waitlist-form .cta-button {
     padding: 14px 28px;
-    background: #fff;
-    color: var(--primary-dark);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(231, 111, 81, 0.3);
 }
 
 .waitlist-form .cta-button:hover {
-    background: #fff;
-    box-shadow: 0 6px 22px rgba(0,0,0,0.12);
-    color: var(--primary);
+    background: var(--accent-dark);
+    box-shadow: 0 6px 22px rgba(231, 111, 81, 0.4);
+    color: #fff;
 }
 
 .waitlist-note {
