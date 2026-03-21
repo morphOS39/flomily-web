@@ -1121,13 +1121,13 @@ h1, h2, h3 {
 
 .fomo-badge {
     display: inline-block;
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.25);
+    background: var(--gold);
+    color: var(--slate);
+    border: none;
     border-radius: 50px;
     padding: 10px 24px;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.92rem;
+    font-weight: 700;
     margin-bottom: 28px;
     animation: subtlePulse 3s ease infinite;
 }
