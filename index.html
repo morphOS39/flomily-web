@@ -20,155 +20,43 @@
             <a href="#warteliste" class="cta-button">Jetzt mitmachen</a>
         </div>
 
-        <!-- Demo Carousel -->
-        <div class="carousel hero-carousel">
-            <button class="carousel-nav carousel-prev" onclick="goSlide(-1)">&lsaquo;</button>
-            <button class="carousel-nav carousel-next" onclick="goSlide(1)">&rsaquo;</button>
-
-            <div class="carousel-track" id="track">
-
-                <!-- SLIDE 1: Foto vom Schulzettel → 3 Termine -->
-                <div class="carousel-slide slide-active" id="slide-0">
-                    <div class="scene-label hero-scene-label">Schulzettel abfotografiert</div>
-                    <div class="demo-flow">
-                        <div class="demo-mockup">
-                            <div class="mockup-header">📸 Foto</div>
-                            <div class="mockup-body mockup-phone-bg">
-                                <div class="photo-mockup anim s1-photo">
-                                    <div class="photo-icon">📋</div>
-                                    <strong>Elterninfo März 2026</strong><br><br>
-                                    → Elternabend: 24.04., 19:30, Aula<br>
-                                    → Wandertag: 02.05., ganztägig<br>
-                                    → Schulfrei: 30.05.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="demo-flow-center">
-                            <svg class="anim s1-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            <span class="demo-flow-spark anim s1-spark">✨</span>
-                            <span class="demo-flow-label anim s1-label">3 Termine erkannt!</span>
-                        </div>
-                        <div class="demo-mockup">
-                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">April</span></div>
-                            <div class="mockup-body">
-                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Training Leon</div><div class="cal-time">Di 17:00</div></div></div>
-                                <div class="cal-entry anim s1-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Elternabend Aula</div><div class="cal-time">Do 24.04. — 19:30</div></div><span class="cal-badge anim s1-b1">NEU</span></div>
-                                <div class="cal-entry anim s1-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Wandertag</div><div class="cal-time">Fr 02.05. — ganztägig</div></div><span class="cal-badge anim s1-b2">NEU</span></div>
-                                <div class="cal-entry anim s1-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Schulfrei</div><div class="cal-time">Fr 30.05.</div></div><span class="cal-badge anim s1-b3">NEU</span></div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Animated visual -->
+        <div class="demo-animation">
+            <div class="demo-phone">
+                <div class="demo-phone-header">Nachrichten</div>
+                <div class="demo-message demo-msg-1">
+                    <span class="demo-sender">🏃 Sportverein</span>
+                    Training fällt aus nächsten Di!
                 </div>
-
-                <!-- SLIDE 2: Multi-Input -->
-                <div class="carousel-slide" id="slide-1">
-                    <div class="scene-label hero-scene-label">Drei Quellen, ein Kalender</div>
-                    <div class="demo-flow">
-                        <div class="demo-mockup">
-                            <div class="mockup-header">📱 An flomily gesendet</div>
-                            <div class="mockup-body mockup-phone-bg">
-                                <div class="chat-bubble anim s2-msg">
-                                    <div class="chat-bubble-sender">💬 Weitergeleitete Nachricht</div>
-                                    Training ab sofort immer Dienstags 17:30 statt 17:00!
-                                    <div class="chat-bubble-time">09:22</div>
-                                </div>
-                                <div class="photo-mockup photo-mockup-small anim s2-photo">
-                                    <span style="font-size:1rem;">📸</span> Foto: Zahnarzt-Terminkarte<br>
-                                    → Dr. Weber, Do 15.05., 10:00
-                                </div>
-                                <div class="voice-mockup anim s2-voice">
-                                    <span style="font-size:1.1rem;">🎤</span>
-                                    <div class="voice-wave">
-                                        <div class="voice-bar" style="height:8px;"></div>
-                                        <div class="voice-bar" style="height:14px;"></div>
-                                        <div class="voice-bar" style="height:20px;"></div>
-                                        <div class="voice-bar" style="height:12px;"></div>
-                                        <div class="voice-bar" style="height:18px;"></div>
-                                        <div class="voice-bar" style="height:10px;"></div>
-                                        <div class="voice-bar" style="height:16px;"></div>
-                                        <div class="voice-bar" style="height:6px;"></div>
-                                    </div>
-                                    <span class="voice-time">0:04</span>
-                                </div>
-                                <div class="voice-transcript">„Geburtstag bei Finn am Samstag um drei"</div>
-                            </div>
-                        </div>
-                        <div class="demo-flow-center">
-                            <svg class="anim s2-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            <span class="demo-flow-spark anim s2-spark">✨</span>
-                            <span class="demo-flow-label anim s2-label">Alles erkannt!</span>
-                        </div>
-                        <div class="demo-mockup">
-                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">Mai</span></div>
-                            <div class="mockup-body">
-                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Elternabend</div><div class="cal-time">Do 24.04. — 19:30</div></div></div>
-                                <div class="cal-entry anim s2-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Training (neue Zeit!)</div><div class="cal-time">Di 17:30</div></div><span class="cal-badge anim s2-b1">NEU</span></div>
-                                <div class="cal-entry anim s2-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Zahnarzt Dr. Weber</div><div class="cal-time">Do 15.05. — 10:00</div></div><span class="cal-badge anim s2-b2">NEU</span></div>
-                                <div class="cal-entry anim s2-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Geburtstag Finn</div><div class="cal-time">Sa — 15:00</div></div><span class="cal-badge anim s2-b3">NEU</span></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="demo-message demo-msg-2">
+                    <span class="demo-sender">🏫 Klassenchat</span>
+                    Elternabend 14.04. um 19:30 in der Aula
                 </div>
-
-                <!-- SLIDE 3: Bestätigungsflow -->
-                <div class="carousel-slide" id="slide-2">
-                    <div class="scene-label hero-scene-label">Bestätigen und fertig</div>
-                    <div class="demo-flow">
-                        <div class="demo-mockup">
-                            <div class="mockup-header">💬 Chat mit flomily</div>
-                            <div class="mockup-body mockup-phone-bg">
-                                <div class="chat-bubble anim s3-msg">
-                                    <div class="chat-bubble-sender">📨 Weitergeleitete Nachricht</div>
-                                    Hallo! Erinnerung: Impftermin Mila am 12.05. um 9:15 bei Dr. Klein, Hauptstr. 42
-                                    <div class="chat-bubble-time">10:31</div>
-                                </div>
-                                <div class="fwd-indicator anim s3-fwd">An flomily gesendet ✓</div>
-                                <div class="flomily-response anim s3-flomily">
-                                    <div class="flomily-tag">🤖 flomily</div>
-                                    <strong>Impftermin Mila</strong><br>
-                                    📅 Mo 12.05. um 9:15<br>
-                                    📍 Dr. Klein, Hauptstr. 42<br>
-                                    🚗 12 Min. Fahrzeit
-                                    <div class="confirm-buttons anim s3-btns">
-                                        <span class="confirm-btn confirm-yes">👨‍👩‍👧 Family</span>
-                                        <span class="confirm-btn confirm-no">👤 Nur ich</span>
-                                        <span class="confirm-btn confirm-no">❌</span>
-                                    </div>
-                                </div>
-                                <div style="text-align:center;margin-top:10px;">
-                                    <span class="confirmed-badge anim s3-check">✅ Bestätigt!</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="demo-flow-center">
-                            <svg class="anim s3-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                            <span class="demo-flow-spark anim s3-spark">✨</span>
-                        </div>
-                        <div class="demo-mockup">
-                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">Mai</span></div>
-                            <div class="mockup-body">
-                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Training Leon</div><div class="cal-time">Di 17:30</div></div></div>
-                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Geburtstag Finn</div><div class="cal-time">Sa 15:00</div></div></div>
-                                <div class="cal-entry anim s3-e1">
-                                    <div class="cal-dot cal-dot-orange"></div>
-                                    <div>
-                                        <div class="cal-title">Impftermin Mila</div>
-                                        <div class="cal-time">Mo 12.05. — 9:15</div>
-                                        <div class="cal-time">📍 Dr. Klein · 🚗 8:55 los</div>
-                                    </div>
-                                    <span class="cal-badge anim s3-b1">NEU</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="demo-message demo-msg-3">
+                    <span class="demo-sender">🦷 Zahnarztpraxis</span>
+                    Termin am Do 10:00 für Mila
                 </div>
-
             </div>
-
-            <div class="carousel-dots hero-carousel-dots">
-                <button class="carousel-dot active" onclick="setSlide(0)"></button>
-                <button class="carousel-dot" onclick="setSlide(1)"></button>
-                <button class="carousel-dot" onclick="setSlide(2)"></button>
+            <div class="demo-arrow">
+                <svg class="demo-arrow-svg" viewBox="0 0 80 24" fill="none">
+                    <path d="M0 12h64M64 12l-8-8M64 12l-8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="demo-spark">✨</div>
+            </div>
+            <div class="demo-calendar">
+                <div class="demo-cal-header">📅 Euer Kalender</div>
+                <div class="demo-cal-entry demo-cal-1">
+                    <span class="demo-cal-dot green"></span>
+                    Di — Training fällt aus
+                </div>
+                <div class="demo-cal-entry demo-cal-2">
+                    <span class="demo-cal-dot orange"></span>
+                    14.04. 19:30 — Elternabend
+                </div>
+                <div class="demo-cal-entry demo-cal-3">
+                    <span class="demo-cal-dot pink"></span>
+                    Do 10:00 — Zahnarzt Mila
+                </div>
             </div>
         </div>
     </div>
@@ -274,6 +162,165 @@
             </div>
         </div>
         <a href="#warteliste" class="cta-button cta-secondary">Klingt gut? Flo' mit!</a>
+    </div>
+</section>
+
+<!-- Demo Carousel -->
+<section class="demo-carousel-section">
+    <div class="container">
+        <h2>So sieht das aus.</h2>
+        <p class="demo-subtitle">Drei typische Szenarien — ein Ergebnis: Termin im Kalender.</p>
+
+        <div class="carousel">
+            <button class="carousel-nav carousel-prev" onclick="goSlide(-1)">&lsaquo;</button>
+            <button class="carousel-nav carousel-next" onclick="goSlide(1)">&rsaquo;</button>
+
+            <div class="carousel-track" id="track">
+
+                <!-- SLIDE 1: Foto vom Schulzettel → 3 Termine -->
+                <div class="carousel-slide slide-active" id="slide-0">
+                    <div class="scene-label">Schulzettel abfotografiert</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📸 Foto</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="photo-mockup anim s1-photo">
+                                    <div class="photo-icon">📋</div>
+                                    <strong>Elterninfo März 2026</strong><br><br>
+                                    → Elternabend: 24.04., 19:30, Aula<br>
+                                    → Wandertag: 02.05., ganztägig<br>
+                                    → Schulfrei: 30.05.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s1-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s1-spark">✨</span>
+                            <span class="demo-flow-label anim s1-label">3 Termine erkannt!</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">April</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Training Leon</div><div class="cal-time">Di 17:00</div></div></div>
+                                <div class="cal-entry anim s1-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Elternabend Aula</div><div class="cal-time">Do 24.04. — 19:30</div></div><span class="cal-badge anim s1-b1">NEU</span></div>
+                                <div class="cal-entry anim s1-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Wandertag</div><div class="cal-time">Fr 02.05. — ganztägig</div></div><span class="cal-badge anim s1-b2">NEU</span></div>
+                                <div class="cal-entry anim s1-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Schulfrei</div><div class="cal-time">Fr 30.05.</div></div><span class="cal-badge anim s1-b3">NEU</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: Multi-Input -->
+                <div class="carousel-slide" id="slide-1">
+                    <div class="scene-label">Drei Quellen, ein Kalender</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📱 An flomily gesendet</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="chat-bubble anim s2-msg">
+                                    <div class="chat-bubble-sender">💬 Weitergeleitete Nachricht</div>
+                                    Training ab sofort immer Dienstags 17:30 statt 17:00!
+                                    <div class="chat-bubble-time">09:22</div>
+                                </div>
+                                <div class="photo-mockup photo-mockup-small anim s2-photo">
+                                    <span style="font-size:1rem;">📸</span> Foto: Zahnarzt-Terminkarte<br>
+                                    → Dr. Weber, Do 15.05., 10:00
+                                </div>
+                                <div class="voice-mockup anim s2-voice">
+                                    <span style="font-size:1.1rem;">🎤</span>
+                                    <div class="voice-wave">
+                                        <div class="voice-bar" style="height:8px;"></div>
+                                        <div class="voice-bar" style="height:14px;"></div>
+                                        <div class="voice-bar" style="height:20px;"></div>
+                                        <div class="voice-bar" style="height:12px;"></div>
+                                        <div class="voice-bar" style="height:18px;"></div>
+                                        <div class="voice-bar" style="height:10px;"></div>
+                                        <div class="voice-bar" style="height:16px;"></div>
+                                        <div class="voice-bar" style="height:6px;"></div>
+                                    </div>
+                                    <span class="voice-time">0:04</span>
+                                </div>
+                                <div class="voice-transcript">„Geburtstag bei Finn am Samstag um drei"</div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s2-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s2-spark">✨</span>
+                            <span class="demo-flow-label anim s2-label">Alles erkannt!</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">Mai</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Elternabend</div><div class="cal-time">Do 24.04. — 19:30</div></div></div>
+                                <div class="cal-entry anim s2-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Training (neue Zeit!)</div><div class="cal-time">Di 17:30</div></div><span class="cal-badge anim s2-b1">NEU</span></div>
+                                <div class="cal-entry anim s2-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Zahnarzt Dr. Weber</div><div class="cal-time">Do 15.05. — 10:00</div></div><span class="cal-badge anim s2-b2">NEU</span></div>
+                                <div class="cal-entry anim s2-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Geburtstag Finn</div><div class="cal-time">Sa — 15:00</div></div><span class="cal-badge anim s2-b3">NEU</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: Bestätigungsflow -->
+                <div class="carousel-slide" id="slide-2">
+                    <div class="scene-label">Bestätigen und fertig</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">💬 Chat mit flomily</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="chat-bubble anim s3-msg">
+                                    <div class="chat-bubble-sender">📨 Weitergeleitete Nachricht</div>
+                                    Hallo! Erinnerung: Impftermin Mila am 12.05. um 9:15 bei Dr. Klein, Hauptstr. 42
+                                    <div class="chat-bubble-time">10:31</div>
+                                </div>
+                                <div class="fwd-indicator anim s3-fwd">An flomily gesendet ✓</div>
+                                <div class="flomily-response anim s3-flomily">
+                                    <div class="flomily-tag">🤖 flomily</div>
+                                    <strong>Impftermin Mila</strong><br>
+                                    📅 Mo 12.05. um 9:15<br>
+                                    📍 Dr. Klein, Hauptstr. 42<br>
+                                    🚗 12 Min. Fahrzeit
+                                    <div class="confirm-buttons anim s3-btns">
+                                        <span class="confirm-btn confirm-yes">👨‍👩‍👧 Family</span>
+                                        <span class="confirm-btn confirm-no">👤 Nur ich</span>
+                                        <span class="confirm-btn confirm-no">❌</span>
+                                    </div>
+                                </div>
+                                <div style="text-align:center;margin-top:10px;">
+                                    <span class="confirmed-badge anim s3-check">✅ Bestätigt!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s3-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s3-spark">✨</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">Mai</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Training Leon</div><div class="cal-time">Di 17:30</div></div></div>
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Geburtstag Finn</div><div class="cal-time">Sa 15:00</div></div></div>
+                                <div class="cal-entry anim s3-e1">
+                                    <div class="cal-dot cal-dot-orange"></div>
+                                    <div>
+                                        <div class="cal-title">Impftermin Mila</div>
+                                        <div class="cal-time">Mo 12.05. — 9:15</div>
+                                        <div class="cal-time">📍 Dr. Klein · 🚗 8:55 los</div>
+                                    </div>
+                                    <span class="cal-badge anim s3-b1">NEU</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="carousel-dots">
+                <button class="carousel-dot active" onclick="setSlide(0)"></button>
+                <button class="carousel-dot" onclick="setSlide(1)"></button>
+                <button class="carousel-dot" onclick="setSlide(2)"></button>
+            </div>
+        </div>
     </div>
 </section>
 
