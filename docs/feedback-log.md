@@ -10,7 +10,7 @@ Wem wurde die Seite wann gezeigt?
 
 | ID | Name/Kuerzel | Datum gezeigt | Kanal | Eingetragen | Bestaetigung | Notiz |
 |----|--------------|---------------|-------|-------------|--------------|-------|
-| P1 | Kai | 2026-03-20 | | | | |
+| P1 | Kai | 2026-03-20 | | ja | | |
 | P2 | Ines | 2026-03-20 | | | | |
 | P3 | Klara | 2026-03-20 | | | | |
 | P4 | Henning | 2026-03-20 | | | | |
@@ -56,6 +56,8 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 | F22 | P12 | 2026-03-20 | Positiv: Seite vom Aufbau her absolut verstaendlich | -- |
 | F23 | P12 | 2026-03-20 | Weiterempfehlung: Will es seiner Frau zeigen | neu |
 | F24 | P12 | 2026-03-20 | Follow-up: Meldet sich ggf. nochmal mit weiteren Gedanken | neu |
+| F25 | P1 | 2026-03-23 | Positiv: "echt beeindruckend die website" | -- |
+| F26 | P1 | 2026-03-23 | Positiv: "mir gefallen vor allem die Animationen, leicht verstaendlich" | -- |
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
