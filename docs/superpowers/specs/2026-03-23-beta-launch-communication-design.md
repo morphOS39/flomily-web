@@ -125,7 +125,9 @@ Referenz: family-hub Issue #90. Alles in diesem Abschnitt muss **vor Stufe 1** (
 Gesetzliche Pflicht fuer jede kommerzielle deutsche Webpraesenz.
 
 - **Wo:** `flomily.de/impressum` (eigene Seite oder Abschnitt im Footer)
-- **Inhalt:** Name (Marc Schlipphak), Anschrift, E-Mail (info@flomily.de), Telefon
+- **Betreiber:** Privatperson / Einzelunternehmer (keine Firma noetig)
+- **Inhalt Beta-Phase:** Name (Marc Schlipphak), E-Mail (info@flomily.de) — Minimalversion fuer geschlossene F&F-Beta
+- **Spaeter (Public Launch):** Vollstaendiges Impressum mit ladungsfaehiger Anschrift nachrüsten (Impressums-Service oder Privatadresse). Pflicht sobald oeffentlich zugaenglich.
 - **Auch auf:** Beta-Seite (`flomily.de/beta`) und in jeder E-Mail (Footer)
 - **Bereits geplant:** flomily-web Issue #2
 
@@ -137,7 +139,7 @@ Muss verfuegbar sein, BEVOR personenbezogene Daten verarbeitet werden (d.h. vor 
 
 **Inhalt (Mindestanforderungen):**
 
-a) **Verantwortlicher:** Name, Anschrift, E-Mail (identisch mit Impressum)
+a) **Verantwortlicher:** Marc Schlipphak, info@flomily.de (Privatperson/Einzelunternehmer, Anschrift wird bei Public Launch ergaenzt)
 
 b) **Welche Daten werden verarbeitet:**
    - Waitlist/Formular: Name, E-Mail-Adresse
