@@ -1258,10 +1258,10 @@ h1, h2, h3 {
     flex: 1;
     min-width: 240px;
     padding: 14px 20px;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 2px solid #E2E8F0;
     border-radius: 50px;
-    background: rgba(255,255,255,0.12);
-    color: #fff;
+    background: var(--card-bg);
+    color: var(--slate);
     font-size: 1rem;
     font-family: inherit;
     font-weight: 500;
@@ -1269,13 +1269,13 @@ h1, h2, h3 {
 }
 
 .waitlist-form input[type="email"]::placeholder {
-    color: rgba(255,255,255,0.6);
+    color: var(--light-muted);
 }
 
 .waitlist-form input[type="email"]:focus {
     outline: none;
-    border-color: #fff;
-    background: rgba(255,255,255,0.2);
+    border-color: var(--primary);
+    background: #fff;
 }
 
 .waitlist-form .cta-button {
