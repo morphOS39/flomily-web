@@ -116,6 +116,191 @@ Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und posit
 
 ---
 
+## Rechtliches & Datenschutz
+
+Referenz: family-hub Issue #90. Alles in diesem Abschnitt muss **vor Stufe 1** (Teaser) bzw. **vor Stufe 3** (Go) erledigt sein — siehe Checkliste am Ende.
+
+### 1. Impressum (TMG §5) — vor Stufe 1
+
+Gesetzliche Pflicht fuer jede kommerzielle deutsche Webpraesenz.
+
+- **Wo:** `flomily.de/impressum` (eigene Seite oder Abschnitt im Footer)
+- **Inhalt:** Name (Marc Schlipphak), Anschrift, E-Mail (info@flomily.de), Telefon
+- **Auch auf:** Beta-Seite (`flomily.de/beta`) und in jeder E-Mail (Footer)
+- **Bereits geplant:** flomily-web Issue #2
+
+### 2. Datenschutzerklaerung (DSGVO Art. 13/14) — vor Stufe 1
+
+Muss verfuegbar sein, BEVOR personenbezogene Daten verarbeitet werden (d.h. vor der ersten E-Mail).
+
+**Wo:** `flomily.de/datenschutz`
+
+**Inhalt (Mindestanforderungen):**
+
+a) **Verantwortlicher:** Name, Anschrift, E-Mail (identisch mit Impressum)
+
+b) **Welche Daten werden verarbeitet:**
+   - Waitlist/Formular: Name, E-Mail-Adresse
+   - Telegram-Bot: Telegram-ID, Telegram-Username, Nachrichteninhalte (Text, Fotos, Dokumente)
+   - ICS-Empfaenger: Name, E-Mail-Adresse
+   - Website: IP-Adresse, Browser-Daten (via Cloudflare)
+
+c) **Zweck und Rechtsgrundlage:**
+   - Waitlist-Anmeldung: Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)
+   - Termin-Erstellung und ICS-Versand: Vertragsdurchfuehrung (Art. 6 Abs. 1 lit. b)
+   - Beta-Einladungs-E-Mails an F&F: Berechtigtes Interesse (Art. 6 Abs. 1 lit. f) — persoenliche Einladung, kein Massen-Marketing
+   - KI-Verarbeitung: Einwilligung (Art. 6 Abs. 1 lit. a) — gesonderte Einwilligung noetig
+
+d) **KI-Verarbeitung / Anthropic-Disclosure (WICHTIG):**
+   - Nachrichten werden an die Claude API (Anthropic, USA) gesendet zur Termin-Erkennung
+   - Anthropic ist Auftragsverarbeiter (Data Processor)
+   - Internationale Datenuebermittlung in die USA auf Basis von Standard Contractual Clauses (SCCs)
+   - Anthropic DPA: Ward muss Anthropic's Data Processing Agreement akzeptieren/unterzeichnen
+   - Klarer Hinweis: "Deine Nachrichten werden von einer kuenstlichen Intelligenz (Claude, Anthropic) verarbeitet, um Termine zu erkennen. Die Verarbeitung erfolgt auf Servern in den USA."
+
+e) **Auftragsverarbeiter (alle auflisten):**
+   | Dienst | Anbieter | Zweck | Standort |
+   |--------|----------|-------|----------|
+   | Claude API | Anthropic, USA | KI-Termin-Erkennung | USA |
+   | Resend | Resend Inc., USA | Transaktionaler E-Mail-Versand | USA |
+   | Cloudflare | Cloudflare Inc., USA | Website-Hosting, DNS, CDN | Global |
+   | Formspree | Formspree Inc., USA | Formular-Verarbeitung (Waitlist, Phase B) | USA |
+   | Telegram | Telegram FZ-LLC, Dubai | Bot-Kommunikation | Global |
+
+f) **Speicherdauer:**
+   - Account-Daten: Solange Account aktiv, danach Loeschung innerhalb 30 Tagen
+   - Nachrichteninhalte: Werden nach Termin-Erkennung nicht dauerhaft gespeichert (Beta v1: keine Termin-Speicherung)
+   - Termin-Speicherung (kuenftig): Siehe gesonderte Einwilligung bei Onboarding
+   - E-Mail-Adressen (Waitlist): Bis Widerruf
+
+g) **Betroffenenrechte:**
+   - Auskunft, Berichtigung, Loeschung, Einschraenkung, Datenportabilitaet, Widerspruch
+   - Beschwerderecht bei Aufsichtsbehoerde (LfDI Baden-Wuerttemberg)
+   - Kontakt: info@flomily.de
+
+### 3. Beta-Nutzungsbedingungen — vor Stufe 3
+
+Keine vollstaendigen AGB, aber eine leichtgewichtige Vereinbarung fuer die Beta-Phase.
+
+**Wo:** `flomily.de/beta/nutzungsbedingungen` (oder Abschnitt auf Beta-Seite)
+
+**Inhalt:**
+- Beta = Testversion, keine Garantie auf Verfuegbarkeit oder Fehlerfreiheit
+- Service kann jederzeit eingestellt werden
+- **Keine Haftung fuer verpasste, falsche oder doppelte Termine** (vgl. flomily-web#7)
+- Termine werden als ICS-Datei verschickt — die Verantwortung fuer den Kalender liegt beim Empfaenger
+- Feedback darf anonymisiert zur Produktverbesserung verwendet werden
+- flomily behaelt sich vor, Beta-Zugang bei Missbrauch zu sperren
+
+### 4. Einwilligungen (Consent) — im Onboarding-Flow
+
+Zentral: An welcher Stelle im Prozess wird welche Einwilligung eingeholt?
+
+| Zeitpunkt | Einwilligung | Wie |
+|-----------|-------------|-----|
+| **Stufe 3: Go-E-Mail** | Hinweis auf Datenschutz + Nutzungsbedingungen | Link in der E-Mail: "Mit der Aktivierung stimmst du den [Nutzungsbedingungen] und der [Datenschutzerklaerung] zu." |
+| **Bot: /start + Code-Eingabe** | Explizite Zustimmung zu: (1) KI-Verarbeitung von Nachrichten, (2) ICS-Versand an angegebene E-Mail-Adressen, (3) kuenftige Termin-Speicherung | Bot zeigt Consent-Text, User muss mit Button bestaetigen bevor Aktivierung abgeschlossen wird |
+| **Bot: E-Mail-Adresse hinzufuegen** | Hinweis: "Stelle sicher, dass diese Person einverstanden ist, Termin-Mails von flomily zu erhalten." | Bot-Nachricht bei `/add`-Befehl. Optional: Bestaetigungs-Mail an den Empfaenger |
+| **Phase B: Anmeldeformular** | DSGVO-Einwilligungs-Checkbox | Auf dem Formular: "Ich stimme der [Datenschutzerklaerung] zu" |
+
+#### Consent-Text im Bot (bei Aktivierung)
+
+Der Bot zeigt bei Code-Eingabe folgenden Text (oder sinngemäß):
+
+> "Bevor es losgeht, ein paar wichtige Infos:
+>
+> - Deine Nachrichten werden von einer KI (Claude, Anthropic) verarbeitet, um Termine zu erkennen. Die Verarbeitung erfolgt auf Servern in den USA.
+> - Erkannte Termine werden als Kalendereinladung (ICS) per E-Mail verschickt.
+> - Wir speichern deine Termine kuenftig auch in flomily, damit du sie spaeter abrufen, durchsuchen und verwalten kannst. Du kannst dem jederzeit widersprechen.
+> - Alle Details: [Datenschutzerklaerung] | [Nutzungsbedingungen]
+>
+> Mit 'Einverstanden' stimmst du zu und aktivierst deinen Zugang."
+>
+> [Einverstanden] [Abbrechen]
+
+**Wichtig:** Die Einwilligung zur kuenftigen Termin-Speicherung wird hier proaktiv eingeholt, obwohl Beta v1 noch keine Termine speichert. So ist die Rechtsgrundlage fuer Folgephasen bereits vorhanden.
+
+### 5. Opt-In fuer ICS-Empfaenger — im Bot-Flow
+
+Wenn ein Admin eine E-Mail-Adresse eines Familienmitglieds hinzufuegt, erhaelt diese Person unaufgefordert ICS-Mails. Das ist datenschutzrechtlich kritisch.
+
+**Loesung (gestuft):**
+
+a) **Beta (pragmatisch):** Bot weist den Admin darauf hin, dass er die Person vorher fragen muss:
+   > "Ich werde Termin-Einladungen an diese Adresse schicken. Bitte stelle sicher, dass [Name] damit einverstanden ist."
+
+b) **Spaeter (robust):** Bestaetigungs-Mail an den Empfaenger (Double-Opt-In):
+   > "Hallo [Name], [Admin] moechte dir Familientermine ueber flomily schicken. Bist du einverstanden? [Ja, Termine empfangen] [Nein danke]"
+
+### 6. Opt-Out — in jeder E-Mail + Bot
+
+Jeder muss jederzeit aussteigen koennen.
+
+- **ICS-Empfaenger:** Jede ICS-Mail enthaelt einen Unsubscribe-Link im Footer: "Du moechtest keine Termine mehr erhalten? [Abmelden]"
+- **Bot-Mitglieder:** `/stop`-Befehl im Telegram-Bot deaktiviert den Account
+- **Admin:** Kann Empfaenger ueber `/remove` entfernen
+- **Datenloeschung:** Auf Anfrage per E-Mail (info@flomily.de) — in Beta manuell, spaeter automatisiert
+
+### 7. E-Mail-Compliance — in allen E-Mails
+
+Jede E-Mail (Teaser, Sneak Peek, Go, ICS) muss enthalten:
+- Absender: flomily / info@flomily.de (bzw. kalender@flomily.de fuer ICS)
+- Impressum (oder Link darauf) im Footer
+- Unsubscribe-Moeglichkeit (Link oder Hinweis)
+- Datenschutz-Link
+
+### 8. Minderjährigenschutz
+
+Falls Kinder den Bot nutzen (z.B. Kalender lesen ueber Dashboard):
+- Unter 16 Jahren: Einwilligung der Erziehungsberechtigten erforderlich (DSGVO Art. 8)
+- Fuer Beta: Kein Problem, da Eltern die Admins sind und Kinder keinen eigenen Bot-Zugang haben
+- Spaeter (Dashboard, Kinder-Lesezeitung): Elterliche Zustimmung im Onboarding einbauen
+
+### 9. Auftragsverarbeitungsvertraege (AVVs)
+
+Ward muss mit allen Auftragsverarbeitern Vertraege haben (DSGVO Art. 28):
+
+| Dienst | AVV/DPA vorhanden? | Aktion |
+|--------|---------------------|--------|
+| Anthropic | Ja (DPA auf Website) | Ward muss akzeptieren |
+| Resend | Ja (DPA auf Website) | Bei Account-Erstellung akzeptieren |
+| Cloudflare | Ja (DPA im Dashboard) | Pruefen ob bereits akzeptiert |
+| Formspree | Ja (DPA auf Website) | Pruefen/akzeptieren |
+| Telegram | Kein klassischer AVV | Telegram ist Plattform, kein Auftragsverarbeiter — in Datenschutzerklaerung erwaehnen |
+
+### 10. Verzeichnis der Verarbeitungstaetigkeiten (DSGVO Art. 30)
+
+Pflicht fuer jeden Verantwortlichen. Internes Dokument (nicht oeffentlich), aber muss existieren.
+
+**Empfehlung:** Einfache Tabelle im Repo (`docs/legal/verarbeitungsverzeichnis.md`):
+
+| Taetigkeit | Betroffene | Daten | Rechtsgrundlage | Speicherdauer | Empfaenger |
+|------------|-----------|-------|-----------------|---------------|------------|
+| Waitlist | Interessenten | Name, E-Mail | Einwilligung | Bis Widerruf | Formspree, Resend |
+| Termin-Erkennung | Bot-Nutzer | Nachrichten, Telegram-ID | Einwilligung | Verarbeitungsdauer | Anthropic |
+| ICS-Versand | Familienmitglieder | Name, E-Mail, Termindaten | Vertrag | Account-Dauer | Resend |
+| Website | Besucher | IP, Browser-Daten | Berechtigtes Interesse | Cloudflare-Standard | Cloudflare |
+
+---
+
+### Rechtliche Checkliste (nach Stufe)
+
+| Was | Wann fertig | Wo |
+|-----|-------------|-----|
+| Impressum | Vor Stufe 1 | flomily.de + Footer aller E-Mails |
+| Datenschutzerklaerung | Vor Stufe 1 | flomily.de/datenschutz |
+| Anthropic DPA akzeptieren | Vor Stufe 3 | Anthropic Dashboard |
+| Resend DPA akzeptieren | Vor Stufe 1 | Bei Account-Erstellung |
+| Cloudflare DPA pruefen | Vor Stufe 1 | Cloudflare Dashboard |
+| Formspree DPA pruefen | Vor Phase B | Formspree Dashboard |
+| Beta-Nutzungsbedingungen | Vor Stufe 3 | flomily.de/beta/nutzungsbedingungen |
+| Consent-Flow im Bot | Vor Stufe 3 | Bot-Code (family-hub Repo) |
+| Unsubscribe in ICS-Mails | Vor Stufe 3 | E-Mail-Template (family-hub Repo) |
+| ICS-Empfaenger Opt-In Hinweis | Vor Stufe 3 | Bot-Code (family-hub Repo) |
+| Verarbeitungsverzeichnis | Vor Stufe 3 | docs/legal/ (internes Dokument) |
+
+---
+
 ## Implementierungs-Scope (flomily-web)
 
 Was muss auf der Webseite gebaut/geaendert werden:
@@ -137,13 +322,10 @@ Was muss auf der Webseite gebaut/geaendert werden:
 
 | Stufe | Voraussetzung |
 |-------|---------------|
-| 1 | Resend-Account eingerichtet, Beta-Seite deployed, E-Mail-Template fertig |
+| 1 | Resend-Account eingerichtet, Beta-Seite deployed, E-Mail-Template fertig, **Impressum + Datenschutzerklaerung online**, Resend/Cloudflare DPAs akzeptiert |
 | 2 | Bot funktioniert im Test (fuer Screenshots/Screenrecording) |
-| 3 | Code-Generierung implementiert, Bot-Aktivierung per Code funktioniert, Einladungsmail-Template fertig |
-| Phase B | Formular auf Beta-Seite, mindestens 10 von 15 haben aktiviert |
-
-### DSGVO-Hinweis
-E-Mail-Adressen der 15 Kontakte stammen aus persoenlichem Kontakt (berechtigtes Interesse, kein Opt-in noetig fuer direkte Einladung). Phase-B-Formular benoetigt Einwilligungs-Checkbox. Siehe auch family-hub Issue #90 (Rechtliches).
+| 3 | Code-Generierung implementiert, Bot-Aktivierung per Code funktioniert, Einladungsmail-Template fertig, **Consent-Flow im Bot implementiert**, **Beta-Nutzungsbedingungen online**, **Anthropic DPA akzeptiert**, **Unsubscribe in ICS-Mails**, **Verarbeitungsverzeichnis erstellt** |
+| Phase B | Formular auf Beta-Seite mit DSGVO-Checkbox, Formspree DPA akzeptiert, mindestens 10 von 15 haben aktiviert |
 
 ### Hinweis zu GMX
 E-Mail-Versand laeuft NICHT ueber GMX, sondern ueber Resend (transaktional, flomily.de Domain). GMX-Sendelimit ist damit kein Problem.
