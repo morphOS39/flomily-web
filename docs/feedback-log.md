@@ -21,7 +21,7 @@ Wem wurde die Seite wann gezeigt?
 | P9 | Mama | 2026-03-20 | | | | |
 | P10 | Tanja | 2026-03-20 | | | | |
 | P11 | Lena | 2026-03-20 | | ja | ja | |
-| P12 | Herr Bayer | 2026-03-20 | | | | |
+| P12 | Herr Bayer | 2026-03-20 | | ja | | |
 | P13 | Yannik | 2026-03-20 | | | | |
 | P14 | Daniela Laufer | 2026-03-20 | | | | |
 | P15 | David Christiani | 2026-03-21 | Mail | | | |
