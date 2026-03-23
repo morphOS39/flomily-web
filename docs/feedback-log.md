@@ -33,24 +33,24 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 | ID | Von | Datum | Feedback | Status |
 |----|-----|-------|----------|--------|
 | F1 | P5 | 2026-03-20 | Positiv: "Website sieht schonmal sehr cool aus" / "sehr vielversprechend" | -- |
-| F2 | P5 | 2026-03-20 | Feature-Frage: Termine automatisch kategorisieren/farblich markieren? (z.B. U13=blau, U19=rot) | neu |
+| F2 | P5 | 2026-03-20 | Feature-Frage: Termine automatisch kategorisieren/farblich markieren? (z.B. U13=blau, U19=rot) | entschieden |
 | F3 | P5 | 2026-03-20 | Transparenz: Wo laeuft die Datenverarbeitung? Cloud, lokal etc.? | entschieden |
 | F4 | P5 | 2026-03-20 | CTA fehlt: Kein "Verwenden"-Button, Weg vom Besucher zum Anwender unklar | entschieden |
 | F5 | P5 | 2026-03-20 | Pricing: "Was kann man fuer sowas verlangen?" — Preismodell nicht ersichtlich | entschieden |
 | F6 | P6 | 2026-03-20 | Design: Helles Gruen mit weisser Schrift ist anstrengend zu lesen (Kontrast) | entschieden |
 | F7 | P6 | 2026-03-20 | Positiv: Idee schreckt nicht ab, Beispiele sind treffend, holt einen ab | -- |
-| F8 | P6 | 2026-03-20 | Sprachnachrichten: Semi-geil, Leute labern zu viel. Wenn, dann zusaetzlich in Text umwandeln | neu |
-| F9 | P6 | 2026-03-20 | Feature-Wunsch: Outlook-Sync/Reminder — nutzt FamilyTree privat, schaut aber nur auf Outlook im Office. Verpasst private Termine. Will Kuerzel-Reminder im Outlook | neu |
+| F8 | P6 | 2026-03-20 | Sprachnachrichten: Semi-geil, Leute labern zu viel. Wenn, dann zusaetzlich in Text umwandeln | entschieden |
+| F9 | P6 | 2026-03-20 | Feature-Wunsch: Outlook-Sync/Reminder — nutzt FamilyTree privat, schaut aber nur auf Outlook im Office. Verpasst private Termine. Will Kuerzel-Reminder im Outlook | entschieden |
 | F10 | P6 | 2026-03-20 | Follow-up angekuendigt: Will sich abends nochmal anschauen und Zusammenfassung schicken | erledigt |
 | F11 | P6 | 2026-03-20 | Weiterempfehlung: Will Link an Kollegen mit gleichen Themen weiterleiten | neu |
 | F12 | P6 | 2026-03-20 | Follow-up: Bleibt bei erstem Eindruck (positiv) | -- |
-| F13 | P6 | 2026-03-20 | Feature-Wunsch: Fotos/Dokumente an Termine anhaengen — als Doku-Ablage pro Termin (Vertraege, Kundendaten, Unterlagen fuer Aemter/Bank griffbereit) | neu |
+| F13 | P6 | 2026-03-20 | Feature-Wunsch: Fotos/Dokumente an Termine anhaengen — als Doku-Ablage pro Termin (Vertraege, Kundendaten, Unterlagen fuer Aemter/Bank griffbereit) | entschieden |
 | F14 | P8 | 2026-03-20 | Positiv: Grundidee ansprechend ("im Prinzip ja") | -- |
 | F15 | P8 | 2026-03-20 | UX: Demo-Animationen/Beispiele gehen zu schnell, muss man mehrfach ansehen | entschieden |
 | F16 | P8 | 2026-03-20 | Pricing: Kosten fehlen auf der Seite | entschieden |
 | F17 | P8 | 2026-03-20 | Zielgruppe: Im Bekanntenkreis (Rentner) wenig Terminprobleme — kein Bedarf in der Altersgruppe | neu |
 | F18 | P12 | 2026-03-20 | Positiv: Idee klasse, sehr gute Idee, wuerde dem Ganzen eine Chance geben | -- |
-| F19 | P12 | 2026-03-20 | Feature-Wunsch: Termine in zwei verschiedene Kalender gleichzeitig eintragen (z.B. seiner + Frau) | neu |
+| F19 | P12 | 2026-03-20 | Feature-Wunsch: Termine in zwei verschiedene Kalender gleichzeitig eintragen (z.B. seiner + Frau) | entschieden |
 | F20 | P12 | 2026-03-20 | Positiv: Stundenplaene, Muellplan-Feature extrem gut — "da weiss immer nur einer Bescheid, so wissen alle Bescheid" | -- |
 | F21 | P12 | 2026-03-20 | UX/Mobil: Demo-Beispiele lassen sich nicht anhalten, scrollt automatisch weiter. Muss zurueckscrollen um zu verstehen. Anstrengend | entschieden |
 | F22 | P12 | 2026-03-20 | Positiv: Seite vom Aufbau her absolut verstaendlich | -- |
@@ -114,6 +114,11 @@ Was wurde aus dem Feedback? Entscheidungen und deren Umsetzung.
 | 2026-03-23 | F4 | umsetzen | Zweiter CTA im Hero: "Platz in der Beta sichern" (orange) → Waitlist. "Zeig mir mehr" wird Ghost-Button. | -- | done (dev) |
 | 2026-03-23 | F15, F21 | umsetzen | Karussell: 10s→15s Interval, Hover pausiert (Desktop), Touch pausiert 20s (Mobil). | -- | done (dev) |
 | 2026-03-23 | F6 | zurueckstellen | Haengt mit Logo und Farbwelt zusammen (Issue #111). Wird gemeinsam angegangen. | family-hub#111 | -- |
+| 2026-03-23 | F2 | verwerfen | Bereits auf Landing Page als Feature abgedeckt (Auto-Kategorisierung, Pain Point). | -- | -- |
+| 2026-03-23 | F9 | umsetzen | Soft erwaehnt in Kalender-Kompatibilitaets-Section ("Auch im Arbeitskalender, wenn ihr wollt"). Kein eigenes Feature, da abhaengig vom Firmen-Outlook-Setup (Grauzone). | -- | done (dev) |
+| 2026-03-23 | F8 | verwerfen | Bereits geplant als Input-Kanal (whisper.cpp laeuft auf MiniPC). | -- | -- |
+| 2026-03-23 | F13 | umsetzen | Existiert bereits (Bild → Anhang am Termin). Als Feature auf Landing Page aufgenommen. | -- | done (dev) |
+| 2026-03-23 | F19 | umsetzen | Bereits in Multi-Tenant #87 abgedeckt (Stufe 2: mehrere Empfaenger). Als Feature auf Landing Page aufgenommen. | family-hub#87 | done (dev) |
 
 **Entscheidung:** umsetzen · zurueckstellen · verwerfen · kommunizieren
 **Umsetzung:** offen · in Arbeit · done
