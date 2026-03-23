@@ -10,16 +10,16 @@ Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und posit
 
 | Stufe | Ziel | Timing | Kanaele |
 |-------|------|--------|---------|
-| 1: Teaser | Neugier wecken | ~1 Woche vor Beta-Start | Persoenlich (WhatsApp) + E-Mail + Telegram |
-| 2: Sneak Peek | Vorfreude steigern | 3-5 Tage nach Stufe 1 | Persoenlich + E-Mail + Telegram + Beta-Seite |
+| 1: Teaser | Neugier wecken | ~1 Woche vor Beta-Start | Persoenlich (WhatsApp) + E-Mail |
+| 2: Sneak Peek | Vorfreude steigern | 3-5 Tage nach Stufe 1 | Persoenlich + E-Mail + Beta-Seite |
 | 3: Go | Beta starten | 2-3 Tage nach Stufe 2 | Persoenlich + E-Mail (mit Code) + Telegram-Bot |
 | Phase B | Ausweiten auf 20-30 | 2-3 Wochen nach Beta-Start | Empfehlungen + Einladungscodes |
 
 ### Kanaele
 
 - **Persoenlich (WhatsApp/direkt):** Ward schreibt den 15 einzeln oder in Kleingruppen
-- **E-Mail:** Offizielle Flomily-Nachrichten an die Kontakte (ueber Waitlist-Adressen bzw. direkt)
-- **Telegram:** Offizielle Nachrichten ueber den Flomily-Kanal/Bot
+- **E-Mail:** Offizielle Flomily-Nachrichten via Resend (flomily.de Domain). Ward hat E-Mail-Adressen der 15 aus persoenlichem Kontakt (nicht nur Waitlist).
+- **Telegram:** Erst ab Stufe 3 nutzbar — User muessen zuerst einen Chat mit dem Bot starten. In Stufe 1+2 kein Telegram-Kanal.
 - **Beta-Seite:** `flomily.de/beta` — zentrale Anlaufstelle, wird mit jeder Stufe aktualisiert
 
 ---
@@ -32,7 +32,7 @@ Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und posit
 - Ward schreibt den 15 einzeln oder in Kleingruppen
 - Ton: beilaeufig, persoenlich — "Hey, erinnerst du dich an Flomily? Da tut sich was..."
 
-### Flomily offiziell (E-Mail + Telegram)
+### Flomily offiziell (E-Mail)
 - Kurze Nachricht, maximal 5 Saetze
 - Kernbotschaft: "Wir bauen etwas fuer euch. Ihr seid die Ersten."
 - Kein konkretes Datum, kein Feature-Dump
@@ -53,7 +53,7 @@ Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und posit
 - "Schau mal, so wird das aussehen" — mit Link auf die Beta-Seite
 - Optional: kurzes Screenrecording oder Screenshot vom echten Bot in Aktion
 
-### Flomily offiziell (E-Mail + Telegram)
+### Flomily offiziell (E-Mail)
 - Konkreter Einblick: 1-2 echte Beispiele (z.B. "WhatsApp-Nachricht rein → Termin im Kalender")
 - Ton: "Das koennt ihr bald" — nicht "Das kann Flomily"
 - Hinweis: "In wenigen Tagen geht's los — haltet euren Telegram bereit"
@@ -107,13 +107,12 @@ Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und posit
 
 ### Aktiv nachhelfen (nach 2-3 Wochen)
 - Persoenliche Nachricht an die aktivsten Beta-Tester: "Magst du jemanden einladen?"
-- Jeder Beta-Tester bekommt 1-2 Einladungscodes zum Weitergeben
-- Einladungscodes ueber gleichen Mechanismus wie Stufe 3 (individuelle Codes per E-Mail)
+- Tester schicken den Link zu `flomily.de/beta` an ihre Kontakte
 
 ### Onboarding neue Tester
-- Bestehende Beta-Tester schicken den Link zu `flomily.de/beta`
-- Dort: kurzes Anmeldeformular (Name + E-Mail) — nur fuer Phase B sichtbar
-- Ward generiert den Code und schickt die Einladungsmail
+- Interessierte melden sich ueber Formular auf `flomily.de/beta` an (Name + E-Mail)
+- Formular via Formspree (gleicher Anbieter wie Waitlist auf Landing Page)
+- Ward generiert den individuellen Aktivierungscode und schickt die Einladungsmail via Resend
 
 ---
 
@@ -122,14 +121,29 @@ Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und posit
 Was muss auf der Webseite gebaut/geaendert werden:
 
 1. **Neue Seite: `beta.html`** (erreichbar unter `flomily.de/beta`)
-   - 3 Zustaende (Teaser → Sneak Peek → Go), manuell umschaltbar oder per Datum
+   - 3 Zustaende (Teaser → Sneak Peek → Go), manuell umschaltbar per Deploy (kein JS-Datumslogik)
    - Responsive, gleiches Design wie Landing Page
 2. **E-Mail-Templates** (3 Stueck: Teaser, Sneak Peek, Go-mit-Code)
    - Koennen als HTML-Dateien im Repo liegen oder als Markdown-Vorlagen
-3. **Telegram-Nachrichten** (3 Stueck: Teaser, Sneak Peek, Willkommen-nach-Aktivierung)
-4. **Phase-B-Erweiterung der Beta-Seite:** Anmeldeformular (Name + E-Mail)
+3. **Telegram-Nachricht** (1 Stueck: Willkommen-nach-Aktivierung — wird im Bot-Code definiert, nicht in flomily-web)
+4. **Phase-B-Erweiterung der Beta-Seite:** Anmeldeformular (Name + E-Mail) via Formspree
 
 ### Ausserhalb Scope (flomily-web)
-- Code-Generierung und -Validierung im Telegram-Bot (family-hub Repo)
-- E-Mail-Versand-Infrastruktur (Resend o.ae.)
-- Telegram-Bot-Onboarding-Flow (family-hub Repo)
+- Code-Generierung und -Validierung im Telegram-Bot (family-hub Repo, Issue TBD)
+- E-Mail-Versand via Resend (family-hub Repo oder separates Script, Issue TBD)
+- Telegram-Bot-Onboarding-Flow inkl. Willkommensnachricht (family-hub Repo)
+
+### Abhaengigkeiten und Voraussetzungen
+
+| Stufe | Voraussetzung |
+|-------|---------------|
+| 1 | Resend-Account eingerichtet, Beta-Seite deployed, E-Mail-Template fertig |
+| 2 | Bot funktioniert im Test (fuer Screenshots/Screenrecording) |
+| 3 | Code-Generierung implementiert, Bot-Aktivierung per Code funktioniert, Einladungsmail-Template fertig |
+| Phase B | Formular auf Beta-Seite, mindestens 10 von 15 haben aktiviert |
+
+### DSGVO-Hinweis
+E-Mail-Adressen der 15 Kontakte stammen aus persoenlichem Kontakt (berechtigtes Interesse, kein Opt-in noetig fuer direkte Einladung). Phase-B-Formular benoetigt Einwilligungs-Checkbox. Siehe auch family-hub Issue #90 (Rechtliches).
+
+### Hinweis zu GMX
+E-Mail-Versand laeuft NICHT ueber GMX, sondern ueber Resend (transaktional, flomily.de Domain). GMX-Sendelimit ist damit kein Problem.
