@@ -180,6 +180,10 @@ g) **Betroffenenrechte:**
    - Beschwerderecht bei Aufsichtsbehoerde (LfDI Baden-Wuerttemberg)
    - Kontakt: info@flomily.de
 
+### Bekannte Limitationen (Beta)
+
+- **1 Telegram-Account = 1 flomily-Account = 1 Familie.** Die Telegram-ID ist der eindeutige Identifier. Ein User kann nicht in mehreren Familien gleichzeitig sein (z.B. Patchwork). Wenn ein bereits aktivierter User einen zweiten Code eingibt, wird dieser abgelehnt ("Du bist bereits aktiviert"). Der Code bleibt fuer jemand anderen gueltig. Multi-Family-Support ist ein spaeteres Feature (family-hub #129).
+
 ### 3. Beta-Nutzungsbedingungen — vor Stufe 3
 
 Keine vollstaendigen AGB, aber eine leichtgewichtige Vereinbarung fuer die Beta-Phase.
