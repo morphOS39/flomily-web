@@ -15,7 +15,7 @@ Wem wurde die Seite wann gezeigt?
 | P3 | Klara | 2026-03-20 | | | | |
 | P4 | Henning | 2026-03-20 | | | | |
 | P5 | Florian Modschiedler | 2026-03-20 | | ja | ja | |
-| P6 | Thomas Mrugalla | 2026-03-20 | | | | |
+| P6 | Thomas Mrugalla | 2026-03-20 | | ja | | Signup 2026-03-23 |
 | P7 | Markus Reiff | 2026-03-20 | | | | |
 | P8 | Papa | 2026-03-20 | | | | |
 | P9 | Mama | 2026-03-20 | | | | |
