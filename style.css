@@ -1182,6 +1182,30 @@ h1, h2, h3 {
     }
 }
 
+.features-toggle {
+    display: block;
+    margin: 28px auto 0;
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.features-toggle:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.features-more {
+    margin-top: 14px;
+}
+
 /* === Waitlist === */
 
 .waitlist {
