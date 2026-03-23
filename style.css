@@ -156,6 +156,7 @@ h1, h2, h3 {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (max-width: 600px) {
