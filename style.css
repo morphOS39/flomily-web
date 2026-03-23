@@ -139,6 +139,35 @@ h1, h2, h3 {
     margin-top: 28px;
 }
 
+.cta-ghost {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: none;
+}
+
+.cta-ghost:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+    border-color: #fff;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-ctas .cta-button {
+        text-align: center;
+    }
+}
+
 /* === Demo Animation === */
 
 .demo-animation {
