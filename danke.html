@@ -59,7 +59,31 @@
             <h1>Du bist dabei!</h1>
             <p>Willkommen bei den ersten Flo'ern. Wir melden uns, sobald flomily startet.</p>
             <p>Bis dahin: Lehn dich zurück. Wir kümmern uns bald um deine Termine.</p>
-            <a href="index.html" class="danke-back">← Zurück zur Startseite</a>
+        </div>
+    </section>
+
+    <section class="feedback-section feedback-danke">
+        <div class="container">
+            <h2>Hilf uns, flomily fuer dich zu bauen</h2>
+            <p class="feedback-sub">Du bist frueh dabei — deine Meinung zaehlt doppelt. Was soll flomily fuer dich koennen?</p>
+            <form class="feedback-form" action="https://formspree.io/f/xaqpkvpd" method="POST">
+                <input type="hidden" name="_type" value="feedback">
+                <input type="hidden" name="_next" value="https://flomily.de/danke.html">
+                <div class="feedback-field">
+                    <label for="wish">Das wuensche ich mir am meisten</label>
+                    <textarea id="wish" name="wish" rows="3" placeholder="z.B. &quot;Dass ich nie wieder Termine aus WhatsApp abtippen muss&quot;"></textarea>
+                </div>
+                <div class="feedback-field">
+                    <label for="pain">Das nervt mich heute am meisten bei Terminen</label>
+                    <textarea id="pain" name="pain" rows="3" placeholder="z.B. &quot;Keiner weiss, wann welches Kind wohin muss&quot;"></textarea>
+                </div>
+                <div class="feedback-field">
+                    <label for="feedback-name">Dein Name <span class="feedback-optional">(optional, fuer Rueckfragen)</span></label>
+                    <input type="text" id="feedback-name" name="name" placeholder="Vorname reicht">
+                </div>
+                <button type="submit" class="cta-button">Absenden</button>
+            </form>
+            <a href="index.html" class="danke-back">← Zurueck zur Startseite</a>
         </div>
     </section>
 </body>

@@ -1303,6 +1303,94 @@ h1, h2, h3 {
     opacity: 0.7;
 }
 
+/* === Feedback === */
+
+.feedback-section {
+    padding: 60px 0;
+    background: var(--warm-bg);
+    text-align: center;
+}
+
+.feedback-section h2 {
+    font-size: 2.1rem;
+    margin-bottom: 8px;
+}
+
+.feedback-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+}
+
+.feedback-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.feedback-field {
+    margin-bottom: 20px;
+}
+
+.feedback-field label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--slate);
+}
+
+.feedback-optional {
+    font-weight: 500;
+    color: var(--light-muted);
+    font-size: 0.85rem;
+}
+
+.feedback-field textarea,
+.feedback-field input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--slate);
+    background: var(--card-bg);
+    transition: border-color 0.2s;
+    resize: vertical;
+}
+
+.feedback-field textarea:focus,
+.feedback-field input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.feedback-field textarea::placeholder,
+.feedback-field input[type="text"]::placeholder {
+    color: var(--light-muted);
+}
+
+.feedback-form .cta-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.feedback-danke {
+    background: var(--snow);
+    padding-top: 40px;
+}
+
+.feedback-danke .danke-back {
+    color: var(--primary);
+    margin-top: 28px;
+}
+
 /* === Footer === */
 
 footer {
