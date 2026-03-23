@@ -514,6 +514,12 @@
 let current = 0;
 const total = 3;
 let autoTimer = null;
+let paused = false;
+
+function startAutoplay() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { if (!paused) goSlide(1); }, 15000);
+}
 
 function setSlide(n) {
     document.getElementById('slide-' + current).classList.remove('slide-active');
@@ -529,15 +535,22 @@ function setSlide(n) {
         el.style.animation = '';
     });
     slide.classList.add('slide-active');
-    clearInterval(autoTimer);
-    autoTimer = setInterval(function() { goSlide(1); }, 10000);
+    startAutoplay();
 }
 
 function goSlide(dir) {
     setSlide(current + dir);
 }
 
-autoTimer = setInterval(function() { goSlide(1); }, 10000);
+var carousel = document.querySelector('.carousel');
+carousel.addEventListener('mouseenter', function() { paused = true; });
+carousel.addEventListener('mouseleave', function() { paused = false; startAutoplay(); });
+carousel.addEventListener('touchstart', function() { paused = true; clearInterval(autoTimer); }, {passive: true});
+carousel.addEventListener('touchend', function() {
+    setTimeout(function() { paused = false; startAutoplay(); }, 20000);
+}, {passive: true});
+
+startAutoplay();
 </script>
 
 </body>
