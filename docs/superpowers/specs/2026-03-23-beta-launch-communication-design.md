@@ -1,5 +1,7 @@
 # Beta-Launch-Kommunikation — Design Spec
 
+> **ERSETZT** durch `family-hub/docs/superpowers/specs/2026-03-24-beta-go-to-market-design.md` (kombinierte Spec)
+
 ## Kontext
 
 Flomily hat 15 Family-&-Friends-Kontakte, die die Landing Page gesehen und positives Feedback gegeben haben (3 davon bereits auf der Waitlist). Alle 15 werden Beta-Tester. Ziel ist ein kontrollierter, zweistufiger Launch: erst den inneren Kreis (15 Tester, Phase A), dann Ausweitung auf 20-30 durch Empfehlungen (Phase B).
