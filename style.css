@@ -85,6 +85,7 @@ h1, h2, h3 {
     background: #fff;
     padding: 16px 0;
     text-align: center;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 100;
