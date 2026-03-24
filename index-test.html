@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — Eure Termine. Einfach im Flow.</title>
+    <meta name="description" content="flomily macht aus Nachrichten, Fotos und Sprachnachrichten automatisch Kalendertermine. Fuer Familien und alle, die keine Termine mehr verpassen wollen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-test.css">
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <img src="logo-white.svg" alt="flomily" class="hero-logo">
+            <h1>Eure Termine.<br>Einfach im Flow.</h1>
+            <p class="subline">Nachricht weiterleiten, Foto schicken, kurz reinsprechen — flomily erkennt den Termin und packt ihn in eure Kalender.</p>
+            <div class="hero-ctas">
+                <a href="#warteliste" class="cta-button">Platz in der Beta sichern</a>
+                <a href="#demo" class="cta-button cta-ghost">Zeig mir mehr</a>
+            </div>
+        </div>
+
+        <!-- Animated visual -->
+        <div class="demo-animation">
+            <div class="demo-phone">
+                <div class="demo-phone-header">Nachrichten</div>
+                <div class="demo-message demo-msg-1">
+                    <span class="demo-sender">🏃 Sportverein</span>
+                    Training fällt aus nächsten Di!
+                </div>
+                <div class="demo-message demo-msg-2">
+                    <span class="demo-sender">🏫 Klassenchat</span>
+                    Elternabend 14.04. um 19:30 in der Aula
+                </div>
+                <div class="demo-message demo-msg-3">
+                    <span class="demo-sender">🦷 Zahnarztpraxis</span>
+                    Termin am Do 10:00 für Mila
+                </div>
+            </div>
+            <div class="demo-arrow">
+                <svg class="demo-arrow-svg" viewBox="0 0 80 24" fill="none">
+                    <path d="M0 12h64M64 12l-8-8M64 12l-8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="demo-spark">✨</div>
+            </div>
+            <div class="demo-calendar">
+                <div class="demo-cal-header">📅 Euer Kalender</div>
+                <div class="demo-cal-entry demo-cal-1">
+                    <span class="demo-cal-dot green"></span>
+                    Di — Training fällt aus
+                </div>
+                <div class="demo-cal-entry demo-cal-2">
+                    <span class="demo-cal-dot orange"></span>
+                    14.04. 19:30 — Elternabend
+                </div>
+                <div class="demo-cal-entry demo-cal-3">
+                    <span class="demo-cal-dot pink"></span>
+                    Do 10:00 — Zahnarzt Mila
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Decorative wave -->
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
+            <path d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z" fill="var(--snow)"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Pain Points -->
+<section class="pain">
+    <div class="container">
+        <h2>Kennst du das?</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-emoji">😩</div>
+                <div class="pain-quote">"Wann war nochmal das Fußballtraining?"</div>
+                <p>Du scrollst durch 47 WhatsApp-Nachrichten. Der Zettel liegt irgendwo im Ranzen.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">😤</div>
+                <div class="pain-quote">"Kannst du den Termin noch eintragen?"</div>
+                <p>Du tippst zum dritten Mal diese Woche einen Termin aus einem Foto ab.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🤦</div>
+                <div class="pain-quote">"Das hatte ich dir doch geschickt!"</div>
+                <p>Ja. Vor drei Wochen. Zwischen Memes und Einkaufslisten.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">😬</div>
+                <div class="pain-quote">"Ich dachte DU hättest das eingetragen?"</div>
+                <p>Keiner hat's gemacht. Termin verpasst. Wieder.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🫠</div>
+                <div class="pain-quote">"Hast du den Zettel von der Schule gesehen?"</div>
+                <p>Drei Kinder, fünf Vereine, null Überblick. Irgendwas ist immer.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🎨</div>
+                <div class="pain-quote">"Welche Farbe hatte nochmal U13?"</div>
+                <p>U13 blau, U19 rot, Schule grün — du versuchst den Überblick zu behalten, aber im Kalender sieht alles gleich aus.</p>
+            </div>
+        </div>
+        <div class="pain-resolve">
+            <div class="resolve-emoji">☀️</div>
+            <p class="resolve-text">Mit flomily: <strong>Weiterleiten. Bestätigen. Fertig.</strong></p>
+            <p class="resolve-sub">Nie wieder abtippen. Nie wieder vergessen. Nie wieder diskutieren wer's eintragen sollte.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof">
+    <div class="container">
+        <div class="proof-grid">
+            <div class="proof-card">
+                <p class="proof-quote">„Endlich muss ich keine Schulzettel mehr abtippen."</p>
+                <span class="proof-author">— Mama, 38, 3 Kinder</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">„Ich leite die Trainingszeiten einfach weiter. Fertig. Meine Frau hat sie auch im Kalender."</p>
+                <span class="proof-author">— Papa, 41, Handball-Trainer</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">„Wir streiten nicht mehr darüber, wer den Termin hätte eintragen sollen."</p>
+                <span class="proof-author">— Elternpaar aus München</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">„Zahnarzt angerufen, Termin kurz ins Handy gesprochen — war direkt im Kalender."</p>
+                <span class="proof-author">— Mama, 34</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">„WhatsApp-Gruppe vom Verein, neuer Spielplan — einmal weitergeleitet und alle Termine waren drin."</p>
+                <span class="proof-author">— Jugendtrainer, 29</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="how">
+    <div class="container">
+        <h2>So einfach geht's</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">📨</div>
+                <div class="step-number">1</div>
+                <h3>Schick's rüber</h3>
+                <p>Text, Foto, Sprachnachricht, PDF — einfach an flomily weiterleiten.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-icon">✨</div>
+                <div class="step-number">2</div>
+                <h3>Wird erkannt</h3>
+                <p>flomily liest den Termin raus — egal wie er formuliert ist.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-icon">📅</div>
+                <div class="step-number">3</div>
+                <h3>In eure Kalender</h3>
+                <p>Kurz bestätigen — der Termin landet direkt in eurem bestehenden Kalender.</p>
+            </div>
+        </div>
+        <a href="#warteliste" class="cta-button cta-secondary">Ich will das!</a>
+    </div>
+</section>
+
+<!-- Demo Carousel -->
+<section class="demo-carousel-section" id="demo">
+    <div class="container">
+        <h2>So sieht das aus.</h2>
+        <p class="demo-subtitle">Drei typische Szenarien — ein Ergebnis: Termin im Kalender.</p>
+
+        <div class="carousel">
+            <button class="carousel-nav carousel-prev" onclick="goSlide(-1)">&lsaquo;</button>
+            <button class="carousel-nav carousel-next" onclick="goSlide(1)">&rsaquo;</button>
+
+            <div class="carousel-track" id="track">
+
+                <!-- SLIDE 1: Foto vom Schulzettel → 3 Termine -->
+                <div class="carousel-slide slide-active" id="slide-0">
+                    <div class="scene-label">Schulzettel abfotografiert</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📸 Foto</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="photo-mockup anim s1-photo">
+                                    <div class="photo-icon">📋</div>
+                                    <strong>Elterninfo März 2026</strong><br><br>
+                                    → Elternabend: 24.04., 19:30, Aula<br>
+                                    → Wandertag: 02.05., ganztägig<br>
+                                    → Schulfrei: 30.05.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s1-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s1-spark">✨</span>
+                            <span class="demo-flow-label anim s1-label">3 Termine erkannt!</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">April</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Training Leon</div><div class="cal-time">Di 17:00</div></div></div>
+                                <div class="cal-entry anim s1-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Elternabend Aula</div><div class="cal-time">Do 24.04. — 19:30</div></div><span class="cal-badge anim s1-b1">NEU</span></div>
+                                <div class="cal-entry anim s1-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Wandertag</div><div class="cal-time">Fr 02.05. — ganztägig</div></div><span class="cal-badge anim s1-b2">NEU</span></div>
+                                <div class="cal-entry anim s1-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Schulfrei</div><div class="cal-time">Fr 30.05.</div></div><span class="cal-badge anim s1-b3">NEU</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: Multi-Input -->
+                <div class="carousel-slide" id="slide-1">
+                    <div class="scene-label">Drei Quellen, ein Kalender</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📱 An flomily gesendet</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="chat-bubble anim s2-msg">
+                                    <div class="chat-bubble-sender">💬 Weitergeleitete Nachricht</div>
+                                    Training ab sofort immer Dienstags 17:30 statt 17:00!
+                                    <div class="chat-bubble-time">09:22</div>
+                                </div>
+                                <div class="photo-mockup photo-mockup-small anim s2-photo">
+                                    <span style="font-size:1rem;">📸</span> Foto: Zahnarzt-Terminkarte<br>
+                                    → Dr. Weber, Do 15.05., 10:00
+                                </div>
+                                <div class="voice-mockup anim s2-voice">
+                                    <span style="font-size:1.1rem;">🎤</span>
+                                    <div class="voice-wave">
+                                        <div class="voice-bar" style="height:8px;"></div>
+                                        <div class="voice-bar" style="height:14px;"></div>
+                                        <div class="voice-bar" style="height:20px;"></div>
+                                        <div class="voice-bar" style="height:12px;"></div>
+                                        <div class="voice-bar" style="height:18px;"></div>
+                                        <div class="voice-bar" style="height:10px;"></div>
+                                        <div class="voice-bar" style="height:16px;"></div>
+                                        <div class="voice-bar" style="height:6px;"></div>
+                                    </div>
+                                    <span class="voice-time">0:04</span>
+                                </div>
+                                <div class="voice-transcript">„Geburtstag bei Finn am Samstag um drei"</div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s2-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s2-spark">✨</span>
+                            <span class="demo-flow-label anim s2-label">Alles erkannt!</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">Mai</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Elternabend</div><div class="cal-time">Do 24.04. — 19:30</div></div></div>
+                                <div class="cal-entry anim s2-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Training (neue Zeit!)</div><div class="cal-time">Di 17:30</div></div><span class="cal-badge anim s2-b1">NEU</span></div>
+                                <div class="cal-entry anim s2-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Zahnarzt Dr. Weber</div><div class="cal-time">Do 15.05. — 10:00</div></div><span class="cal-badge anim s2-b2">NEU</span></div>
+                                <div class="cal-entry anim s2-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Geburtstag Finn</div><div class="cal-time">Sa — 15:00</div></div><span class="cal-badge anim s2-b3">NEU</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: Bestätigungsflow -->
+                <div class="carousel-slide" id="slide-2">
+                    <div class="scene-label">Bestätigen und fertig</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">💬 Chat mit flomily</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="chat-bubble anim s3-msg">
+                                    <div class="chat-bubble-sender">📨 Weitergeleitete Nachricht</div>
+                                    Hallo! Erinnerung: Impftermin Mila am 12.05. um 9:15 bei Dr. Klein, Hauptstr. 42
+                                    <div class="chat-bubble-time">10:31</div>
+                                </div>
+                                <div class="fwd-indicator anim s3-fwd">An flomily gesendet ✓</div>
+                                <div class="flomily-response anim s3-flomily">
+                                    <div class="flomily-tag">🤖 flomily</div>
+                                    <strong>Impftermin Mila</strong><br>
+                                    📅 Mo 12.05. um 9:15<br>
+                                    📍 Dr. Klein, Hauptstr. 42<br>
+                                    🚗 12 Min. Fahrzeit
+                                    <div class="confirm-buttons anim s3-btns">
+                                        <span class="confirm-btn confirm-yes">👨‍👩‍👧 Family</span>
+                                        <span class="confirm-btn confirm-no">👤 Nur ich</span>
+                                        <span class="confirm-btn confirm-no">❌</span>
+                                    </div>
+                                </div>
+                                <div style="text-align:center;margin-top:10px;">
+                                    <span class="confirmed-badge anim s3-check">✅ Bestätigt!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s3-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s3-spark">✨</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 Familienkalender <span class="mockup-month">Mai</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Training Leon</div><div class="cal-time">Di 17:30</div></div></div>
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Geburtstag Finn</div><div class="cal-time">Sa 15:00</div></div></div>
+                                <div class="cal-entry anim s3-e1">
+                                    <div class="cal-dot cal-dot-orange"></div>
+                                    <div>
+                                        <div class="cal-title">Impftermin Mila</div>
+                                        <div class="cal-time">Mo 12.05. — 9:15</div>
+                                        <div class="cal-time">📍 Dr. Klein · 🚗 8:55 los</div>
+                                    </div>
+                                    <span class="cal-badge anim s3-b1">NEU</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="carousel-dots">
+                <button class="carousel-dot active" onclick="setSlide(0)"></button>
+                <button class="carousel-dot" onclick="setSlide(1)"></button>
+                <button class="carousel-dot" onclick="setSlide(2)"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Your calendar stays yours -->
+<section class="calendar-compat">
+    <div class="container">
+        <div class="compat-content">
+            <div class="compat-text">
+                <h2>Euer Kalender bleibt euer Kalender.</h2>
+                <p>flomily ist kein neuer Kalender. Termine landen direkt dort, wo ihr sie sowieso nachschaut — ob Google, Apple, Outlook oder jeder andere Kalender. Auch im Arbeitskalender, wenn ihr wollt. Nichts umziehen, nichts umlernen.</p>
+            </div>
+            <div class="compat-logos">
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#4285F4"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">G</text></svg>
+                    <span>Google</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#333"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">&#63743;</text></svg>
+                    <span>Apple</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#0078D4"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">O</text></svg>
+                    <span>Outlook</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#1C449B"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">G</text></svg>
+                    <span>GMX</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#94A3B8"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="16" font-weight="bold">+</text></svg>
+                    <span>Jeder Kalender</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Input channels -->
+<section class="channels">
+    <div class="container">
+        <h2>Egal wie — flomily versteht's.</h2>
+        <div class="channel-grid">
+            <div class="channel-card">
+                <div class="channel-icon">📱</div>
+                <h3>Weiterleiten</h3>
+                <p>Die Trainerin schickt den neuen Plan in die WhatsApp-Gruppe? Einfach weiterleiten.</p>
+                <div class="channel-example">"Fußballtraining ab nächster Woche immer Dienstags 17 Uhr"</div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">📸</div>
+                <h3>Fotografieren</h3>
+                <p>Elternbrief aus der Postmappe? Abfotografieren, fertig.</p>
+                <div class="channel-example">Foto vom Schulzettel → 3 Termine erkannt</div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">🎤</div>
+                <h3>Reinsprechen</h3>
+                <p>Beim Arzt einen Termin bekommen? Keine Hände frei? Einfach sagen.</p>
+                <div class="channel-example">"Zahnarzt nächsten Donnerstag um zehn"</div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">📄</div>
+                <h3>Dokumente</h3>
+                <p>Stundenplan als PDF? Vereins-Rundmail? Outlook-Einladung? Weiterleiten.</p>
+                <div class="channel-example">Elternabend-Einladung.pdf → 14.04., 19:30</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- For whom -->
+<section class="forwho">
+    <div class="container">
+        <div class="forwho-cards">
+            <div class="forwho-card">
+                <div class="forwho-emoji">👨‍👩‍👧‍👦</div>
+                <h3>Familien</h3>
+                <p>Schule, Sport, Arzt, Kindergeburtstag — alles an einem Ort, für alle.</p>
+            </div>
+            <div class="forwho-card">
+                <div class="forwho-emoji">🏃</div>
+                <h3>Vielbeschäftigte</h3>
+                <p>Zu viele Termine, zu wenig Zeit sie einzutragen. flomily macht das.</p>
+            </div>
+            <div class="forwho-card">
+                <div class="forwho-emoji">🤝</div>
+                <h3>Vereine & Gruppen</h3>
+                <p>Trainingszeiten, Spieltage, Versammlungen — einmal schicken, alle haben's.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <h2>Ein Auszug aus dem, was flomily kann.</h2>
+        <div class="features-grid">
+            <div class="feature-item"><span class="feature-icon">📋</span><div><strong>Schulzettel erkennen</strong><p>Elternbrief abfotografieren, alle Termine auf einen Schlag.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">🔄</span><div><strong>Terminserien</strong><p>„Karate jeden Freitag" wird automatisch zur Serie.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">🎨</span><div><strong>Auto-Kategorisierung</strong><p>Legt eure eigenen Kategorien und Farben fest — flomily sortiert neue Termine automatisch ein.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">📎</span><div><strong>Dokumente am Termin</strong><p>Fotos und Dokumente werden automatisch an den Termin angehängt — alles griffbereit.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">✏️</span><div><strong>Direkt im Chat bearbeiten</strong><p>Titel, Datum, Ort oder Kategorie anpassen, bevor der Termin rausgeht.</p></div></div>
+            <div class="feature-item coming-soon"><span class="feature-icon">🚗</span><div><strong>Fahrzeit-Berechnung</strong><p>flomily sagt dir, wann du losfahren musst.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+            <div class="feature-item coming-soon"><span class="feature-icon">❌</span><div><strong>Absagen erkennen</strong><p>„Training fällt aus" — Termin wird automatisch gestrichen.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+            <div class="feature-item coming-soon"><span class="feature-icon">👨‍👩‍👧‍👦</span><div><strong>Gemeinsamer Familienkalender</strong><p>Ein Termin, alle haben ihn.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+        </div>
+        <div class="features-more" id="features-more" style="display:none;">
+            <div class="features-grid">
+                <div class="feature-item"><span class="feature-icon">🎤</span><div><strong>Sprachnachrichten</strong><p>Termin einfach reinsprechen.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">⏰</span><div><strong>Erinnerungen</strong><p>Individuell pro Termin wählbar.</p></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">👥</span><div><strong>Mehrere Kalender</strong><p>Jedes Familienmitglied bekommt Termine in seinen eigenen Kalender — oder alle in einen gemeinsamen.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">📊</span><div><strong>Familien-Dashboard</strong><p>Alle Termine auf einen Blick, z.B. am Tablet in der Küche.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item"><span class="feature-icon">🗑️</span><div><strong>Müllkalender</strong><p>Einmal abfotografieren, nie wieder nachschauen.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">🍽️</span><div><strong>Speiseplan</strong><p>Foto vom Kita- oder Schulessen — Mahlzeiten im Wochenüberblick.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">📄</span><div><strong>PDFs & Dokumente</strong><p>Stundenplan, Vereinsrundmail, Outlook-Einladung — einfach weiterleiten.</p></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">🏟️</span><div><strong>Spielpläne</strong><p>Lieblingsteam verknüpfen, Spieltage landen automatisch im Kalender.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">↔️</span><div><strong>Verschiebungen erkennen</strong><p>„Neue Zeit vorschlagen" aus Outlook? flomily aktualisiert automatisch.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item"><span class="feature-icon">📸</span><div><strong>Foto = Termin</strong><p>Aushang, Flyer, Visitenkarte — abfotografieren reicht.</p></div></div>
+            </div>
+        </div>
+        <button class="features-toggle" id="features-toggle" onclick="var m=document.getElementById('features-more'),b=document.getElementById('features-toggle');if(m.style.display==='none'){m.style.display='block';b.textContent='Weniger anzeigen';}else{m.style.display='none';b.textContent='Und noch viel mehr...';}">Und noch viel mehr...</button>
+    </div>
+</section>
+
+<!-- Trust -->
+<section class="trust">
+    <div class="container">
+        <h2>Eure Daten in guten Haenden.</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <span class="trust-icon">🔒</span>
+                <div>
+                    <strong>DSGVO-konform</strong>
+                    <p>Wir nehmen Datenschutz ernst und halten uns an europaeische Standards.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🔐</span>
+                <div>
+                    <strong>Verschluesselte Uebertragung</strong>
+                    <p>Eure Daten werden ausschliesslich verschluesselt uebertragen.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🚫</span>
+                <div>
+                    <strong>Keine Weitergabe</strong>
+                    <p>Eure Daten werden nicht an Dritte zu Werbezwecken weitergegeben.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">📋</span>
+                <div>
+                    <strong>Transparent</strong>
+                    <p>Alle Details zur Datenverarbeitung findest du in unserer Datenschutzerklaerung.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Waitlist -->
+<section class="waitlist" id="warteliste">
+    <div class="container">
+        <h2>Bald geht's los.</h2>
+        <p class="waitlist-sub">Meld dich an und bekomm als Erste(r) Updates zum Projektfortschritt — und Zugang zur Beta, wenn's soweit ist.</p>
+        <div class="fomo-badge">🎁 Die ersten 100 Flo'er starten mit 100 Credits — als Dankeschoen.</div>
+        <form class="waitlist-form" action="https://formspree.io/f/xaqpkvpd" method="POST">
+            <input type="hidden" name="_next" value="https://flomily.de/danke.html">
+            <input type="email" name="email" placeholder="Deine E-Mail-Adresse" required>
+            <button type="submit" class="cta-button">Platz sichern</button>
+        </form>
+        <p class="waitlist-fomo">300+ Flo'er warten schon. Sei dabei, wenn flomily startet.</p>
+        <p class="waitlist-note">Kein Spam. Ein Update alle paar Wochen, mehr nicht.</p>
+    </div>
+</section>
+
+<!-- Feedback -->
+<section class="feedback-section" id="feedback">
+    <div class="container">
+        <h2>Was würdest du dir wünschen?</h2>
+        <p class="feedback-sub">flomily entsteht gerade — und deine Meinung baut mit. Sag uns, was dir bei Terminen am meisten helfen würde.</p>
+        <form class="feedback-form" action="https://formspree.io/f/xaqpkvpd" method="POST">
+            <input type="hidden" name="_type" value="feedback">
+            <input type="hidden" name="_next" value="https://flomily.de/danke.html">
+            <div class="feedback-field">
+                <label for="main-wish">Das wünsche ich mir am meisten:</label>
+                <textarea id="main-wish" name="wish" rows="3" placeholder="z.B. &quot;Dass ich nie wieder Termine aus WhatsApp abtippen muss&quot;"></textarea>
+            </div>
+            <div class="feedback-field">
+                <label for="main-pain">Das nervt mich heute am meisten bei Terminen:</label>
+                <textarea id="main-pain" name="pain" rows="3" placeholder="z.B. &quot;Keiner weiß, wann welches Kind wohin muss&quot;"></textarea>
+            </div>
+            <div class="feedback-field">
+                <label for="main-name">Dein Name: <span class="feedback-optional">(optional, für Rückfragen)</span></label>
+                <input type="text" id="main-name" name="name" placeholder="Vorname reicht">
+            </div>
+            <button type="submit" class="cta-button">Absenden</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 flomily. Termin-Orga, die mitdenkt.</p>
+        <nav>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+let current = 0;
+const total = 3;
+let autoTimer = null;
+let paused = false;
+
+function startAutoplay() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { if (!paused) goSlide(1); }, 15000);
+}
+
+function setSlide(n) {
+    document.getElementById('slide-' + current).classList.remove('slide-active');
+    current = ((n % total) + total) % total;
+    document.getElementById('track').style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+    });
+    var slide = document.getElementById('slide-' + current);
+    slide.querySelectorAll('.anim').forEach(function(el) {
+        el.style.animation = 'none';
+        void el.offsetHeight;
+        el.style.animation = '';
+    });
+    slide.classList.add('slide-active');
+    startAutoplay();
+}
+
+function goSlide(dir) {
+    setSlide(current + dir);
+}
+
+var carousel = document.querySelector('.carousel');
+carousel.addEventListener('mouseenter', function() { paused = true; });
+carousel.addEventListener('mouseleave', function() { paused = false; startAutoplay(); });
+carousel.addEventListener('touchstart', function() { paused = true; clearInterval(autoTimer); }, {passive: true});
+carousel.addEventListener('touchend', function() {
+    setTimeout(function() { paused = false; startAutoplay(); }, 20000);
+}, {passive: true});
+
+startAutoplay();
+</script>
+
+</body>
+</html>
