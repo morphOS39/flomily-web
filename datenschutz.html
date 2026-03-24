@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklaerung — flomily</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal {
+            min-height: 100vh;
+            padding: 80px 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .legal h1 {
+            color: #2A9D8F;
+            margin-bottom: 24px;
+        }
+        .legal h2 {
+            color: #2A9D8F;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        .legal h3 {
+            margin-top: 24px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .legal p, .legal li {
+            line-height: 1.8;
+            color: #334155;
+        }
+        .legal ul {
+            padding-left: 24px;
+        }
+        .legal a {
+            color: #2A9D8F;
+        }
+        .legal table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95rem;
+        }
+        .legal th, .legal td {
+            border: 1px solid #e0e0e0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .legal th {
+            background: #f0faf8;
+            color: #2A9D8F;
+        }
+        .legal-back {
+            display: inline-block;
+            margin-top: 32px;
+            color: #2A9D8F;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .legal-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="legal">
+        <h1>Datenschutzerklaerung</h1>
+
+        <h2>1. Verantwortlicher</h2>
+        <p>
+            Marc O. S.<br>
+            E-Mail: <a href="mailto:info@flomily.de">info@flomily.de</a>
+        </p>
+
+        <h2>2. Welche Daten wir verarbeiten</h2>
+
+        <h3>Website (flomily.de)</h3>
+        <p>Beim Besuch unserer Website werden automatisch technische Daten erhoben: IP-Adresse, Browser-Typ, Betriebssystem, Zugriffszeitpunkt. Diese Daten werden von unserem Hosting-Anbieter Cloudflare verarbeitet.</p>
+
+        <h3>Warteliste / Anmeldeformular</h3>
+        <p>Wenn du dich fuer die Beta anmeldest, erheben wir: Name und E-Mail-Adresse. Diese werden ueber den Formular-Dienst Formspree verarbeitet.</p>
+
+        <h3>Telegram-Bot</h3>
+        <p>Bei Nutzung des flomily Telegram-Bots verarbeiten wir:</p>
+        <ul>
+            <li>Telegram-ID und Telegram-Benutzername</li>
+            <li>Nachrichteninhalte (Text, Fotos, Dokumente, Sprachnachrichten)</li>
+            <li>E-Mail-Adresse (bei Registrierung angegeben)</li>
+        </ul>
+
+        <h3>Termin-Versand (ICS)</h3>
+        <p>Erkannte Termine werden als Kalendereinladung (ICS-Datei) per E-Mail verschickt. Dabei verarbeiten wir: Name und E-Mail-Adresse der Empfaenger sowie die Termindaten.</p>
+
+        <h3>Drip-Mails</h3>
+        <p>Registrierte Nutzer erhalten automatisierte Service-E-Mails (Willkommen, Tipps, Updates). Dabei speichern wir: E-Mail-Adresse, Name und welche Mails bereits verschickt wurden.</p>
+
+        <h2>3. Zweck und Rechtsgrundlage</h2>
+        <table>
+            <tr><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+            <tr><td>Warteliste / Beta-Anmeldung</td><td>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</td></tr>
+            <tr><td>Termin-Erstellung und ICS-Versand</td><td>Vertragsdurchfuehrung (Art. 6 Abs. 1 lit. b DSGVO)</td></tr>
+            <tr><td>Service-E-Mails (Drip-Mails)</td><td>Vertragsdurchfuehrung (Art. 6 Abs. 1 lit. b DSGVO)</td></tr>
+            <tr><td>Beta-Einladungen an Bekannte</td><td>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)</td></tr>
+            <tr><td>KI-Verarbeitung (Termin-Erkennung)</td><td>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</td></tr>
+            <tr><td>Website-Betrieb (Hosting)</td><td>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)</td></tr>
+        </table>
+
+        <h2>4. KI-Verarbeitung</h2>
+        <p><strong>Wichtiger Hinweis:</strong> Deine Nachrichten an den Telegram-Bot werden von einer kuenstlichen Intelligenz (<strong>Claude</strong>, Anbieter: <strong>Anthropic</strong>, USA) verarbeitet, um Termine zu erkennen. Die Verarbeitung erfolgt auf Servern in den USA.</p>
+        <p>Sprachnachrichten werden <strong>lokal</strong> auf unserem Server transkribiert (whisper.cpp) und nicht an externe Dienste gesendet. Nur der transkribierte Text wird zur Termin-Erkennung an die Claude API weitergeleitet.</p>
+        <p>Die Datenuebermittlung in die USA erfolgt auf Basis von Standard Contractual Clauses (SCCs) gemaess Art. 46 Abs. 2 lit. c DSGVO.</p>
+        <p>Du wirst bei der Aktivierung des Bots ausdruecklich auf die KI-Verarbeitung hingewiesen und musst dieser gesondert zustimmen.</p>
+
+        <h2>5. Auftragsverarbeiter</h2>
+        <p>Wir setzen folgende Dienstleister ein, die in unserem Auftrag personenbezogene Daten verarbeiten:</p>
+        <table>
+            <tr><th>Dienst</th><th>Anbieter</th><th>Zweck</th><th>Standort</th></tr>
+            <tr><td>Claude API</td><td>Anthropic, USA</td><td>KI-Termin-Erkennung</td><td>USA</td></tr>
+            <tr><td>E-Mail-Versand</td><td>Wird aktualisiert</td><td>Termin-Einladungen und Service-Mails</td><td>—</td></tr>
+            <tr><td>Cloudflare</td><td>Cloudflare Inc., USA</td><td>Website-Hosting, DNS, CDN</td><td>Global</td></tr>
+            <tr><td>Formspree</td><td>Formspree Inc., USA</td><td>Formular-Verarbeitung</td><td>USA</td></tr>
+            <tr><td>Telegram</td><td>Telegram FZ-LLC, Dubai</td><td>Bot-Kommunikation</td><td>Global</td></tr>
+        </table>
+
+        <h2>6. Speicherdauer</h2>
+        <ul>
+            <li><strong>Account-Daten:</strong> Solange dein Account aktiv ist. Nach Deaktivierung Loeschung innerhalb von 30 Tagen.</li>
+            <li><strong>Nachrichteninhalte:</strong> Werden nach der Termin-Erkennung nicht dauerhaft gespeichert.</li>
+            <li><strong>Drip-Mail-Log:</strong> Solange dein Account aktiv ist (Protokoll welche Mails verschickt wurden).</li>
+            <li><strong>E-Mail-Adressen (Warteliste):</strong> Bis zum Widerruf deiner Einwilligung.</li>
+        </ul>
+
+        <h2>7. Kuenftige Termin-Speicherung</h2>
+        <p>In einer zukuenftigen Version von flomily moechten wir erkannte Termine speichern, damit du sie spaeter abrufen, durchsuchen und verwalten kannst. Bei der Aktivierung des Bots wird deine Einwilligung dazu eingeholt. Du kannst dieser Speicherung jederzeit widersprechen.</p>
+
+        <h2>8. Deine Rechte</h2>
+        <p>Du hast jederzeit das Recht auf:</p>
+        <ul>
+            <li><strong>Auskunft</strong> ueber deine gespeicherten Daten (Art. 15 DSGVO)</li>
+            <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+            <li><strong>Loeschung</strong> deiner Daten (Art. 17 DSGVO)</li>
+            <li><strong>Einschraenkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+            <li><strong>Datenuebertragbarkeit</strong> (Art. 20 DSGVO)</li>
+            <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+            <li><strong>Widerruf</strong> erteilter Einwilligungen mit Wirkung fuer die Zukunft</li>
+        </ul>
+        <p>Kontakt: <a href="mailto:info@flomily.de">info@flomily.de</a></p>
+
+        <h2>9. Beschwerderecht</h2>
+        <p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehoerde zu beschweren. Die fuer uns zustaendige Aufsichtsbehoerde ist:</p>
+        <p>
+            Der Landesbeauftragte fuer den Datenschutz und die Informationsfreiheit Baden-Wuerttemberg (LfDI)<br>
+            <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener">www.baden-wuerttemberg.datenschutz.de</a>
+        </p>
+
+        <h2>10. Abmeldung / Opt-Out</h2>
+        <p>Du kannst dich jederzeit abmelden:</p>
+        <ul>
+            <li><strong>Service-E-Mails:</strong> Ueber den Abmelde-Link im Footer jeder E-Mail</li>
+            <li><strong>Telegram-Bot:</strong> Mit dem Befehl <code>/stop</code></li>
+            <li><strong>Termin-Einladungen:</strong> Schreib uns an <a href="mailto:info@flomily.de">info@flomily.de</a></li>
+        </ul>
+
+        <p style="margin-top: 40px; font-size: 0.9rem; color: #999;">Stand: Maerz 2026</p>
+
+        <a href="/" class="legal-back">&larr; Zurueck zur Startseite</a>
+    </div>
+</body>
+</html>
