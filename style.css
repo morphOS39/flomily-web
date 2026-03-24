@@ -81,9 +81,14 @@ h1, h2, h3 {
     pointer-events: none;
 }
 
-.hero-logo {
-    width: 220px;
-    margin-bottom: 20px;
+.site-header {
+    background: #fff;
+    padding: 16px 0;
+    text-align: center;
+}
+
+.header-logo {
+    width: 160px;
 }
 
 .hero h1 {
