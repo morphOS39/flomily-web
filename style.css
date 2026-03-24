@@ -1435,6 +1435,48 @@ h1, h2, h3 {
     margin-top: 28px;
 }
 
+/* === Why flomily === */
+
+.why-flomily {
+    padding: 56px 0;
+    background: var(--snow);
+}
+
+.why-flomily h2 {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.why-content {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--slate);
+}
+
+.why-content p {
+    margin-bottom: 16px;
+}
+
+.why-content blockquote {
+    border-left: 4px solid var(--primary);
+    margin: 24px 0;
+    padding: 12px 24px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.1rem;
+    background: var(--primary-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.why-signature {
+    margin-top: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
 /* === Requirements === */
 
 .requirements {
