@@ -14,14 +14,14 @@ Wem wurde die Seite wann gezeigt?
 |P2|Ines|2026-03-20|||||
 |P3|Klara|2026-03-20|||||
 |P4|Henning|2026-03-20|||||
-|P5|Florian Modschiedler|2026-03-20||ja|ja||
-|P6|Thomas Mrugalla|2026-03-20||ja|ja|Signup 2026-03-23|
+|P5|Florian Modschiedler|2026-03-20||ja|ja|florian.finn1@googlemail.com|
+|P6|Thomas Mrugalla|2026-03-20||ja|ja|thomasmrugalla@web.de, Signup 2026-03-23|
 |P7|Markus Reiff|2026-03-20|||||
 |P8|Papa|2026-03-20|||||
 |P9|Mama|2026-03-20|||||
 |P10|Tanja|2026-03-20|||||
-|P11|Lena|2026-03-20||ja|ja||
-|P12|Herr Bayer|2026-03-20||ja|ja|Signup 2026-03-24|
+|P11|Lena|2026-03-20||ja|ja|lenasophie2007@gmx.de|
+|P12|Herr Bayer|2026-03-20||ja|ja|christian.bayer84@gmail.com, Signup 2026-03-24|
 |P13|Yannik|2026-03-20|||||
 |P14|Daniela Laufer|2026-03-20|||||
 |P15|David Christiani|2026-03-21|Mail||||
