@@ -1,6 +1,6 @@
 # Flomily Landing Page — Feedback-Tracker
 
-> \*\*Signalwort Telegram:\*\* `#ff` — VEGA erkennt Feedback und traegt es hier ein.
+> \\\*\\\*Signalwort Telegram:\\\*\\\* `#ff` — VEGA erkennt Feedback und traegt es hier ein.
 
 \---
 
@@ -24,7 +24,7 @@ Wem wurde die Seite wann gezeigt?
 |P12|Herr Bayer|2026-03-20||ja|ja|christian.bayer84@gmail.com, Signup 2026-03-24|
 |P13|Yannik|2026-03-20|||||
 |P14|Daniela Laufer|2026-03-20|||||
-|P15|David Christiani|2026-03-21|Mail||||
+|P15|David Christiani|2026-03-21|Mail|ja|ja|newintaiwan@gmail.com|
 |P16|Cathi Rintelmann|2026-03-24||ja|ja|cathi20@freenet.de|
 |P17|Dália|2026-03-24|||||
 |P18|Dirk|2026-03-24||||Fußballtrainer|
