@@ -61,6 +61,11 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 | F24 | P12 | 2026-03-20 | Follow-up: Meldet sich ggf. nochmal mit weiteren Gedanken | neu |
 | F25 | P1 | 2026-03-23 | Positiv: "echt beeindruckend die website" | -- |
 | F26 | P1 | 2026-03-23 | Positiv: "mir gefallen vor allem die Animationen, leicht verstaendlich" | -- |
+| F27 | P16 | 2026-03-24 | Positiv: "Die Idee finde ich mega gut" | -- |
+| F28 | P16 | 2026-03-24 | Bedenken: "ich mag nur nicht noch einen Messanger" — wuerde es aber in Kauf nehmen | neu |
+| F29 | P16 | 2026-03-24 | UX: Voraussetzungen (Telegram) fehlen auf der Website | neu |
+| F30 | P16 | 2026-03-24 | Weiterempfehlung: "Mindestens mal meinen Schwestern und jedem der sich ueber seinen Kalender beschwert" | -- |
+| F31 | P16 | 2026-03-24 | Frage: "Gibt es die Option auch fuer andere Messanger?" | neu |
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
