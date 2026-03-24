@@ -25,7 +25,7 @@ Wem wurde die Seite wann gezeigt?
 | P13 | Yannik | 2026-03-20 | | | | |
 | P14 | Daniela Laufer | 2026-03-20 | | | | |
 | P15 | David Christiani | 2026-03-21 | Mail | | | |
-| P16 | Cathi Rintelmann | 2026-03-24 | | | | |
+| P16 | Cathi Rintelmann | 2026-03-24 | | ja | | cathi20@freenet.de |
 | P17 | Dália | 2026-03-24 | | | | |
 | P18 | Dirk | 2026-03-24 | | | | Fußballtrainer |
 
