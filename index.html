@@ -7,6 +7,7 @@
     <meta name="description" content="flomily macht aus Nachrichten, Fotos und Sprachnachrichten automatisch Kalendertermine. Fuer Familien und alle, die keine Termine mehr verpassen wollen.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,6 +16,7 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
+            <img src="logo-coral.svg" alt="flomily" class="hero-logo">
             <h1>Eure Termine.<br>Einfach im Flow.</h1>
             <p class="subline">Nachricht weiterleiten, Foto schicken, kurz reinsprechen — flomily erkennt den Termin und packt ihn in eure Kalender.</p>
             <div class="hero-ctas">
@@ -282,7 +284,7 @@
                                 </div>
                                 <div class="fwd-indicator anim s3-fwd">An flomily gesendet ✓</div>
                                 <div class="flomily-response anim s3-flomily">
-                                    <div class="flomily-tag">🤖 flomily</div>
+                                    <div class="flomily-tag"><img src="icon.svg" alt="" class="flomily-tag-icon"> flomily</div>
                                     <strong>Impftermin Mila</strong><br>
                                     📅 Mo 12.05. um 9:15<br>
                                     📍 Dr. Klein, Hauptstr. 42<br>
@@ -535,11 +537,15 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <p>&copy; 2026 flomily. Termin-Orga, die mitdenkt.</p>
+        <div class="footer-brand">
+            <img src="logo.svg" alt="flomily" class="footer-logo">
+            <p>Termin-Orga, die mitdenkt.</p>
+        </div>
         <nav>
             <a href="/impressum">Impressum</a>
             <a href="/datenschutz">Datenschutz</a>
         </nav>
+        <p class="footer-copy">&copy; 2026 flomily</p>
     </div>
 </footer>
 

@@ -81,6 +81,11 @@ h1, h2, h3 {
     pointer-events: none;
 }
 
+.hero-logo {
+    width: 220px;
+    margin-bottom: 20px;
+}
+
 .hero h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -719,6 +724,15 @@ h1, h2, h3 {
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.flomily-tag-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
 }
 
 .confirm-buttons {
@@ -1423,10 +1437,31 @@ footer {
 
 footer .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-logo {
+    width: 120px;
+    opacity: 0.7;
+}
+
+.footer-brand p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    margin-top: 4px;
 }
 
 footer nav {
