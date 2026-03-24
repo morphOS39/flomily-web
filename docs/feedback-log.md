@@ -66,6 +66,10 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F29|P16|2026-03-24|UX: Voraussetzungen (Telegram) fehlen auf der Website|neu|
 |F30|P16|2026-03-24|Weiterempfehlung: "Mindestens mal meinen Schwestern und jedem der sich ueber seinen Kalender beschwert"|--|
 |F31|P16|2026-03-24|Frage: "Gibt es die Option auch fuer andere Messanger?"|neu|
+|F40|P15|2026-03-24|Positiv: "I love the idea of taking a WhatsApp message and one-clicking an appointment into your calendar - WOW, that's absolutely huge!"|--|
+|F41|P15|2026-03-24|Pain Point bestätigt: School info, birthday parties in WhatsApp groups — "drives you crazy scrolling back through to find exact times"|--|
+|F42|P15|2026-03-24|Branding: Name "Flomily" braucht Gewöhnung. Verbindung flow+family klar, aber Value Proposition auf der Seite nicht stark genug auf Familien-Stress gemünzt|neu|
+|F43|P15|2026-03-24|Messaging-Vorschlag: "Managing a family is complex enough, don't let your appointments add to the stress. With flomily, family life is simply — easier."|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
