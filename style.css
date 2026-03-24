@@ -1477,6 +1477,22 @@ h1, h2, h3 {
     font-size: 1rem;
 }
 
+.why-toggle {
+    display: block;
+    margin: 16px auto 0;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.why-toggle:hover {
+    text-decoration: underline;
+}
+
 /* === Requirements === */
 
 .requirements {
