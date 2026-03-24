@@ -1116,6 +1116,26 @@ h1, h2, h3 {
     line-height: 1.5;
 }
 
+.feature-item.coming-soon {
+    opacity: 0.45;
+    position: relative;
+}
+
+.feature-item.coming-soon:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+}
+
+.coming-soon-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #E76F51;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    display: block;
+}
+
 @media (max-width: 768px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
