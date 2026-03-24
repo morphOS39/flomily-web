@@ -85,6 +85,10 @@ h1, h2, h3 {
     background: #fff;
     padding: 16px 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 8px rgba(45, 55, 72, 0.06);
 }
 
 .header-logo {
