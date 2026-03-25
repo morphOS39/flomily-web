@@ -74,7 +74,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F44|P19|2026-03-25|UX: "Einfach im Flow" klingt cool, sagt aber nicht was es macht. "Termine aus Nachrichten direkt in den Kalender" ist technokratisch aber klar|neu|
 |F45|P19|2026-03-25|UX: Subline darunter ist gut, die erklärt wie es geht|--|
 |F46|P19|2026-03-25|Sicherheit: Ungewissheit wie flomily auf Nachrichten zugreift. "Nix greift automatisch zu, du entscheidest" sollte vorne stehen|neu|
-|F47|P19|2026-03-25|Conversion: Erst nach Schritt 15 auf der Seite überzeugt — zu spät|neu|
+|F47|P19|2026-03-25|UX: Nach 5 Sekunden noch nicht verstanden worum es geht, erst nach ~15 Sekunden klar|neu|
 |F48|P19|2026-03-25|Weiterempfehlung: Prinzipiell jedem, sobald von Sicherheit überzeugt|--|
 |F49|P12|2026-03-25|Frage: Wofür sind die Credits?|neu|
 
