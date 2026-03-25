@@ -20,10 +20,21 @@
 
 <!-- Header -->
 <header class="site-header">
-    <div class="container">
+    <div class="container header-bar">
         <a href="#"><img src="logo.svg" alt="flomily" class="header-logo"></a>
+        <button class="burger" id="burger" onclick="document.getElementById('nav-overlay').classList.toggle('open');this.classList.toggle('open');" aria-label="Menü">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+<nav class="nav-overlay" id="nav-overlay">
+    <a href="#how" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">So geht's</a>
+    <a href="#demo" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Demo</a>
+    <a href="#features" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Features</a>
+    <a href="#why" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Warum flomily?</a>
+    <a href="#requirements" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Was brauchst du?</a>
+    <a href="#warteliste" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Warteliste</a>
+</nav>
 
 <!-- Hero -->
 <section class="hero">
@@ -159,7 +170,7 @@
 </section>
 
 <!-- How it works -->
-<section class="how">
+<section class="how" id="how">
     <div class="container">
         <h2>So einfach geht's</h2>
         <div class="steps">
@@ -438,7 +449,7 @@
 </section>
 
 <!-- Features -->
-<section class="features">
+<section class="features" id="features">
     <div class="container">
         <h2>Ein Auszug aus dem, was flomily kann.</h2>
         <div class="features-grid">
@@ -470,7 +481,7 @@
 </section>
 
 <!-- Why flomily -->
-<section class="why-flomily">
+<section class="why-flomily" id="why">
     <div class="container">
         <h2>Warum flomily?</h2>
         <div class="why-content">
@@ -528,7 +539,7 @@
 </section>
 
 <!-- Requirements -->
-<section class="requirements">
+<section class="requirements" id="requirements">
     <div class="container">
         <h2>Was brauchst du?</h2>
         <p class="requirements-sub">Nur zwei Dinge — und los geht's.</p>
