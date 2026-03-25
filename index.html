@@ -28,13 +28,17 @@
     </div>
 </header>
 <nav class="nav-overlay" id="nav-overlay">
-    <a href="#how" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">So geht's</a>
-    <a href="#demo" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Demo</a>
-    <a href="#features" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Features</a>
-    <a href="#why" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Warum flomily?</a>
-    <a href="#requirements" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Was brauchst du?</a>
-    <a href="#warteliste" onclick="document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');">Warteliste</a>
+    <a href="#pain" onclick="closeNav()">Kennst du das?</a>
+    <a href="#how" onclick="closeNav()">So geht's</a>
+    <a href="#demo" onclick="closeNav()">Demo</a>
+    <a href="#features" onclick="closeNav()">Features</a>
+    <a href="#why" onclick="closeNav()">Warum flomily?</a>
+    <a href="#trust" onclick="closeNav()">Datenschutz</a>
+    <a href="#requirements" onclick="closeNav()">Was brauchst du?</a>
+    <a href="#warteliste" onclick="closeNav()">Warteliste</a>
+    <a href="#feedback" onclick="closeNav()">Dein Wunsch</a>
 </nav>
+<script>function closeNav(){document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');}</script>
 
 <!-- Hero -->
 <section class="hero">
@@ -98,7 +102,7 @@
 </section>
 
 <!-- Pain Points -->
-<section class="pain">
+<section class="pain" id="pain">
     <div class="container">
         <h2>Kennst du das?</h2>
         <div class="pain-grid">
@@ -502,22 +506,22 @@
 </section>
 
 <!-- Trust -->
-<section class="trust">
+<section class="trust" id="trust">
     <div class="container">
-        <h2>Eure Daten in guten Haenden.</h2>
+        <h2>Eure Daten in guten Händen.</h2>
         <div class="trust-grid">
             <div class="trust-item">
                 <span class="trust-icon">🔒</span>
                 <div>
                     <strong>DSGVO-konform</strong>
-                    <p>Wir nehmen Datenschutz ernst und halten uns an europaeische Standards.</p>
+                    <p>Wir nehmen Datenschutz ernst und halten uns an europäische Standards.</p>
                 </div>
             </div>
             <div class="trust-item">
                 <span class="trust-icon">🔐</span>
                 <div>
-                    <strong>Verschluesselte Uebertragung</strong>
-                    <p>Eure Daten werden ausschliesslich verschluesselt uebertragen.</p>
+                    <strong>Verschlüsselte Übertragung</strong>
+                    <p>Eure Daten werden ausschließlich verschlüsselt übertragen.</p>
                 </div>
             </div>
             <div class="trust-item">
@@ -531,7 +535,7 @@
                 <span class="trust-icon">📋</span>
                 <div>
                     <strong>Transparent</strong>
-                    <p>Alle Details zur Datenverarbeitung findest du in unserer Datenschutzerklaerung.</p>
+                    <p>Alle Details zur Datenverarbeitung findest du in unserer Datenschutzerklärung.</p>
                 </div>
             </div>
         </div>

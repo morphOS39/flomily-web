@@ -63,8 +63,19 @@ h1, h2, h3 {
 
 .header-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.header-bar .burger {
+    position: absolute;
+    right: 0;
+}
+
+/* Offset for anchor scroll — compensate sticky header height */
+section[id] {
+    scroll-margin-top: 70px;
 }
 
 .burger {
