@@ -71,6 +71,12 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F41|P15|2026-03-24|Pain Point bestätigt: School info, birthday parties in WhatsApp groups — "drives you crazy scrolling back through to find exact times"|--|
 |F42|P15|2026-03-24|Branding: Name "Flomily" braucht Gewöhnung. Verbindung flow+family klar, aber Value Proposition auf der Seite nicht stark genug auf Familien-Stress gemünzt|neu|
 |F43|P15|2026-03-24|Messaging-Vorschlag: "Managing a family is complex enough, don't let your appointments add to the stress. With flomily, family life is simply — easier."|neu|
+|F44|P19|2026-03-25|UX: "Einfach im Flow" klingt cool, sagt aber nicht was es macht. "Termine aus Nachrichten direkt in den Kalender" ist technokratisch aber klar|neu|
+|F45|P19|2026-03-25|UX: Subline darunter ist gut, die erklärt wie es geht|--|
+|F46|P19|2026-03-25|Sicherheit: Ungewissheit wie flomily auf Nachrichten zugreift. "Nix greift automatisch zu, du entscheidest" sollte vorne stehen|neu|
+|F47|P19|2026-03-25|Conversion: Erst nach Schritt 15 auf der Seite überzeugt — zu spät|neu|
+|F48|P19|2026-03-25|Weiterempfehlung: Prinzipiell jedem, sobald von Sicherheit überzeugt|--|
+|F49|P12|2026-03-25|Frage: Wofür sind die Credits?|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
