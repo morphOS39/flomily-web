@@ -77,6 +77,9 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F47|P19|2026-03-25|UX: Nach 5 Sekunden noch nicht verstanden worum es geht, erst nach ~15 Sekunden klar|neu|
 |F48|P19|2026-03-25|Weiterempfehlung: Prinzipiell jedem, sobald von Sicherheit überzeugt|--|
 |F49|P12|2026-03-25|Frage: Wofür sind die Credits?|neu|
+|F50|P7|2026-03-26|Positiv: Funktionsweise sofort klar, Termin-Flow funktioniert gut|--|
+|F51|P6|2026-03-26|Pricing-Frage: Wurde von Kontakten gefragt was es kosten soll|neu|
+|F52|P6|2026-03-26|Link-Skepsis: Kontakte wollten nicht leichtfertig auf unbekannten Link klicken. "Was ist das?" kam mehrfach. Vertrauens-Hürde beim Referral.|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
