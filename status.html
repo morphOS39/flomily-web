@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — Dein Referral-Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .status-hero {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(150deg, #2A9D8F 0%, #3DBBAD 40%, #5CC9BA 100%);
+            color: #fff;
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .status-hero h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .status-hero p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+        .status-content {
+            max-width: 500px;
+            margin: -40px auto 0;
+            padding: 0 24px 48px;
+            position: relative;
+            z-index: 1;
+        }
+        .status-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .credits-display {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2A9D8F;
+            margin: 16px 0 4px;
+        }
+        .credits-label {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+        .credits-hint {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .referral-link-box {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .referral-link-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.95rem;
+            color: #334155;
+            background: #f8fafa;
+        }
+        .referral-link-box input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+        }
+        .btn-copy {
+            padding: 12px 20px;
+            background: #2A9D8F;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .btn-copy:hover { background: #238577; }
+        .btn-copy.copied { background: #16a34a; }
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #fff;
+            transition: opacity 0.2s;
+        }
+        .share-btn:hover { opacity: 0.85; }
+        .share-btn-wa { background: #25D366; }
+        .share-btn-tg { background: #0088cc; }
+        .share-btn-mail { background: #64748b; }
+        .status-back {
+            display: inline-block;
+            color: #2A9D8F;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px 28px;
+            border: 2px solid #2A9D8F;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+        .status-back:hover {
+            background: #2A9D8F;
+            color: #fff;
+        }
+        .no-code {
+            text-align: center;
+            padding: 60px 24px;
+            color: #64748b;
+        }
+        .no-code a {
+            color: #2A9D8F;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <section class="status-hero">
+        <div>
+            <h1>Dein Referral-Status</h1>
+            <p>Lade Freunde ein und sammle Credits für den Start.</p>
+        </div>
+    </section>
+
+    <div class="status-content" id="status-content" style="display:none;">
+        <div class="status-card">
+            <div class="credits-display" id="credits-count">0</div>
+            <div class="credits-label">Credits gesammelt</div>
+            <div class="credits-hint">Für jede Person, die sich über deinen Link anmeldet, bekommst du einen Credit. Was du damit machen kannst, verraten wir bald.</div>
+            <h3 style="color:#334155;margin-bottom:12px;">Dein Empfehlungslink:</h3>
+            <div class="referral-link-box">
+                <input type="text" id="referral-link" readonly>
+                <button class="btn-copy" id="btn-copy" onclick="copyLink()">Kopieren</button>
+            </div>
+            <div class="share-buttons">
+                <a class="share-btn share-btn-wa" id="share-wa" href="#" target="_blank">💬 WhatsApp</a>
+                <a class="share-btn share-btn-tg" id="share-tg" href="#" target="_blank">✈️ Telegram</a>
+                <a class="share-btn share-btn-mail" id="share-mail" href="#">✉️ E-Mail</a>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <a href="index.html" class="status-back">← Zurück zur Startseite</a>
+        </div>
+    </div>
+
+    <div class="no-code" id="no-code">
+        <p>Kein Referral-Code gefunden.<br>
+        <a href="index.html#warteliste">Jetzt auf die Warteliste eintragen</a> und deinen persönlichen Link bekommen.</p>
+    </div>
+
+    <script>
+    (function(){
+        var ref = new URLSearchParams(location.search).get('ref');
+        if (!ref) return;
+
+        document.getElementById('no-code').style.display = 'none';
+        document.getElementById('status-content').style.display = 'block';
+
+        var link = 'https://flomily.de/?ref=' + ref;
+        var shareText = 'Nie wieder Termine abtippen — flomily macht das automatisch. Meld dich an: ' + link;
+
+        document.getElementById('referral-link').value = link;
+        document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+        document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('Nie wieder Termine abtippen — flomily macht das automatisch!');
+        document.getElementById('share-mail').href = 'mailto:?subject=' + encodeURIComponent('flomily — Termine einfach im Flow') + '&body=' + encodeURIComponent(shareText);
+
+        // Credits count is static for now (no backend API) — shows 0
+        // Future: fetch from API to show real count
+    })();
+
+    function copyLink() {
+        var input = document.getElementById('referral-link');
+        navigator.clipboard.writeText(input.value).then(function(){
+            var btn = document.getElementById('btn-copy');
+            btn.textContent = '✓ Kopiert';
+            btn.classList.add('copied');
+            setTimeout(function(){ btn.textContent = 'Kopieren'; btn.classList.remove('copied'); }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>
