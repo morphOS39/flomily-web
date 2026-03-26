@@ -185,9 +185,6 @@
                 <a class="share-btn share-btn-tg" id="share-tg" href="#" target="_blank">✈️ Telegram</a>
                 <a class="share-btn share-btn-mail" id="share-mail" href="#">✉️ E-Mail</a>
             </div>
-            <div class="referral-credits">
-                <a id="status-link" href="#">Deinen Credit-Stand anzeigen →</a>
-            </div>
         </div>
         <a href="index.html" class="danke-back">← Zurück zur Startseite</a>
     </section>
@@ -239,8 +236,6 @@
             document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
             document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('Nie wieder Termine abtippen — flomily macht das automatisch!');
             document.getElementById('share-mail').href = 'mailto:?subject=' + encodeURIComponent('flomily — Termine einfach im Flow') + '&body=' + encodeURIComponent(shareText);
-            document.getElementById('status-link').href = 'status.html?ref=' + code;
-
             // Fetch credits
             fetch('/credits.json').then(function(r){return r.json()}).then(function(data){
                 var c = data[code];
