@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — Einladung</title>
+    <meta name="description" content="Du wurdest eingeladen! Nie wieder Termine abtippen — flomily macht das automatisch.">
+    <meta property="og:title" content="flomily — Du wurdest eingeladen!">
+    <meta property="og:description" content="Nie wieder Termine abtippen. flomily erkennt Termine aus Nachrichten, Fotos und Sprachnachrichten und packt sie in euren Kalender.">
+    <meta property="og:image" content="https://flomily.de/og-image.png">
+    <meta property="og:url" content="https://flomily.de">
+    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <script>
+    // Extract ref code from path: /einladung/REF-XXXXXX or /einladung?ref=REF-XXXXXX
+    var path = location.pathname;
+    var ref = path.split('/einladung/')[1] || new URLSearchParams(location.search).get('ref') || '';
+    ref = ref.replace(/[^A-Z0-9\-]/gi, ''); // sanitize
+    location.replace('/?ref=' + ref + '#warteliste');
+    </script>
+</head>
+<body>
+    <p>Weiterleitung... <a href="/">Hier klicken falls es nicht automatisch weitergeht.</a></p>
+</body>
+</html>

@@ -185,6 +185,10 @@
                 <a class="share-btn share-btn-tg" id="share-tg" href="#" target="_blank">✈️ Telegram</a>
                 <a class="share-btn share-btn-mail" id="share-mail" href="#">✉️ E-Mail</a>
             </div>
+            <div style="margin-top:24px;padding-top:20px;border-top:1px solid #e2e8f0;">
+                <p style="color:#64748b;font-size:0.9rem;margin-bottom:12px;">Oder zeig den QR-Code — einfach scannen lassen:</p>
+                <canvas id="qr-canvas" style="margin:0 auto;display:block;"></canvas>
+            </div>
         </div>
         <a href="index.html" class="danke-back">← Zurück zur Startseite</a>
     </section>
@@ -213,6 +217,7 @@
         </div>
     </section>
 
+    <script src="/qrcode.min.js"></script>
     <script>
     (function(){
         var email = sessionStorage.getItem('flomily_email');
@@ -229,13 +234,29 @@
 
         sha256(email.toLowerCase().trim()).then(function(hash) {
             var code = 'REF-' + hash.substring(0, 8).toUpperCase();
-            var link = 'https://flomily.de/?ref=' + code;
+            var link = 'https://flomily.de/einladung/' + code;
             var shareText = 'Nie wieder Termine abtippen — flomily macht das automatisch. Meld dich an: ' + link;
 
             document.getElementById('referral-link').value = link;
             document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
             document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('Nie wieder Termine abtippen — flomily macht das automatisch!');
             document.getElementById('share-mail').href = 'mailto:?subject=' + encodeURIComponent('flomily — Termine einfach im Flow') + '&body=' + encodeURIComponent(shareText);
+
+            // QR Code
+            if(typeof qrcode !== 'undefined') {
+                var qr = qrcode(0, 'M');
+                qr.addData(link);
+                qr.make();
+                var canvas = document.getElementById('qr-canvas');
+                var size = 180, modules = qr.getModuleCount(), cellSize = size / modules;
+                canvas.width = size; canvas.height = size;
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(0, 0, size, size);
+                for(var r=0; r<modules; r++)
+                    for(var c=0; c<modules; c++)
+                        if(qr.isDark(r, c)) { ctx.fillStyle='#2A9D8F'; ctx.fillRect(c*cellSize, r*cellSize, cellSize+0.5, cellSize+0.5); }
+            }
             // Fetch credits
             fetch('/credits.json').then(function(r){return r.json()}).then(function(data){
                 var c = data[code];
