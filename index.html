@@ -569,20 +569,27 @@
         <h2>Bald geht's los.</h2>
         <p class="waitlist-sub">Meld dich an und bekomm als Erste(r) Updates zum Projektfortschritt — und Zugang zur Beta, wenn's soweit ist.</p>
         <div class="fomo-badge">🎁 Die ersten 100 Flo'er starten mit 100 Credits — damit nutzt du flomily exklusiv, bevor es für alle verfügbar ist.</div>
-        <form class="waitlist-form" action="https://formspree.io/f/xaqpkvpd" method="POST" id="waitlist-form">
-            <input type="hidden" name="_next" value="https://flomily.de/danke.html">
-            <input type="hidden" name="ref" id="ref-field" value="">
+        <form class="waitlist-form" id="waitlist-form">
             <input type="email" name="email" id="waitlist-email" placeholder="Deine E-Mail-Adresse" required>
-            <button type="submit" class="cta-button">Platz sichern</button>
+            <button type="submit" class="cta-button" id="waitlist-btn">Platz sichern</button>
         </form>
         <script>
         (function(){
             var ref = new URLSearchParams(location.search).get('ref');
-            if(ref) document.getElementById('ref-field').value = ref;
-            document.getElementById('waitlist-form').addEventListener('submit', function(){
+            document.getElementById('waitlist-form').addEventListener('submit', function(e){
+                e.preventDefault();
                 var email = document.getElementById('waitlist-email').value;
-                if(email) sessionStorage.setItem('flomily_email', email);
+                var btn = document.getElementById('waitlist-btn');
+                btn.textContent = 'Wird gesendet...';
+                btn.disabled = true;
+                sessionStorage.setItem('flomily_email', email);
                 if(ref) sessionStorage.setItem('flomily_ref', ref);
+                fetch('https://formspree.io/f/xaqpkvpd', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                    body: JSON.stringify({email: email, ref: ref || ''})
+                }).then(function(){ location.href = '/danke.html'; })
+                  .catch(function(){ location.href = '/danke.html'; });
             });
         })();
         </script>
