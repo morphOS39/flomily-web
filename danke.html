@@ -146,23 +146,36 @@
     </style>
 </head>
 <body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="container header-bar">
+        <a href="index.html"><img src="logo.svg" alt="flomily" class="header-logo"></a>
+    </div>
+</header>
+
     <section class="danke">
         <div class="danke-content">
             <div class="danke-emoji">🎉</div>
             <h1>Du bist dabei!</h1>
             <p>Willkommen bei den ersten Flo'ern. Wir melden uns, sobald flomily startet.</p>
-            <p>Bis dahin: Lehn dich zurück. Wir kümmern uns bald um deine Termine.</p>
+            <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:20px;margin:24px 0;">
+                <p style="margin:0 0 4px;opacity:0.8;font-size:0.9rem;">Dein Startguthaben:</p>
+                <p style="margin:0;font-size:2.5rem;font-weight:700;">100 Credits</p>
+            </div>
         </div>
     </section>
 
     <section class="referral-section" id="referral-section">
         <div class="referral-card">
-            <h2>Lade Freunde ein — sammle Credits! 🎁</h2>
-            <p>Für jede Person, die sich über deinen Link anmeldet, bekommst du <strong>25 Credits</strong>. Je mehr Credits, desto besser für dich beim Start.</p>
-            <div id="danke-credits" style="display:none;margin-bottom:20px;">
-                <span style="font-size:2.5rem;font-weight:700;color:#2A9D8F;" id="danke-credits-count"></span>
-                <span style="color:#64748b;"> Credits</span>
+            <h2>Hol dir mehr Credits! 🎁</h2>
+            <p>Für jede Person, die sich über deinen Link anmeldet, bekommst du <strong>+25 Credits</strong>. Je mehr Credits, desto besser für dich beim Start.</p>
+            <div id="danke-credits" style="display:none;margin-bottom:20px;background:#f0fdfa;border-radius:12px;padding:16px;">
+                <span style="font-size:2rem;font-weight:700;color:#2A9D8F;" id="danke-credits-count"></span>
+                <span style="color:#64748b;"> Credits insgesamt</span>
+                <div style="color:#94a3b8;font-size:0.85rem;margin-top:4px;" id="danke-credits-detail"></div>
             </div>
+            <h3 style="color:#334155;margin-bottom:12px;font-size:1rem;">Dein Empfehlungslink:</h3>
             <div class="referral-link-box">
                 <input type="text" id="referral-link" readonly>
                 <button class="btn-copy" id="btn-copy" onclick="copyLink()">Kopieren</button>
@@ -233,6 +246,13 @@
                 var c = data[code];
                 if(c !== undefined) {
                     document.getElementById('danke-credits-count').textContent = c;
+                    var bonus = c - 100;
+                    if(bonus > 0) {
+                        var friends = bonus / 25;
+                        document.getElementById('danke-credits-detail').textContent = '100 Startguthaben + ' + bonus + ' durch ' + friends + ' Einladung' + (friends > 1 ? 'en' : '');
+                    } else {
+                        document.getElementById('danke-credits-detail').textContent = '100 Startguthaben — lade Freunde ein für +25 pro Einladung!';
+                    }
                     document.getElementById('danke-credits').style.display = 'block';
                 }
             }).catch(function(){});
