@@ -1342,6 +1342,59 @@ section[id] {
     margin-top: 14px;
 }
 
+/* === Credits === */
+
+.credits-section {
+    padding: 60px 0;
+    background: #f8fafa;
+    text-align: center;
+}
+.credits-section h2 {
+    margin-bottom: 32px;
+}
+.credits-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.credits-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+}
+.credits-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2A9D8F;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.credits-label {
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+.credits-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+.credits-teaser {
+    color: #64748b;
+    font-size: 1rem;
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* === Waitlist === */
 
 .waitlist {
