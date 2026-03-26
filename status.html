@@ -190,8 +190,11 @@
         document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('Nie wieder Termine abtippen — flomily macht das automatisch!');
         document.getElementById('share-mail').href = 'mailto:?subject=' + encodeURIComponent('flomily — Termine einfach im Flow') + '&body=' + encodeURIComponent(shareText);
 
-        // Credits count is static for now (no backend API) — shows 0
-        // Future: fetch from API to show real count
+        // Fetch credits from static JSON
+        fetch('/credits.json').then(function(r){return r.json()}).then(function(data){
+            var c = data[ref];
+            if(c !== undefined) document.getElementById('credits-count').textContent = c;
+        }).catch(function(){});
     })();
 
     function copyLink() {

@@ -158,7 +158,11 @@
     <section class="referral-section" id="referral-section">
         <div class="referral-card">
             <h2>Lade Freunde ein — sammle Credits! 🎁</h2>
-            <p>Für jede Person, die sich über deinen Link anmeldet, bekommst du einen Credit. Je mehr Credits, desto besser für dich beim Start.</p>
+            <p>Für jede Person, die sich über deinen Link anmeldet, bekommst du <strong>25 Credits</strong>. Je mehr Credits, desto besser für dich beim Start.</p>
+            <div id="danke-credits" style="display:none;margin-bottom:20px;">
+                <span style="font-size:2.5rem;font-weight:700;color:#2A9D8F;" id="danke-credits-count"></span>
+                <span style="color:#64748b;"> Credits</span>
+            </div>
             <div class="referral-link-box">
                 <input type="text" id="referral-link" readonly>
                 <button class="btn-copy" id="btn-copy" onclick="copyLink()">Kopieren</button>
@@ -223,6 +227,15 @@
             document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('Nie wieder Termine abtippen — flomily macht das automatisch!');
             document.getElementById('share-mail').href = 'mailto:?subject=' + encodeURIComponent('flomily — Termine einfach im Flow') + '&body=' + encodeURIComponent(shareText);
             document.getElementById('status-link').href = 'status.html?ref=' + code;
+
+            // Fetch credits
+            fetch('/credits.json').then(function(r){return r.json()}).then(function(data){
+                var c = data[code];
+                if(c !== undefined) {
+                    document.getElementById('danke-credits-count').textContent = c;
+                    document.getElementById('danke-credits').style.display = 'block';
+                }
+            }).catch(function(){});
         });
     })();
 
