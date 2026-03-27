@@ -1141,11 +1141,18 @@ section[id] {
 /* === Homescreen hint (inside requirements) === */
 .homescreen-hint {
     margin-top: 30px;
-    padding: 20px 24px;
+    padding: 24px;
     background: var(--card-bg);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    text-align: center;
+}
+.homescreen-hint-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.homescreen-hint-text {
+    flex: 1;
 }
 .homescreen-hint h3 {
     font-size: 1.05rem;
@@ -1155,8 +1162,23 @@ section[id] {
 .homescreen-hint p {
     font-size: 0.9rem;
     color: var(--muted);
-    max-width: 550px;
-    margin: 0 auto;
+}
+.homescreen-hint-img {
+    flex-shrink: 0;
+}
+.homescreen-hint-img img {
+    width: 120px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+@media (max-width: 600px) {
+    .homescreen-hint-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .homescreen-hint-img img {
+        width: 160px;
+    }
 }
 
 .forwho {
