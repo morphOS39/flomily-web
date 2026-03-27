@@ -85,6 +85,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F55|P10|2026-03-27|Feature-Wunsch: Familienübergreifende Kalender-Verbindung (mehrere Empfänger pro Termin)|family-hub#142|
 |F56|P8|2026-03-27|Sicherheitsfrage: "Ist es sicher, dass niemand über flomily auf meinen Kalender zugreifen kann?" Vertrauens-Hürde.|neu|
 |F57|P8|2026-03-27|Verständnisfrage: "Bist du bei Apple mit der App eingetragen? Zugriff über AppStore?" Erwartet native App.|neu|
+|F58|P19|2026-03-27|Positiv: Live-Demo war Wow-Effekt trotz vorherigem Homepage-Besuch. Killer-Feature: Termine einsprechen (Sprachnachricht). Ableitung: Sprachfunktion auf Homepage prominenter, echte Demo-Videos einbinden.|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
