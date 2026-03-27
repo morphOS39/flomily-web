@@ -83,6 +83,8 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F53|P10|2026-03-27|Verständnisfrage: Ist der Kalender nur auf einem Handy oder familienübergreifend? Wie verbindet man Kalender?|neu|
 |F54|P10|2026-03-27|Verständnisfrage: Foto vom Elternbrief → alle Termine erkannt? Oder jeden einzeln eingeben/als Memo sprechen?|neu|
 |F55|P10|2026-03-27|Feature-Wunsch: Familienübergreifende Kalender-Verbindung (mehrere Empfänger pro Termin)|family-hub#142|
+|F56|P8|2026-03-27|Sicherheitsfrage: "Ist es sicher, dass niemand über flomily auf meinen Kalender zugreifen kann?" Vertrauens-Hürde.|neu|
+|F57|P8|2026-03-27|Verständnisfrage: "Bist du bei Apple mit der App eingetragen? Zugriff über AppStore?" Erwartet native App.|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
