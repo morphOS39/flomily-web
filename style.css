@@ -1165,9 +1165,11 @@ section[id] {
 }
 .homescreen-hint-img {
     flex-shrink: 0;
+    display: flex;
+    gap: 12px;
 }
 .homescreen-hint-img img {
-    width: 120px;
+    width: 100px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
