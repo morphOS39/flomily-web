@@ -280,6 +280,7 @@ section[id] {
 .hero-video {
     flex-shrink: 0;
     width: 220px;
+    margin-top: 24px;
 }
 .hero-video video {
     width: 100%;
