@@ -17,7 +17,7 @@ Wem wurde die Seite wann gezeigt?
 |P5|Florian Modschiedler|2026-03-20||ja|ja|florian.finn1@googlemail.com|
 |P6|Thomas Mrugalla|2026-03-20||ja|ja|thomasmrugalla@web.de, Signup 2026-03-23|
 |P7|Markus Reiff|2026-03-20|||||
-|P8|Papa|2026-03-20|||||
+|P8|Papa|2026-03-20||||Blocker: hat kein Telegram|
 |P9|Mama|2026-03-20|||||
 |P10|Tanja|2026-03-20|||||
 |P11|Lena|2026-03-20||ja|ja|lenasophie2007@gmx.de|
@@ -29,6 +29,11 @@ Wem wurde die Seite wann gezeigt?
 |P17|Dália|2026-03-24|||||
 |P18|Dirk|2026-03-24||||Fußballtrainer|
 |P19|Nils|2026-03-25||ja||Beta-Tester|
+|P20|Franz Biesinger|2026-03-28||||Eingeladen von Ward|
+|P21|Sreto|2026-03-28||||Eingeladen von Ward|
+|P22|Oliver Schropp|2026-03-28||||Eingeladen von Ward|
+|P23|Martin Leister|2026-03-28||ja||Waitlist|
+|P24|Nishant|2026-03-28||||Angefragt von Ward|
 
 ## Feedback
 
@@ -86,6 +91,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F56|P8|2026-03-27|Sicherheitsfrage: "Ist es sicher, dass niemand über flomily auf meinen Kalender zugreifen kann?" Vertrauens-Hürde.|neu|
 |F57|P8|2026-03-27|Verständnisfrage: "Bist du bei Apple mit der App eingetragen? Zugriff über AppStore?" Erwartet native App.|neu|
 |F58|P19|2026-03-27|Positiv: Live-Demo war Wow-Effekt trotz vorherigem Homepage-Besuch. Killer-Feature: Termine einsprechen (Sprachnachricht). Ableitung: Sprachfunktion auf Homepage prominenter, echte Demo-Videos einbinden.|neu|
+|F59|P8|2026-03-28|Blocker: "Ich habe aber kein Telegramm" — Papa hat kein Telegram, kann flomily nicht nutzen. Bestätigt Bedarf für weitere Messenger (#102).|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
