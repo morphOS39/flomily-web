@@ -80,6 +80,9 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F50|P7|2026-03-26|Positiv: Funktionsweise sofort klar, Termin-Flow funktioniert gut|--|
 |F51|P6|2026-03-26|Pricing-Frage: Wurde von Kontakten gefragt was es kosten soll|neu|
 |F52|P6|2026-03-26|Link-Skepsis: Kontakte wollten nicht leichtfertig auf unbekannten Link klicken. "Was ist das?" kam mehrfach. Vertrauens-Hürde beim Referral.|neu|
+|F53|P10|2026-03-27|Verständnisfrage: Ist der Kalender nur auf einem Handy oder familienübergreifend? Wie verbindet man Kalender?|neu|
+|F54|P10|2026-03-27|Verständnisfrage: Foto vom Elternbrief → alle Termine erkannt? Oder jeden einzeln eingeben/als Memo sprechen?|neu|
+|F55|P10|2026-03-27|Feature-Wunsch: Familienübergreifende Kalender-Verbindung (mehrere Empfänger pro Termin)|family-hub#142|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
