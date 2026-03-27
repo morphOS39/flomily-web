@@ -1138,52 +1138,25 @@ section[id] {
 
 /* === For whom === */
 
-/* === Homescreen === */
-.homescreen {
-    padding: 50px 0;
+/* === Homescreen hint (inside requirements) === */
+.homescreen-hint {
+    margin-top: 30px;
+    padding: 20px 24px;
     background: var(--card-bg);
-    text-align: center;
-}
-.homescreen h2 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    color: var(--heading);
-}
-.homescreen-sub {
-    color: var(--muted);
-    max-width: 600px;
-    margin: 0 auto 30px;
-    font-size: 0.95rem;
-}
-.homescreen-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.homescreen-card {
-    padding: 28px 20px;
-    background: var(--snow);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    transition: transform 0.2s;
+    text-align: center;
 }
-.homescreen-card:hover {
-    transform: translateY(-3px);
-}
-.homescreen-emoji {
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-}
-.homescreen-card h3 {
+.homescreen-hint h3 {
     font-size: 1.05rem;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: var(--heading);
 }
-.homescreen-card p {
-    font-size: 0.88rem;
+.homescreen-hint p {
+    font-size: 0.9rem;
     color: var(--muted);
+    max-width: 550px;
+    margin: 0 auto;
 }
 
 .forwho {
