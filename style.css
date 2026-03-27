@@ -278,9 +278,8 @@ section[id] {
 
 /* === Hero Video === */
 .hero-video {
-    flex-shrink: 0;
     width: 220px;
-    margin-top: 24px;
+    margin: 40px auto 0;
 }
 .hero-video video {
     width: 100%;
@@ -290,7 +289,7 @@ section[id] {
 @media (max-width: 768px) {
     .hero-video {
         width: 180px;
-        margin: 0 auto;
+        margin: 32px auto 0;
     }
 }
 
