@@ -276,6 +276,23 @@ section[id] {
     }
 }
 
+/* === Hero Video === */
+.hero-video {
+    flex-shrink: 0;
+    width: 220px;
+}
+.hero-video video {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+@media (max-width: 768px) {
+    .hero-video {
+        width: 180px;
+        margin: 0 auto;
+    }
+}
+
 /* === Demo Animation === */
 
 .demo-animation {
