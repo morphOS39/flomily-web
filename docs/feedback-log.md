@@ -34,6 +34,7 @@ Wem wurde die Seite wann gezeigt?
 |P22|Oliver Schropp|2026-03-28||||Eingeladen von Ward|
 |P23|Martin Leister|2026-03-28||ja||Waitlist|
 |P24|Nishant|2026-03-28||||Angefragt von Ward|
+|P25|Roland König|2026-03-28||||Angefragt von Ward|
 
 ## Feedback
 
@@ -92,6 +93,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F57|P8|2026-03-27|Verständnisfrage: "Bist du bei Apple mit der App eingetragen? Zugriff über AppStore?" Erwartet native App.|neu|
 |F58|P19|2026-03-27|Positiv: Live-Demo war Wow-Effekt trotz vorherigem Homepage-Besuch. Killer-Feature: Termine einsprechen (Sprachnachricht). Ableitung: Sprachfunktion auf Homepage prominenter, echte Demo-Videos einbinden.|neu|
 |F59|P8|2026-03-28|Blocker: "Ich habe aber kein Telegramm" — Papa hat kein Telegram, kann flomily nicht nutzen. Bestätigt Bedarf für weitere Messenger (#102).|neu|
+|F60|P25|2026-03-28|"Wir nutzen privat einen Wandkalender." Potential: mit flomily den Wandkalender endlich digitalisieren.|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
