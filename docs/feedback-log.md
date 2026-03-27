@@ -36,7 +36,7 @@ Wem wurde die Seite wann gezeigt?
 |P24|Nishant|2026-03-28||||Angefragt von Ward|
 |P25|Roland König|2026-03-28||||Angefragt von Ward|
 |P26|Helmut Wlcek|2026-03-28||||Angefragt von Ward|
-|P27|Matthias Wlcek|2026-03-28||||Angefragt von Ward|
+|P27|Matthias Wlcek|2026-03-28||ja||Matthias@wlcek.de, Waitlist|
 |P28|Herwig Huber|2026-03-28||||Angefragt von Ward|
 |P29|Börge Hansen|2026-03-28|LinkedIn|||Angefragt von Ward|
 |P30|Selin Tanriverdi|2026-03-28|LinkedIn|||Angefragt von Ward|
