@@ -1243,10 +1243,13 @@ section[id] {
 }
 
 .forwho {
-    padding: 40px 0;
+    padding: 20px 0 40px;
     background: var(--snow);
 }
-
+.forwho h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 .forwho-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
