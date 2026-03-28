@@ -28,7 +28,9 @@
         </button>
     </div>
 </header>
+<div class="nav-backdrop" id="nav-backdrop" onclick="closeNav()"></div>
 <nav class="nav-overlay" id="nav-overlay">
+    <button class="nav-close" onclick="closeNav()" aria-label="Menü schließen">✕</button>
     <a href="#pain" onclick="closeNav()">Kennst du das?</a>
     <a href="#how" onclick="closeNav()">So geht's</a>
     <a href="#demo" onclick="closeNav()">Demo</a>
@@ -41,7 +43,8 @@
     <a href="#faq" onclick="closeNav()">FAQ</a>
     <a href="#feedback" onclick="closeNav()">Dein Wunsch</a>
 </nav>
-<script>function closeNav(){document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');}</script>
+<script>function closeNav(){document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');document.getElementById('nav-backdrop').classList.remove('open');}
+document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav-backdrop').classList.toggle('open');});</script>
 
 <!-- Hero -->
 <section class="hero">

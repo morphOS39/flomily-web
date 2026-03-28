@@ -110,32 +110,57 @@ section[id] {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+.nav-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 199;
+}
+.nav-backdrop.open {
+    display: block;
+}
 .nav-overlay {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 260px;
+    width: 220px;
     height: 100vh;
     background: #fff;
     box-shadow: -4px 0 20px rgba(0,0,0,0.1);
     z-index: 200;
     display: flex;
     flex-direction: column;
-    padding: 80px 32px 32px;
-    gap: 20px;
+    padding: 60px 24px 24px;
+    gap: 10px;
     transition: right 0.3s ease;
+    overflow-y: auto;
 }
 
 .nav-overlay.open {
     right: 0;
 }
 
+.nav-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--slate);
+    cursor: pointer;
+}
+
 .nav-overlay a {
     color: var(--slate);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    padding: 8px 0;
+    padding: 6px 0;
     border-bottom: 1px solid var(--warm-bg);
 }
 
