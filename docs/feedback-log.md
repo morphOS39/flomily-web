@@ -103,6 +103,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F60|P25|2026-03-28|"Wir nutzen privat einen Wandkalender." Potential: mit flomily den Wandkalender endlich digitalisieren.|neu|
 |F61|P20|2026-03-28|Audio: Versteht flomily nach ~15s (nicht 5s). Sprachaufnahme im Video hat ihn am meisten angesprochen. Selbst "retro" (Papierkalender), würde sich nicht anmelden. Findet Idee aber gut, glaubt dass es viele anspricht die digital unterwegs sind. Keine Weiterempfehlung.|neu|
 |F62|P27|2026-03-27|Formular: Wish: "Will nichts mit Kalender zu tun haben, nichts selber eintragen, nicht reinschauen müssen, kein Telegram installieren." Pain: "Terminfindung in Gruppen: Keiner hat Überblick wer wann Zeit hat." Zwei Themen: Telegram-Blocker (#159) + neuer Use-Case Gruppen-Terminfindung (Doodle-Alternative).|neu|
+|F63|P14|2026-03-28|Audio: Findet es ansprechend und cool. Hat Konzept verstanden. Für sie nicht nötig ("bei uns nicht so krass mit Terminen"). Zielgruppe klar: Familien mit vielen Terminen. Credits nicht verstanden ("wozu, ist es kostenlos?"). Hat sich trotzdem eingetragen.|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
