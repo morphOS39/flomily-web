@@ -1248,7 +1248,8 @@ section[id] {
 }
 .forwho h2 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.1rem;
+    margin-bottom: 24px;
 }
 .forwho-cards {
     display: grid;
