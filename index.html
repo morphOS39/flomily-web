@@ -724,10 +724,21 @@ function goSlide(dir) {
 }
 
 var carousel = document.querySelector('.carousel');
+var touchStartX = 0;
+var touchEndX = 0;
 carousel.addEventListener('mouseenter', function() { paused = true; });
 carousel.addEventListener('mouseleave', function() { paused = false; startAutoplay(); });
-carousel.addEventListener('touchstart', function() { paused = true; clearInterval(autoTimer); }, {passive: true});
-carousel.addEventListener('touchend', function() {
+carousel.addEventListener('touchstart', function(e) {
+    paused = true; clearInterval(autoTimer);
+    touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+carousel.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) goSlide(1);   // swipe left → next
+        else goSlide(-1);            // swipe right → prev
+    }
     setTimeout(function() { paused = false; startAutoplay(); }, 20000);
 }, {passive: true});
 
