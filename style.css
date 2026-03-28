@@ -698,13 +698,13 @@ section[id] {
 
 .scene-label {
     display: inline-block;
-    background: var(--primary);
-    color: #fff;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    background: none;
+    color: var(--primary);
+    padding: 0;
+    font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
 }
 
 /* Demo flow layout */
