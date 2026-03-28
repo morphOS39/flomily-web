@@ -104,6 +104,17 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F61|P20|2026-03-28|Audio: Versteht flomily nach ~15s (nicht 5s). Sprachaufnahme im Video hat ihn am meisten angesprochen. Selbst "retro" (Papierkalender), würde sich nicht anmelden. Findet Idee aber gut, glaubt dass es viele anspricht die digital unterwegs sind. Keine Weiterempfehlung.|neu|
 |F62|P27|2026-03-27|Formular: Wish: "Will nichts mit Kalender zu tun haben, nichts selber eintragen, nicht reinschauen müssen, kein Telegram installieren." Pain: "Terminfindung in Gruppen: Keiner hat Überblick wer wann Zeit hat." Zwei Themen: Telegram-Blocker (#159) + neuer Use-Case Gruppen-Terminfindung (Doodle-Alternative).|neu|
 |F63|P14|2026-03-28|Audio: Findet es ansprechend und cool. Hat Konzept verstanden. Für sie nicht nötig ("bei uns nicht so krass mit Terminen"). Zielgruppe klar: Familien mit vielen Terminen. Credits nicht verstanden ("wozu, ist es kostenlos?"). Hat sich trotzdem eingetragen.|neu|
+|F64|P31|2026-03-28|Chatbilder/Screenshots auf der Homepage zu alt.|neu|
+|F65|P31|2026-03-28|"Kennst du das"-Section nicht ansprechend. Beispiele lieber positiv formulieren statt authetisch-negativ.|neu|
+|F66|P31|2026-03-28|Bug: Man kommt aus dem Burger-Menü nicht mehr zurück.|neu|
+|F67|P31|2026-03-28|Nach erstem Lesen nicht klar wie flomily funktioniert. Unterschiedliche Formulierungen ("an flomily schicken") verwirren.|neu|
+|F68|P31|2026-03-28|"Ich habe das so verstanden dass ich da sehr viele Umwege braucht. Ist das dann Pfusch???" — Telegram-Weg empfindet er als umständlich.|neu|
+|F69|P31|2026-03-28|Feature-Wunsch: Eigene App die im Hintergrund Nachrichten automatisch durchcheckt.|neu|
+|F70|P31|2026-03-28|Datenschutz: "Wenn ich meine Daten schützen will, dann kein Telegram wo alle meine Termine drüber laufen. Dann lieber flomily." Sieht Telegram als Risiko, flomily als vertrauenswürdiger.|neu|
+|F71|P31|2026-03-28|UX: Zwischen Sections nicht wischen/swipen möglich — "schlecht".|neu|
+|F72|P31|2026-03-28|"Das was flomily kann muss weiter nach oben" — Features sind zu weit unten auf der Seite.|neu|
+|F73|P31|2026-03-28|Credits unklar: "Was machen Credits und was bringen die."|neu|
+|F74|P31|2026-03-28|Positiv: "Feedbackmöglichkeit sehr geil."|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
