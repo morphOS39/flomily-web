@@ -23,7 +23,7 @@ Wem wurde die Seite wann gezeigt?
 |P11|Lena|2026-03-20||ja|ja|lenasophie2007@gmx.de|
 |P12|Herr Bayer|2026-03-20||ja|ja|christian.bayer84@gmail.com, Signup 2026-03-24|
 |P13|Yannik|2026-03-20|||||
-|P14|Daniela Laufer|2026-03-20|||||
+|P14|Daniela Laufer|2026-03-20||ja||daniela.laufer@outlook.de, Waitlist|
 |P15|David Christiani|2026-03-21|Mail|ja|ja|newintaiwan@gmail.com|
 |P16|Cathi Rintelmann|2026-03-24||ja|ja|cathi20@freenet.de|
 |P17|Dália|2026-03-24|||||
