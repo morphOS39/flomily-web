@@ -31,7 +31,7 @@ Wem wurde die Seite wann gezeigt?
 |P19|Nils|2026-03-25||ja||Beta-Tester|
 |P20|Franz Biesinger|2026-03-28||||Eingeladen von Ward|
 |P21|Sreto|2026-03-28||||Eingeladen von Ward|
-|P22|Oliver Schropp|2026-03-28||||Eingeladen von Ward|
+|P22|Oliver Schropp|2026-03-28||ja||oliver@schropps.de, Waitlist|
 |P23|Martin Leister|2026-03-28||ja||martin.leister@gmx.de, Waitlist|
 |P24|Nishant|2026-03-28||||Angefragt von Ward|
 |P25|Roland König|2026-03-28||||Angefragt von Ward|
