@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — Dein Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .feedback-page { max-width: 600px; margin: 0 auto; padding: 40px 24px; }
+        .feedback-page h1 { font-size: 1.8rem; color: var(--heading); margin-bottom: 8px; }
+        .feedback-page .subtitle { color: var(--muted); margin-bottom: 32px; }
+        .feedback-page .credits-badge { display: inline-block; background: #f0fdfa; border: 2px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; margin-bottom: 32px; }
+        .fb-field { margin-bottom: 24px; }
+        .fb-field label { display: block; font-weight: 700; color: var(--heading); margin-bottom: 8px; font-size: 0.95rem; }
+        .fb-field label span { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+        .fb-field textarea { width: 100%; min-height: 80px; padding: 12px; border: 1px solid #e2e8f0; border-radius: 12px; font-family: inherit; font-size: 0.95rem; resize: vertical; }
+        .fb-field textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(42,157,143,0.1); }
+        .fb-submit { background: var(--primary); color: #fff; border: none; padding: 14px 32px; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+        .fb-submit:hover { background: var(--primary-dark); }
+        .fb-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+        .fb-success { display: none; text-align: center; padding: 40px 0; }
+        .fb-success h2 { color: var(--primary); margin-bottom: 12px; }
+        .fb-success .credits-confirm { font-size: 2rem; font-weight: 700; color: var(--primary); margin: 20px 0; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container header-inner">
+        <a href="/" class="logo-link"><img src="logo.svg" alt="flomily" class="logo"></a>
+    </div>
+</header>
+
+<div class="feedback-page">
+    <div id="feedback-form-container">
+        <h1>Dein Feedback 🙏</h1>
+        <p class="subtitle">Eine Woche mit flomily — wie läuft's? Drei kurze Fragen, dauert keine 2 Minuten.</p>
+        <div class="credits-badge">🎁 +50 Credits als Dankeschön</div>
+
+        <form id="feedback-form">
+            <input type="hidden" id="fb-email" name="email">
+            <div class="fb-field">
+                <label>Was hat gut funktioniert? <span>(Damit wir wissen, was wir beibehalten sollen)</span></label>
+                <textarea name="good" placeholder="z.B. Sprachnachricht hat super geklappt..." required></textarea>
+            </div>
+            <div class="fb-field">
+                <label>Was hat nicht geklappt? <span>(Damit wir es fixen können)</span></label>
+                <textarea name="bad" placeholder="z.B. Termin wurde nicht richtig erkannt..."></textarea>
+            </div>
+            <div class="fb-field">
+                <label>Was fehlt dir? <span>(Damit wir wissen, was als nächstes kommt)</span></label>
+                <textarea name="wish" placeholder="z.B. Gemeinsamer Familienkalender..."></textarea>
+            </div>
+            <button type="submit" class="fb-submit" id="fb-btn">Feedback absenden</button>
+        </form>
+    </div>
+
+    <div class="fb-success" id="feedback-success">
+        <h2>Danke für dein Feedback! 🎉</h2>
+        <p>Das hilft uns enorm, flomily besser zu machen.</p>
+        <div class="credits-confirm">+50 Credits</div>
+        <p>Die Credits wurden deinem Konto gutgeschrieben.</p>
+        <p style="margin-top: 24px;"><a href="/" style="color: var(--primary); font-weight: 600;">← Zurück zu flomily.de</a></p>
+    </div>
+</div>
+
+<script>
+(function() {
+    var params = new URLSearchParams(location.search);
+    var email = params.get('user') || '';
+    document.getElementById('fb-email').value = email;
+
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = document.getElementById('fb-btn');
+        btn.disabled = true;
+        btn.textContent = 'Wird gesendet...';
+
+        var data = {
+            email: email,
+            good: e.target.good.value,
+            bad: e.target.bad.value,
+            wish: e.target.wish.value,
+        };
+
+        fetch('/api/feedback', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data),
+        }).then(function(r) {
+            if (r.ok) {
+                document.getElementById('feedback-form-container').style.display = 'none';
+                document.getElementById('feedback-success').style.display = 'block';
+            } else {
+                btn.disabled = false;
+                btn.textContent = 'Feedback absenden';
+                alert('Fehler beim Senden. Bitte versuche es nochmal.');
+            }
+        }).catch(function() {
+            btn.disabled = false;
+            btn.textContent = 'Feedback absenden';
+            alert('Fehler beim Senden. Bitte versuche es nochmal.');
+        });
+    });
+})();
+</script>
+</body>
+</html>
