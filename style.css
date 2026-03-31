@@ -531,6 +531,10 @@ section[id] {
 .proof-card:hover {
     transform: translateY(-3px);
 }
+.proof-card-real {
+    border: 2px solid var(--primary);
+    background: var(--primary-light);
+}
 
 .proof-quote {
     font-size: 1rem;
