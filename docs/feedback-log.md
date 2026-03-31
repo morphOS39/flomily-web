@@ -105,6 +105,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F62|P27|2026-03-27|Formular: Wish: "Will nichts mit Kalender zu tun haben, nichts selber eintragen, nicht reinschauen müssen, kein Telegram installieren." Pain: "Terminfindung in Gruppen: Keiner hat Überblick wer wann Zeit hat." Zwei Themen: Telegram-Blocker (#159) + neuer Use-Case Gruppen-Terminfindung (Doodle-Alternative).|neu|
 |F63|P14|2026-03-28|Audio: Findet es ansprechend und cool. Hat Konzept verstanden. Für sie nicht nötig ("bei uns nicht so krass mit Terminen"). Zielgruppe klar: Familien mit vielen Terminen. Credits nicht verstanden ("wozu, ist es kostenlos?"). Hat sich trotzdem eingetragen.|neu|
 |F75|P22|2026-03-31|WhatsApp: "Hab's verstanden", "Und wenn's funktioniert top", "Jup würds mal testen", "Ich schicks mal Leute die das evtl brauchen können :)", "Bist du da Mitgründer?", "Die Idee ist ja super". Hat direkt Google Assistant zum Vergleich ausprobiert. Will Grenzen testen. Sehr positiv, Weiterempfehlung proaktiv.|neu|
+|F76|P19|2026-04-01|Audio: "Ich bin zum Hardcore flomily User geworden. Diese Woche schon vier Termine damit eingestellt. Geiles Ding!" Sehr positiv, aktive Nutzung.|neu|
 |F64|P31|2026-03-28|Chatbilder/Screenshots auf der Homepage zu alt.|neu|
 |F65|P31|2026-03-28|"Kennst du das"-Section nicht ansprechend. Beispiele lieber positiv formulieren statt authetisch-negativ.|neu|
 |F66|P31|2026-03-28|Bug: Man kommt aus dem Burger-Menü nicht mehr zurück.|neu|
