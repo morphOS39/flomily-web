@@ -91,7 +91,7 @@
             wish: e.target.wish.value,
         };
 
-        fetch('/api/feedback', {
+        fetch('https://mail.flomily.de/api/feedback', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),
