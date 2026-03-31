@@ -143,9 +143,27 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <p class="proof-quote">„WhatsApp-Gruppe vom Verein, neuer Spielplan — einmal weitergeleitet und alle Termine waren drin."</p>
                 <span class="proof-author">— Jugendtrainer, 29</span>
             </div>
-            <div class="proof-card proof-card-real">
-                <p class="proof-quote">„Ich bin zum Hardcore flomily User geworden. Diese Woche schon vier Termine damit eingestellt. Geiles Ding!"</p>
-                <span class="proof-author">— Beta-Tester</span>
+        </div>
+        <div class="beta-quotes">
+            <h3>Was unsere Beta-Tester sagen:</h3>
+            <div class="beta-quotes-track" id="beta-quotes-track">
+                <div class="beta-quote-card active">
+                    <p class="proof-quote">„Ich bin zum Hardcore flomily User geworden. Diese Woche schon vier Termine damit eingestellt. Geiles Ding!"</p>
+                    <span class="proof-author">— Beta-Tester</span>
+                </div>
+                <div class="beta-quote-card">
+                    <p class="proof-quote">„Die Idee ist ja super. Ich werd das auch mal testen wo das ganze an seine Grenzen stößt."</p>
+                    <span class="proof-author">— Beta-Tester</span>
+                </div>
+                <div class="beta-quote-card">
+                    <p class="proof-quote">„Hab's verstanden. Und wenn's funktioniert top. Ich schicks mal Leute die das evtl brauchen können."</p>
+                    <span class="proof-author">— Beta-Tester</span>
+                </div>
+            </div>
+            <div class="beta-quotes-dots" id="beta-quotes-dots">
+                <button class="beta-dot active" onclick="setBetaSlide(0)"></button>
+                <button class="beta-dot" onclick="setBetaSlide(1)"></button>
+                <button class="beta-dot" onclick="setBetaSlide(2)"></button>
             </div>
         </div>
     </div>
@@ -749,6 +767,35 @@ carousel.addEventListener('touchend', function(e) {
 }, {passive: true});
 
 startAutoplay();
+// Beta quotes carousel
+var betaCurrent = 0;
+var betaCards = document.querySelectorAll('.beta-quote-card');
+var betaDots = document.querySelectorAll('.beta-dot');
+
+function setBetaSlide(i) {
+    betaCards.forEach(function(c) { c.classList.remove('active'); });
+    betaDots.forEach(function(d) { d.classList.remove('active'); });
+    betaCurrent = i;
+    betaCards[i].classList.add('active');
+    betaDots[i].classList.add('active');
+}
+
+if (betaCards.length > 1) {
+    setInterval(function() {
+        setBetaSlide((betaCurrent + 1) % betaCards.length);
+    }, 5000);
+
+    var bqTrack = document.querySelector('.beta-quotes-track');
+    var bqStartX = 0;
+    bqTrack.addEventListener('touchstart', function(e) { bqStartX = e.changedTouches[0].screenX; }, {passive: true});
+    bqTrack.addEventListener('touchend', function(e) {
+        var diff = bqStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) setBetaSlide((betaCurrent + 1) % betaCards.length);
+            else setBetaSlide((betaCurrent - 1 + betaCards.length) % betaCards.length);
+        }
+    }, {passive: true});
+}
 </script>
 
 </body>
