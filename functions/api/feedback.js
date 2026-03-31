@@ -1,7 +1,26 @@
+async function verifyToken(email, token, secret) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw", encoder.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, encoder.encode(email));
+  const expected = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, "0")).join("");
+  return expected === token;
+}
+
 export async function onRequestPost(context) {
   try {
     const body = await context.request.json();
-    const { email, good, bad, wish } = body;
+    const { email, token, good, bad, wish } = body;
+
+    // Verify HMAC token
+    const secret = context.env.FEEDBACK_SECRET;
+    if (!email || !token || !secret || !(await verifyToken(email, token, secret))) {
+      return new Response(JSON.stringify({ error: "Ungültiger Link" }), {
+        status: 403,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
     if (!good && !bad && !wish) {
       return new Response(JSON.stringify({ error: "Mindestens ein Feld ausfüllen" }), {
@@ -13,7 +32,7 @@ export async function onRequestPost(context) {
     // Build Telegram message
     const lines = [
       `🙏 Neues Beta-Feedback!`,
-      `📧 ${email || "unbekannt"}`,
+      `📧 ${email}`,
       ``,
       `✅ Was lief gut:`,
       good || "—",
@@ -27,11 +46,11 @@ export async function onRequestPost(context) {
     const text = lines.join("\n");
 
     // Send to VEGA Telegram bot
-    const token = context.env.VEGA_BOT_TOKEN;
+    const botToken = context.env.VEGA_BOT_TOKEN;
     const chatId = context.env.VEGA_CHAT_ID;
 
-    if (token && chatId) {
-      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    if (botToken && chatId) {
+      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chat_id: chatId, text }),

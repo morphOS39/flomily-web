@@ -53,7 +53,7 @@
                 <label>Was fehlt dir? <span>(Damit wir wissen, was als nächstes kommt)</span></label>
                 <textarea name="wish" placeholder="z.B. Gemeinsamer Familienkalender..."></textarea>
             </div>
-            <button type="submit" class="fb-submit" id="fb-btn">Feedback absenden</button>
+            <button type="submit" class="fb-submit" id="fb-btn">Feedback absenden → +50 Credits</button>
         </form>
     </div>
 
@@ -70,7 +70,12 @@
 (function() {
     var params = new URLSearchParams(location.search);
     var email = params.get('user') || '';
+    var token = params.get('token') || '';
     document.getElementById('fb-email').value = email;
+
+    if (!email || !token) {
+        document.getElementById('feedback-form-container').innerHTML = '<p style="color:#dc2626;text-align:center;padding:40px 0;">Ungültiger Link. Bitte verwende den Link aus deiner E-Mail.</p>';
+    }
 
     document.getElementById('feedback-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -80,6 +85,7 @@
 
         var data = {
             email: email,
+            token: token,
             good: e.target.good.value,
             bad: e.target.bad.value,
             wish: e.target.wish.value,
