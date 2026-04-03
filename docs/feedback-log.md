@@ -23,7 +23,7 @@ Wem wurde die Seite wann gezeigt?
 |P11|Lena|2026-03-20||ja|ja|lenasophie2007@gmx.de|
 |P12|Herr Bayer|2026-03-20||ja|ja|christian.bayer84@gmail.com, Signup 2026-03-24|
 |P13|Yannik|2026-03-20|||||
-|P14|Daniela Laufer|2026-03-20||ja||daniela.laufer@outlook.de, Waitlist|
+|P14|Daniela Laufer|2026-03-20|||||
 |P15|David Christiani|2026-03-21|Mail|ja|ja|newintaiwan@gmail.com|
 |P16|Cathi Rintelmann|2026-03-24||ja|ja|cathi20@freenet.de|
 |P17|Dália|2026-03-24|||||
@@ -31,26 +31,16 @@ Wem wurde die Seite wann gezeigt?
 |P19|Nils|2026-03-25||ja||Beta-Tester|
 |P20|Franz Biesinger|2026-03-28||||Eingeladen von Ward|
 |P21|Sreto|2026-03-28||||Eingeladen von Ward|
-|P22|Oliver Schropp|2026-03-28||ja||oliver@schropps.de, Waitlist|
+|P22|Oliver Schropp|2026-03-28||||Eingeladen von Ward|
 |P23|Martin Leister|2026-03-28||ja||martin.leister@gmx.de, Waitlist|
 |P24|Nishant|2026-03-28||||Angefragt von Ward|
 |P25|Roland König|2026-03-28||||Angefragt von Ward|
 |P26|Helmut Wlcek|2026-03-28||||Angefragt von Ward|
 |P27|Matthias Wlcek|2026-03-28||ja||Matthias@wlcek.de, Waitlist|
 |P28|Herwig Huber|2026-03-28||||Angefragt von Ward|
-|P29|Börge Hansen|2026-03-28|LinkedIn|ja||boerge.hansen@values-realestate.de, Waitlist|
+|P29|Börge Hansen|2026-03-28|LinkedIn|||Angefragt von Ward|
 |P30|Selin Tanriverdi|2026-03-28|LinkedIn|||Angefragt von Ward|
 |P31|Adrian|2026-03-28||||Angefragt von Ward|
-|P32|Adone|2026-03-28||||Angefragt von Ward|
-|P33|Timo Kußmaul|2026-03-28||ja||t.kussmaul@gmail.com, Waitlist|
-|P34|Markus Kiefer|2026-03-28||||Angefragt von Ward|
-|P35|Daniel Kaczmarek|2026-03-28||||Angefragt von Ward|
-|P36|Daniel Schunn|2026-03-28||||Angefragt von Ward|
-|P37|Flo Bayerle|2026-03-28||||Angefragt von Ward|
-|P38|Olaf Hebecker|2026-03-28||||Angefragt von Ward|
-|P39|Danijel Biko|2026-04-03||||Angefragt von Ward|
-|P40|Norbert Bacher|2026-04-03||||Angefragt von Ward|
-|P41|Philip Dormann|2026-04-03||||Angefragt von Ward|
 
 ## Feedback
 
@@ -112,20 +102,7 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F60|P25|2026-03-28|"Wir nutzen privat einen Wandkalender." Potential: mit flomily den Wandkalender endlich digitalisieren.|neu|
 |F61|P20|2026-03-28|Audio: Versteht flomily nach ~15s (nicht 5s). Sprachaufnahme im Video hat ihn am meisten angesprochen. Selbst "retro" (Papierkalender), würde sich nicht anmelden. Findet Idee aber gut, glaubt dass es viele anspricht die digital unterwegs sind. Keine Weiterempfehlung.|neu|
 |F62|P27|2026-03-27|Formular: Wish: "Will nichts mit Kalender zu tun haben, nichts selber eintragen, nicht reinschauen müssen, kein Telegram installieren." Pain: "Terminfindung in Gruppen: Keiner hat Überblick wer wann Zeit hat." Zwei Themen: Telegram-Blocker (#159) + neuer Use-Case Gruppen-Terminfindung (Doodle-Alternative).|neu|
-|F63|P14|2026-03-28|Audio: Findet es ansprechend und cool. Hat Konzept verstanden. Für sie nicht nötig ("bei uns nicht so krass mit Terminen"). Zielgruppe klar: Familien mit vielen Terminen. Credits nicht verstanden ("wozu, ist es kostenlos?"). Hat sich trotzdem eingetragen.|neu|
-|F75|P22|2026-03-31|WhatsApp: "Hab's verstanden", "Und wenn's funktioniert top", "Jup würds mal testen", "Ich schicks mal Leute die das evtl brauchen können :)", "Bist du da Mitgründer?", "Die Idee ist ja super". Hat direkt Google Assistant zum Vergleich ausprobiert. Will Grenzen testen. Sehr positiv, Weiterempfehlung proaktiv.|neu|
-|F76|P19|2026-04-01|Audio: "Ich bin zum Hardcore flomily User geworden. Diese Woche schon vier Termine damit eingestellt. Geiles Ding!" Sehr positiv, aktive Nutzung.|neu|
-|F64|P31|2026-03-28|Chatbilder/Screenshots auf der Homepage zu alt.|neu|
-|F65|P31|2026-03-28|"Kennst du das"-Section nicht ansprechend. Beispiele lieber positiv formulieren statt authetisch-negativ.|neu|
-|F66|P31|2026-03-28|Bug: Man kommt aus dem Burger-Menü nicht mehr zurück.|neu|
-|F67|P31|2026-03-28|Nach erstem Lesen nicht klar wie flomily funktioniert. Unterschiedliche Formulierungen ("an flomily schicken") verwirren.|neu|
-|F68|P31|2026-03-28|"Ich habe das so verstanden dass ich da sehr viele Umwege braucht. Ist das dann Pfusch???" — Telegram-Weg empfindet er als umständlich.|neu|
-|F69|P31|2026-03-28|Feature-Wunsch: Eigene App die im Hintergrund Nachrichten automatisch durchcheckt.|neu|
-|F70|P31|2026-03-28|Datenschutz: "Wenn ich meine Daten schützen will, dann kein Telegram wo alle meine Termine drüber laufen. Dann lieber flomily." Sieht Telegram als Risiko, flomily als vertrauenswürdiger.|neu|
-|F71|P31|2026-03-28|UX: Zwischen Sections nicht wischen/swipen möglich — "schlecht".|neu|
-|F72|P31|2026-03-28|"Das was flomily kann muss weiter nach oben" — Features sind zu weit unten auf der Seite.|neu|
-|F73|P31|2026-03-28|Credits unklar: "Was machen Credits und was bringen die."|neu|
-|F74|P31|2026-03-28|Positiv: "Feedbackmöglichkeit sehr geil."|neu|
+|F63|P22|2026-04-02|"Scheitere an einem zentralen Punkt: Wer wird zu welchem Termin eingeladen? Bei uns hat jeder eigenen Kalender + Familien-Kalender. Einladungen müssten abhängig von eingeladenen Personen an andere E-Mail-Adressen gehen. Das geht noch nicht oder?" → Feature-Request: Multi-Empfänger pro Termin, personenbezogene ICS-Einladungen.|neu|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
@@ -198,3 +175,13 @@ Was wurde aus dem Feedback? Entscheidungen und deren Umsetzung.
 **Entscheidung:** umsetzen · zurueckstellen · verwerfen · kommunizieren
 **Umsetzung:** offen · in Arbeit · done
 
+|P32|Adone|2026-03-28||||Angefragt von Ward|
+|P33|Timo Kußmaul|2026-04-02||ja||t.kussmaul@gmail.com, Waitlist|
+|P34|Markus Kiefer|2026-04-02||||Angefragt von Ward|
+|P35|Daniel Kaczmarek|2026-04-02||||Angefragt von Ward|
+|P36|Daniel Schunn|2026-04-02||||Angefragt von Ward|
+|P37|Flo Bayerle|2026-04-02||||Angefragt von Ward|
+|P38|Olaf Hebecker|2026-04-02||||Angefragt von Ward|
+|P39|Danijel Biko|2026-04-03||||Angefragt von Ward|
+|P40|Norbert Bacher|2026-04-03||||Angefragt von Ward|
+|P41|Philip Dormann|2026-04-03||||Angefragt von Ward|
