@@ -346,22 +346,56 @@ document.getElementById('burger').addEventListener('click',function(){document.g
     </div>
 </section>
 
-<!-- Showcase: Veranstaltungstabelle -->
+<!-- Showcase Carousel -->
 <section class="showcase" id="showcase">
     <div class="container">
-        <h2>36 Termine. Ein Foto. 10 Sekunden.</h2>
-        <p class="showcase-sub">Veranstaltungsplan, Spielplan, VHS-Programm — einfach abfotografieren. flomily erkennt jeden einzelnen Termin.</p>
-        <div class="showcase-grid">
-            <div class="showcase-item">
-                <div class="showcase-label">📋 Veranstaltungsplan</div>
-                <img src="img/veranstaltungstabelle-original.jpg" alt="Veranstaltungsplan mit 36 Terminen" loading="lazy">
+        <div class="showcase-carousel">
+            <div class="showcase-track" id="showcase-track">
+
+                <!-- Slide 1: Veranstaltungstabelle -->
+                <div class="showcase-slide showcase-slide-active" id="showcase-slide-0">
+                    <h2>36 Termine. Ein Foto. 10 Sekunden.</h2>
+                    <p class="showcase-sub">Veranstaltungsplan, Spielplan, VHS-Programm — einfach abfotografieren. flomily erkennt jeden einzelnen Termin.</p>
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-label">📋 Veranstaltungsplan</div>
+                            <img src="img/veranstaltungstabelle-original.jpg" alt="Veranstaltungsplan mit 36 Terminen" loading="lazy">
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-label">✨ Von flomily erkannt</div>
+                            <img src="img/veranstaltungstabelle-telegram.jpg" alt="flomily erkennt 36 Termine aus dem Foto" loading="lazy">
+                        </div>
+                    </div>
+                    <p class="showcase-disclaimer">*Beispiel eines öffentlichen Veranstaltungsplans. Kein Bezug zu flomily — einfach ein zufälliger Fund, der zeigt, was möglich ist.</p>
+                </div>
+
+                <!-- Slide 2: Spielplan -->
+                <div class="showcase-slide" id="showcase-slide-1">
+                    <h2>Spieltag? Screenshot. Fertig.</h2>
+                    <p class="showcase-sub">Jugendspielplan, Kreisliga, Vereins-App — Screenshot an flomily schicken und alle Spiele landen im Kalender.</p>
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-label">⚽ Spielplan E-Junioren</div>
+                            <img src="img/spielplan-original.jpg" alt="Spielplan E-Junioren Kreisstaffel" loading="lazy">
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-label">✨ Von flomily erkannt</div>
+                            <img src="img/spielplan-telegram.jpg" alt="flomily erkennt 4 Spiele aus dem Screenshot" loading="lazy">
+                        </div>
+                    </div>
+                    <p class="showcase-disclaimer">*Echtes Beispiel aus der fussball.de App. Kein Bezug zu den gezeigten Vereinen.</p>
+                </div>
+
             </div>
-            <div class="showcase-item">
-                <div class="showcase-label">✨ Von flomily erkannt</div>
-                <img src="img/veranstaltungstabelle-telegram.jpg" alt="flomily erkennt 36 Termine aus dem Foto" loading="lazy">
+
+            <button class="showcase-nav showcase-prev" onclick="goShowcase(-1)">&lsaquo;</button>
+            <button class="showcase-nav showcase-next" onclick="goShowcase(1)">&rsaquo;</button>
+
+            <div class="showcase-dots">
+                <button class="showcase-dot active" onclick="setShowcase(0)"></button>
+                <button class="showcase-dot" onclick="setShowcase(1)"></button>
             </div>
         </div>
-        <p class="showcase-disclaimer">*Beispiel eines öffentlichen Veranstaltungsplans. Kein Bezug zu flomily — einfach ein zufälliger Fund, der zeigt, was möglich ist.</p>
         <a href="#warteliste" class="cta-button cta-secondary">Das will ich auch!</a>
     </div>
 </section>
@@ -815,6 +849,38 @@ if (betaCards.length > 1) {
         }
     }, {passive: true});
 }
+
+// Showcase carousel
+var scCurrent = 0;
+var scTotal = 2;
+var scAutoTimer = null;
+
+function setShowcase(n) {
+    document.getElementById('showcase-slide-' + scCurrent).classList.remove('showcase-slide-active');
+    scCurrent = ((n % scTotal) + scTotal) % scTotal;
+    document.getElementById('showcase-track').style.transform = 'translateX(-' + (scCurrent * 100) + '%)';
+    document.querySelectorAll('.showcase-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === scCurrent);
+    });
+    document.getElementById('showcase-slide-' + scCurrent).classList.add('showcase-slide-active');
+    clearInterval(scAutoTimer);
+    scAutoTimer = setInterval(function() { goShowcase(1); }, 12000);
+}
+
+function goShowcase(dir) {
+    setShowcase(scCurrent + dir);
+}
+
+scAutoTimer = setInterval(function() { goShowcase(1); }, 12000);
+
+var scEl = document.querySelector('.showcase-carousel');
+var scTouchX = 0;
+scEl.addEventListener('touchstart', function(e) { scTouchX = e.changedTouches[0].screenX; clearInterval(scAutoTimer); }, {passive: true});
+scEl.addEventListener('touchend', function(e) {
+    var diff = scTouchX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) { if (diff > 0) goShowcase(1); else goShowcase(-1); }
+    scAutoTimer = setInterval(function() { goShowcase(1); }, 12000);
+}, {passive: true});
 </script>
 
 </body>
