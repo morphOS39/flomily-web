@@ -1118,7 +1118,7 @@ section[id] {
     }
 }
 
-/* === Showcase: Veranstaltungstabelle === */
+/* === Showcase Carousel === */
 
 .showcase {
     padding: 60px 0;
@@ -1126,7 +1126,24 @@ section[id] {
     text-align: center;
 }
 
-.showcase h2 {
+.showcase-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    overflow: hidden;
+}
+
+.showcase-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.showcase-slide {
+    min-width: 100%;
+    padding: 0 10px;
+}
+
+.showcase-slide h2 {
     font-size: 2.1rem;
     margin-bottom: 8px;
 }
@@ -1144,7 +1161,6 @@ section[id] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 28px;
-    max-width: 860px;
     margin: 0 auto 20px;
     align-items: start;
 }
@@ -1179,7 +1195,7 @@ section[id] {
 .showcase-disclaimer {
     font-size: 0.82rem;
     color: var(--light-muted);
-    margin-bottom: 24px;
+    margin-top: 16px;
     font-style: italic;
 }
 
@@ -1187,10 +1203,62 @@ section[id] {
     margin-top: 8px;
 }
 
+.showcase-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    border: none;
+    font-size: 2rem;
+    color: var(--slate);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.showcase-nav:hover {
+    background: rgba(255,255,255,1);
+}
+
+.showcase-prev { left: 4px; }
+.showcase-next { right: 4px; }
+
+.showcase-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.showcase-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--light-muted);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.showcase-dot.active {
+    background: var(--primary);
+}
+
 @media (max-width: 700px) {
     .showcase-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .showcase-nav {
+        display: none;
     }
 }
 
