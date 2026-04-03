@@ -6,51 +6,8 @@
 
 ## Kontaktlog
 
-Wem wurde die Seite wann gezeigt?
-
-|ID|Name/Kuerzel|Datum gezeigt|Kanal|Eingetragen|Bestaetigung|Notiz|
-|-|-|-|-|-|-|-|
-|P1|Kai|2026-03-20||ja|ja|kai.libicher@gmail.com|
-|P2|Ines|2026-03-20|||||
-|P3|Klara|2026-03-20|||||
-|P4|Henning|2026-03-20|||||
-|P5|Florian Modschiedler|2026-03-20||ja|ja|florian.finn1@googlemail.com|
-|P6|Thomas Mrugalla|2026-03-20||ja|ja|thomasmrugalla@web.de, Signup 2026-03-23|
-|P7|Markus Reiff|2026-03-20|||||
-|P8|Papa|2026-03-20||||Blocker: hat kein Telegram|
-|P9|Mama|2026-03-20|||||
-|P10|Tanja|2026-03-20|||||
-|P11|Lena|2026-03-20||ja|ja|lenasophie2007@gmx.de|
-|P12|Herr Bayer|2026-03-20||ja|ja|christian.bayer84@gmail.com, Signup 2026-03-24|
-|P13|Yannik|2026-03-20|||||
-|P14|Daniela Laufer|2026-03-20|||||
-|P15|David Christiani|2026-03-21|Mail|ja|ja|newintaiwan@gmail.com|
-|P16|Cathi Rintelmann|2026-03-24||ja|ja|cathi20@freenet.de|
-|P17|Dália|2026-03-24|||||
-|P18|Dirk|2026-03-24||||Fußballtrainer|
-|P19|Nils|2026-03-25||ja||Beta-Tester|
-|P20|Franz Biesinger|2026-03-28||||Eingeladen von Ward|
-|P21|Sreto|2026-03-28||||Eingeladen von Ward|
-|P22|Oliver Schropp|2026-03-28||||Eingeladen von Ward|
-|P23|Martin Leister|2026-03-28||ja||martin.leister@gmx.de, Waitlist|
-|P24|Nishant|2026-03-28||||Angefragt von Ward|
-|P25|Roland König|2026-03-28||||Angefragt von Ward|
-|P26|Helmut Wlcek|2026-03-28||||Angefragt von Ward|
-|P27|Matthias Wlcek|2026-03-28||ja||Matthias@wlcek.de, Waitlist|
-|P28|Herwig Huber|2026-03-28||||Angefragt von Ward|
-|P29|Börge Hansen|2026-03-28|LinkedIn|||Angefragt von Ward|
-|P30|Selin Tanriverdi|2026-03-28|LinkedIn|||Angefragt von Ward|
-|P31|Adrian|2026-03-28||||Angefragt von Ward|
-|P32|Adone|2026-03-28||||Angefragt von Ward|
-|P33|Timo Kußmaul|2026-04-02||ja||t.kussmaul@gmail.com, Waitlist|
-|P34|Markus Kiefer|2026-04-02||||Angefragt von Ward|
-|P35|Daniel Kaczmarek|2026-04-02||||Angefragt von Ward|
-|P36|Daniel Schunn|2026-04-02||||Angefragt von Ward|
-|P37|Flo Bayerle|2026-04-02||||Angefragt von Ward|
-|P38|Olaf Hebecker|2026-04-02||||Angefragt von Ward|
-|P39|Danijel Biko|2026-04-03||||Angefragt von Ward|
-|P40|Norbert Bacher|2026-04-03||||Angefragt von Ward|
-|P41|Philip Dormann|2026-04-03||||Angefragt von Ward|
+> Kontakte sind jetzt in der SQLite-DB (`data-beta/users.db`, Tabelle `contacted`).
+> Das Dashboard liest direkt aus der DB. Neue Kontakte werden per VEGA eingetragen.
 
 ## Feedback
 
