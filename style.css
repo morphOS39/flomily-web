@@ -1971,6 +1971,28 @@ section[id] {
     color: var(--slate);
 }
 
+.why-positioning {
+    background: var(--primary-light);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.why-positioning p {
+    margin-bottom: 8px;
+}
+
+.why-positioning p:last-child {
+    margin-bottom: 0;
+}
+
+.why-bold {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+}
+
 .why-content p {
     margin-bottom: 16px;
 }
