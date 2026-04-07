@@ -1971,27 +1971,6 @@ section[id] {
     color: var(--slate);
 }
 
-/* === No Lock-in === */
-
-.no-lockin {
-    padding: 48px 0;
-    background: var(--primary-light);
-    text-align: center;
-}
-
-.no-lockin h2 {
-    font-size: 1.8rem;
-    color: var(--primary-dark);
-    margin-bottom: 16px;
-}
-
-.no-lockin-text {
-    max-width: 640px;
-    margin: 0 auto;
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--slate);
-}
 
 .why-content p {
     margin-bottom: 16px;
