@@ -1971,26 +1971,26 @@ section[id] {
     color: var(--slate);
 }
 
-.why-positioning {
+/* === No Lock-in === */
+
+.no-lockin {
+    padding: 48px 0;
     background: var(--primary-light);
-    border-left: 4px solid var(--primary);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 20px 24px;
-    margin-bottom: 24px;
+    text-align: center;
 }
 
-.why-positioning p {
-    margin-bottom: 8px;
-}
-
-.why-positioning p:last-child {
-    margin-bottom: 0;
-}
-
-.why-bold {
-    font-weight: 700;
-    font-size: 1.1rem;
+.no-lockin h2 {
+    font-size: 1.8rem;
     color: var(--primary-dark);
+    margin-bottom: 16px;
+}
+
+.no-lockin-text {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--slate);
 }
 
 .why-content p {
