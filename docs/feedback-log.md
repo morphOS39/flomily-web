@@ -70,6 +70,11 @@ Einzelne Rueckmeldungen, verknuepft mit Person aus Kontaktlog.
 |F61|P20|2026-03-28|Audio: Versteht flomily nach ~15s (nicht 5s). Sprachaufnahme im Video hat ihn am meisten angesprochen. Selbst "retro" (Papierkalender), würde sich nicht anmelden. Findet Idee aber gut, glaubt dass es viele anspricht die digital unterwegs sind. Keine Weiterempfehlung.|neu|
 |F62|P27|2026-03-27|Formular: Wish: "Will nichts mit Kalender zu tun haben, nichts selber eintragen, nicht reinschauen müssen, kein Telegram installieren." Pain: "Terminfindung in Gruppen: Keiner hat Überblick wer wann Zeit hat." Zwei Themen: Telegram-Blocker (#159) + neuer Use-Case Gruppen-Terminfindung (Doodle-Alternative).|neu|
 |F63|P22|2026-04-02|"Scheitere an einem zentralen Punkt: Wer wird zu welchem Termin eingeladen? Bei uns hat jeder eigenen Kalender + Familien-Kalender. Einladungen müssten abhängig von eingeladenen Personen an andere E-Mail-Adressen gehen. Das geht noch nicht oder?" → Feature-Request: Multi-Empfänger pro Termin, personenbezogene ICS-Einladungen.|neu|
+|F64|Markus Kiefer|2026-04-09|Positiv: "Idee grundsätzlich sehr gut, denke dass es vielen helfen würde." Thema/Sinn sofort verstanden, Visualisierungen/Erklärungen "sehr gut".|--|
+|F65|Markus Kiefer|2026-04-09|Kein Bedarf: Familie nutzt bewusst Offline-Papierkalender in der Küche. Grund: Konsequenz bei Medienregeln für Kinder — alltägliche Dinge sollen offline zugänglich sein.|--|
+|F66|Markus Kiefer|2026-04-09|Telegram-Hürde: "Viele nicht-Nerd-Familien nutzen kein Telegram." Empfehlung: auch ohne Telegram nutzbar machen.|neu|
+|F67|Markus Kiefer|2026-04-09|App-Store-Hürde: "Wenn man keine im App Store herunterladbare App anbietet, verstehen viele nicht wie sie die App installieren." Empfehlung: Container-App für App Store.|neu|
+|F68|Markus Kiefer|2026-04-09|Humor: "MarcOS im Impressum — warte auf Feature Parity mit iOS" :-)|--|
 
 **Status:** neu · diskutiert · entschieden (siehe Entscheidungslog)
 
