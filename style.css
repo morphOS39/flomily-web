@@ -77,18 +77,18 @@ h1, h2, h3 {
     position: absolute;
     right: 50px;
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.7);
+    color: var(--muted);
 }
 .lang-switch a {
-    color: rgba(255,255,255,0.7);
+    color: var(--muted);
     text-decoration: none;
 }
 .lang-switch a.lang-active {
-    color: #fff;
+    color: var(--primary);
     font-weight: 700;
 }
 .lang-switch a:hover {
-    color: #fff;
+    color: var(--primary-dark);
 }
 
 /* Offset for anchor scroll — compensate sticky header height */
