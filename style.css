@@ -73,6 +73,24 @@ h1, h2, h3 {
     right: 0;
 }
 
+.lang-switch {
+    position: absolute;
+    right: 50px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+}
+.lang-switch a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+}
+.lang-switch a.lang-active {
+    color: #fff;
+    font-weight: 700;
+}
+.lang-switch a:hover {
+    color: #fff;
+}
+
 /* Offset for anchor scroll — compensate sticky header height */
 section[id] {
     scroll-margin-top: 70px;

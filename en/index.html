@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — Your appointments. Instantly in your calendar.</title>
+    <meta name="description" content="flomily turns messages, photos and voice notes into calendar events — right in your existing calendar. No app, no lock-in.">
+    <meta property="og:title" content="flomily — Your appointments. Instantly in your calendar.">
+    <meta property="og:description" content="Forward a message, snap a photo, or just speak — flomily picks up the appointment and puts it in your existing calendar.">
+    <meta property="og:image" content="https://flomily.de/og-image.png">
+    <meta property="og:url" content="https://flomily.de/en/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../icon.svg">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="container header-bar">
+        <a href="/en/"><img src="../logo.svg" alt="flomily" class="header-logo"></a>
+        <div class="lang-switch"><a href="/">DE</a> | <a href="/en/" class="lang-active">EN</a></div>
+        <button class="burger" id="burger" onclick="document.getElementById('nav-overlay').classList.toggle('open');this.classList.toggle('open');" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+<div class="nav-backdrop" id="nav-backdrop" onclick="closeNav()"></div>
+<nav class="nav-overlay" id="nav-overlay">
+    <button class="nav-close" onclick="closeNav()" aria-label="Close menu">✕</button>
+    <a href="#pain" onclick="closeNav()">Sound familiar?</a>
+    <a href="#how" onclick="closeNav()">How it works</a>
+    <a href="#demo" onclick="closeNav()">Demo</a>
+    <a href="#showcase" onclick="closeNav()">Showcase</a>
+    <a href="#features" onclick="closeNav()">Features</a>
+    <a href="#why" onclick="closeNav()">Why flomily?</a>
+    <a href="#forwho" onclick="closeNav()">Who's it for?</a>
+    <a href="#trust" onclick="closeNav()">Privacy</a>
+    <a href="#requirements" onclick="closeNav()">What you need</a>
+    <a href="#warteliste" onclick="closeNav()">Waitlist</a>
+    <a href="#credits" onclick="closeNav()">Credits</a>
+    <a href="#faq" onclick="closeNav()">FAQ</a>
+    <a href="#feedback" onclick="closeNav()">Your wish</a>
+</nav>
+<script>function closeNav(){document.getElementById('nav-overlay').classList.remove('open');document.getElementById('burger').classList.remove('open');document.getElementById('nav-backdrop').classList.remove('open');}
+document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav-backdrop').classList.toggle('open');});</script>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Your appointments.<br>Instantly in your calendar.</h1>
+            <p class="subline">Just speak, snap a photo, or forward a message — flomily picks up the appointment and puts it right in your existing calendar. Outlook, Google, Apple, GMX — and any other calendar that understands invitations.</p>
+            <p class="hero-trust">🔒 No access to your calendar or emails needed — you stay in full control.</p>
+            <div class="hero-ctas">
+                <a href="#warteliste" class="cta-button">Get early access</a>
+                <a href="#demo" class="cta-button cta-ghost">Show me more</a>
+            </div>
+        </div>
+
+        <!-- Demo video -->
+        <div class="hero-video">
+            <video autoplay muted loop playsinline poster="../img/demo-voice-poster.jpg">
+                <source src="../img/demo-voice.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <!-- Decorative wave -->
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
+            <path d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z" fill="var(--snow)"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Pain Points -->
+<section class="pain" id="pain">
+    <div class="container">
+        <h2>Sound familiar?</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="pain-emoji">😩</div>
+                <div class="pain-quote">"When was that appointment again?"</div>
+                <p>You scroll through 47 WhatsApp messages. It was in there somewhere — but where?</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">😤</div>
+                <div class="pain-quote">"I'll add it later..."</div>
+                <p>You're typing in an appointment from a photo for the third time this week. Or just forgetting about it entirely.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🤦</div>
+                <div class="pain-quote">"I sent that to you!"</div>
+                <p>Yes. Three weeks ago. Buried between memes and grocery lists. Never made it to the calendar.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">😬</div>
+                <div class="pain-quote">"Is that in the calendar?"</div>
+                <p>No. Again. Because nobody wants to type in appointments manually.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">🫠</div>
+                <div class="pain-quote">"The doctor called — when was that again?"</div>
+                <p>Phone call, WhatsApp message, notice on the board — all in your head, none in your calendar.</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">💼</div>
+                <div class="pain-quote">"Work or personal? Doesn't matter, just get it in."</div>
+                <p>You're in Outlook, get an appointment via WhatsApp — and would have to switch apps, type it in, or put it off until "later." Later means: never.</p>
+            </div>
+        </div>
+        <div class="pain-resolve">
+            <div class="resolve-emoji">☀️</div>
+            <p class="resolve-text">With flomily: <strong>Speak it. Forward it. Snap it.</strong></p>
+            <p class="resolve-sub">Never type again. Never forget again. Never argue about who should've added it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof">
+    <div class="container">
+        <div class="proof-grid">
+            <div class="proof-card">
+                <p class="proof-quote">"I have Outlook open all day. When my wife sends me an appointment via WhatsApp, I forward it to flomily — 10 seconds later it's in Outlook. No app-switching."</p>
+                <span class="proof-author">— Office worker, 36</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">"WhatsApp group from the club, new schedule — forwarded once and all the games were in my calendar."</p>
+                <span class="proof-author">— Youth coach, 29</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">"I don't type appointments anymore. Take a photo, confirm, done."</p>
+                <span class="proof-author">— Self-employed, 42</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">"Finally I don't have to type in school notices anymore."</p>
+                <span class="proof-author">— Mom, 38, 3 kids</span>
+            </div>
+            <div class="proof-card">
+                <p class="proof-quote">"I just forward the training times. My wife has them in her calendar too."</p>
+                <span class="proof-author">— Dad, 41, handball coach</span>
+            </div>
+        </div>
+        <div class="beta-quotes">
+            <h3>What our beta testers say:</h3>
+            <div class="beta-quotes-track" id="beta-quotes-track">
+                <div class="beta-quote-card active">
+                    <p class="proof-quote">"I've become a hardcore flomily user. Already set up four appointments with it this week. Love it!"</p>
+                    <span class="proof-author">— Beta tester</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="how" id="how">
+    <div class="container">
+        <h2>It's that simple</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">🎤</div>
+                <div class="step-number">1</div>
+                <h3>Just say it</h3>
+                <p>Voice note, text, photo or PDF — just send it to flomily.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-icon">✨</div>
+                <div class="step-number">2</div>
+                <h3>Recognized</h3>
+                <p>flomily picks up the appointment — no matter how it's phrased.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-icon">📅</div>
+                <div class="step-number">3</div>
+                <h3>In your calendar</h3>
+                <p>Quick confirm — the appointment goes straight to your existing calendar.</p>
+            </div>
+        </div>
+        <a href="#warteliste" class="cta-button cta-secondary">I want this!</a>
+    </div>
+</section>
+
+<!-- Demo Carousel -->
+<section class="demo-carousel-section" id="demo">
+    <div class="container">
+        <h2>See it in action.</h2>
+        <p class="demo-subtitle">Three typical scenarios — one result: appointment in your calendar.</p>
+
+        <div class="carousel">
+            <button class="carousel-nav carousel-prev" onclick="goSlide(-1)">&lsaquo;</button>
+            <button class="carousel-nav carousel-next" onclick="goSlide(1)">&rsaquo;</button>
+
+            <div class="carousel-track" id="track">
+
+                <!-- SLIDE 1: Photo of school notice → 3 appointments -->
+                <div class="carousel-slide slide-active" id="slide-0">
+                    <div class="scene-label">School notice photographed</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📸 Photo</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="photo-mockup anim s1-photo">
+                                    <div class="photo-icon">📋</div>
+                                    <strong>Parent Info March 2026</strong><br><br>
+                                    → Parent evening: Apr 24, 7:30 PM, Hall<br>
+                                    → Field trip: May 2, all day<br>
+                                    → Day off: May 30
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s1-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s1-spark">✨</span>
+                            <span class="demo-flow-label anim s1-label">3 appointments found!</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 My Calendar <span class="mockup-month">April</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Leon's practice</div><div class="cal-time">Tue 5:00 PM</div></div></div>
+                                <div class="cal-entry anim s1-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Parent evening</div><div class="cal-time">Thu Apr 24 — 7:30 PM</div></div><span class="cal-badge anim s1-b1">NEW</span></div>
+                                <div class="cal-entry anim s1-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Field trip</div><div class="cal-time">Fri May 2 — all day</div></div><span class="cal-badge anim s1-b2">NEW</span></div>
+                                <div class="cal-entry anim s1-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Day off</div><div class="cal-time">Fri May 30</div></div><span class="cal-badge anim s1-b3">NEW</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: Multi-Input -->
+                <div class="carousel-slide" id="slide-1">
+                    <div class="scene-label">Three sources, one calendar</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📱 Sent to flomily</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="chat-bubble anim s2-msg">
+                                    <div class="chat-bubble-sender">💬 Forwarded message</div>
+                                    Practice now on Tuesdays at 5:30 instead of 5:00!
+                                    <div class="chat-bubble-time">09:22</div>
+                                </div>
+                                <div class="photo-mockup photo-mockup-small anim s2-photo">
+                                    <span style="font-size:1rem;">📸</span> Photo: Dentist appointment card<br>
+                                    → Dr. Weber, Thu May 15, 10:00 AM
+                                </div>
+                                <div class="voice-mockup anim s2-voice">
+                                    <span style="font-size:1.1rem;">🎤</span>
+                                    <div class="voice-wave">
+                                        <div class="voice-bar" style="height:8px;"></div>
+                                        <div class="voice-bar" style="height:14px;"></div>
+                                        <div class="voice-bar" style="height:20px;"></div>
+                                        <div class="voice-bar" style="height:12px;"></div>
+                                        <div class="voice-bar" style="height:18px;"></div>
+                                        <div class="voice-bar" style="height:10px;"></div>
+                                        <div class="voice-bar" style="height:16px;"></div>
+                                        <div class="voice-bar" style="height:6px;"></div>
+                                    </div>
+                                    <span class="voice-time">0:04</span>
+                                </div>
+                                <div class="voice-transcript">"Finn's birthday on Saturday at three"</div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s2-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s2-spark">✨</span>
+                            <span class="demo-flow-label anim s2-label">All recognized!</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 My Calendar <span class="mockup-month">May</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Parent evening</div><div class="cal-time">Thu Apr 24 — 7:30 PM</div></div></div>
+                                <div class="cal-entry anim s2-e1"><div class="cal-dot cal-dot-orange"></div><div><div class="cal-title">Practice (new time!)</div><div class="cal-time">Tue 5:30 PM</div></div><span class="cal-badge anim s2-b1">NEW</span></div>
+                                <div class="cal-entry anim s2-e2"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Dentist Dr. Weber</div><div class="cal-time">Thu May 15 — 10:00 AM</div></div><span class="cal-badge anim s2-b2">NEW</span></div>
+                                <div class="cal-entry anim s2-e3"><div class="cal-dot cal-dot-pink"></div><div><div class="cal-title">Finn's birthday</div><div class="cal-time">Sat — 3:00 PM</div></div><span class="cal-badge anim s2-b3">NEW</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: Confirmation flow -->
+                <div class="carousel-slide" id="slide-2">
+                    <div class="scene-label">Confirm and done</div>
+                    <div class="demo-flow">
+                        <div class="demo-mockup">
+                            <div class="mockup-header">💬 Chat with flomily</div>
+                            <div class="mockup-body mockup-phone-bg">
+                                <div class="chat-bubble anim s3-msg">
+                                    <div class="chat-bubble-sender">📨 Forwarded message</div>
+                                    Hi! Reminder: Mila's vaccination on May 12 at 9:15 AM at Dr. Klein, Main St. 42
+                                    <div class="chat-bubble-time">10:31</div>
+                                </div>
+                                <div class="fwd-indicator anim s3-fwd">Sent to flomily ✓</div>
+                                <div class="flomily-response anim s3-flomily">
+                                    <div class="flomily-tag"><img src="../icon.svg" alt="" class="flomily-tag-icon"> flomily</div>
+                                    <strong>Mila's vaccination</strong><br>
+                                    📅 Mon May 12 at 9:15 AM<br>
+                                    📍 Dr. Klein, Main St. 42<br>
+                                    🚗 12 min. drive
+                                    <div class="confirm-buttons anim s3-btns">
+                                        <span class="confirm-btn confirm-yes">👨‍👩‍👧 Family</span>
+                                        <span class="confirm-btn confirm-no">👤 Just me</span>
+                                        <span class="confirm-btn confirm-no">❌</span>
+                                    </div>
+                                </div>
+                                <div style="text-align:center;margin-top:10px;">
+                                    <span class="confirmed-badge anim s3-check">✅ Confirmed!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-flow-center">
+                            <svg class="anim s3-arrow" viewBox="0 0 44 14" fill="none"><path d="M0 7h32M32 7l-5-5M32 7l-5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <span class="demo-flow-spark anim s3-spark">✨</span>
+                        </div>
+                        <div class="demo-mockup">
+                            <div class="mockup-header">📅 My Calendar <span class="mockup-month">May</span></div>
+                            <div class="mockup-body">
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-teal"></div><div><div class="cal-title">Leon's practice</div><div class="cal-time">Tue 5:30 PM</div></div></div>
+                                <div class="cal-entry cal-faded"><div class="cal-dot cal-dot-gold"></div><div><div class="cal-title">Finn's birthday</div><div class="cal-time">Sat 3:00 PM</div></div></div>
+                                <div class="cal-entry anim s3-e1">
+                                    <div class="cal-dot cal-dot-orange"></div>
+                                    <div>
+                                        <div class="cal-title">Mila's vaccination</div>
+                                        <div class="cal-time">Mon May 12 — 9:15 AM</div>
+                                        <div class="cal-time">📍 Dr. Klein · 🚗 leave at 8:55</div>
+                                    </div>
+                                    <span class="cal-badge anim s3-b1">NEW</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="carousel-dots">
+                <button class="carousel-dot active" onclick="setSlide(0)"></button>
+                <button class="carousel-dot" onclick="setSlide(1)"></button>
+                <button class="carousel-dot" onclick="setSlide(2)"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Showcase Carousel -->
+<section class="showcase" id="showcase">
+    <div class="container">
+        <div class="showcase-carousel">
+            <div class="showcase-track" id="showcase-track">
+
+                <!-- Slide 1: Game schedule -->
+                <div class="showcase-slide showcase-slide-active" id="showcase-slide-0">
+                    <h2>Game day? Screenshot. Done.</h2>
+                    <p class="showcase-sub">Youth league, local league, club app — screenshot to flomily and all games land in your calendar.</p>
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-label">⚽ Youth league schedule</div>
+                            <img src="../img/spielplan-original.jpg" alt="Youth league game schedule" loading="lazy">
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-label">✨ Recognized by flomily</div>
+                            <img src="../img/spielplan-telegram.jpg" alt="flomily recognizes 4 games from the screenshot" loading="lazy">
+                        </div>
+                    </div>
+                    <p class="showcase-disclaimer">*Real example from a sports app. No affiliation with the clubs shown.</p>
+                </div>
+
+                <!-- Slide 2: Event table -->
+                <div class="showcase-slide" id="showcase-slide-1">
+                    <h2>36 events. One photo. 10 seconds.</h2>
+                    <p class="showcase-sub">Event schedule, game plan, community program — just take a photo. flomily recognizes every single appointment.</p>
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-label">📋 Event schedule</div>
+                            <img src="../img/veranstaltungstabelle-original.jpg" alt="Event schedule with 36 appointments" loading="lazy">
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-label">✨ Recognized by flomily</div>
+                            <img src="../img/veranstaltungstabelle-telegram.jpg" alt="flomily recognizes 36 events from the photo" loading="lazy">
+                        </div>
+                    </div>
+                    <p class="showcase-disclaimer">*Example of a public event schedule. No affiliation with flomily — just a random find showing what's possible.</p>
+                </div>
+
+            </div>
+
+            <button class="showcase-nav showcase-prev" onclick="goShowcase(-1)">&lsaquo;</button>
+            <button class="showcase-nav showcase-next" onclick="goShowcase(1)">&rsaquo;</button>
+
+            <div class="showcase-dots">
+                <button class="showcase-dot active" onclick="setShowcase(0)"></button>
+                <button class="showcase-dot" onclick="setShowcase(1)"></button>
+            </div>
+        </div>
+        <a href="#warteliste" class="cta-button cta-secondary">I want that too!</a>
+    </div>
+</section>
+
+<!-- Your calendar stays yours -->
+<section class="calendar-compat" id="no-lockin">
+    <div class="container">
+        <div class="compat-content">
+            <div class="compat-text">
+                <h2>Your calendar stays your calendar.</h2>
+                <p>flomily is not a new calendar — and doesn't want to be one. Appointments go right where you already check them. Including your work calendar. No migration, no learning curve, no lock-in. Apps like TimeTree or Cozi want you to move your calendar.</p>
+                <p class="compat-highlight"><strong>No app. No subscription. No lock-in.</strong><br>flomily needs no installation, no account with a new service, and doesn't lock you in anywhere. You keep using your calendar — flomily just fills it faster.</p>
+            </div>
+            <div class="compat-logos">
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#4285F4"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">G</text></svg>
+                    <span>Google</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#333"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">&#63743;</text></svg>
+                    <span>Apple</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#0078D4"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">O</text></svg>
+                    <span>Outlook</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#1C449B"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="22" font-weight="bold">G</text></svg>
+                    <span>GMX</span>
+                </div>
+                <div class="compat-logo">
+                    <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="10" fill="#94A3B8"/><text x="24" y="32" text-anchor="middle" fill="white" font-size="16" font-weight="bold">+</text></svg>
+                    <span>Any calendar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Input channels -->
+<section class="channels">
+    <div class="container">
+        <h2>No matter how — flomily gets it.</h2>
+        <div class="channel-grid">
+            <div class="channel-card channel-highlight">
+                <div class="channel-icon">🎤</div>
+                <h3>Speak it</h3>
+                <p>Just left the doctor? Say it. In the car? Quick voice note. flomily understands you — and the appointment is in.</p>
+                <div class="channel-example">"Dentist next Thursday at ten for Mila"</div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">📸</div>
+                <h3>Snap it</h3>
+                <p>School notice in the backpack? Take a photo, done.</p>
+                <div class="channel-example">Photo of school notice → 3 appointments found</div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">📱</div>
+                <h3>Forward it</h3>
+                <p>The coach sends a new schedule in the WhatsApp group? Just forward it.</p>
+                <div class="channel-example">"Soccer practice from next week every Tuesday at 5 PM"</div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">📄</div>
+                <h3>Documents</h3>
+                <p>Game schedule as PDF? Club newsletter? Outlook invitation? Just forward it.</p>
+                <div class="channel-example">Parent-evening-invite.pdf → Apr 14, 7:30 PM</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- For whom -->
+<section class="forwho" id="forwho">
+    <div class="container">
+        <h2>Who is flomily for?</h2>
+        <div class="forwho-cards">
+            <div class="forwho-card">
+                <div class="forwho-emoji">🏃</div>
+                <h3>Busy people</h3>
+                <p>Appointments from WhatsApp, the doctor, emails — everything should just go in your calendar. Without typing.</p>
+            </div>
+            <div class="forwho-card">
+                <div class="forwho-emoji">💼</div>
+                <h3>Professionals</h3>
+                <p>You have Outlook open all day and want private appointments in there? Just send them to flomily — they land right in Outlook. No app-switching, no typing.</p>
+            </div>
+            <div class="forwho-card">
+                <div class="forwho-emoji">👨‍👩‍👧‍👦</div>
+                <h3>Families</h3>
+                <p>Selectively share appointments with your partner or kids. Everyone keeps their own calendar.</p>
+            </div>
+            <div class="forwho-card">
+                <div class="forwho-emoji">🤝</div>
+                <h3>Clubs & groups</h3>
+                <p>Practice times, game days, meetings — send once, everyone has it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+    <div class="container">
+        <h2>A taste of what flomily can do.</h2>
+        <div class="features-grid">
+            <div class="feature-item"><span class="feature-icon">📋</span><div><strong>Recognize school notices</strong><p>Photograph the school letter, get all appointments at once.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">🔄</span><div><strong>Recurring events</strong><p>"Karate every Friday" automatically becomes a series.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">🎨</span><div><strong>Auto-categorization</strong><p>Set your own categories and colors — flomily sorts new appointments automatically.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">📎</span><div><strong>Documents on appointments</strong><p>Photos and documents are automatically attached to the appointment — everything at hand.</p></div></div>
+            <div class="feature-item"><span class="feature-icon">✏️</span><div><strong>Edit right in the chat</strong><p>Adjust title, date, location or category before the appointment is sent.</p></div></div>
+            <div class="feature-item coming-soon"><span class="feature-icon">🚗</span><div><strong>Travel time calculation</strong><p>flomily tells you when to leave.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+            <div class="feature-item coming-soon"><span class="feature-icon">❌</span><div><strong>Cancellation detection</strong><p>"Practice is cancelled" — appointment gets automatically removed.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+            <div class="feature-item coming-soon"><span class="feature-icon">👨‍👩‍👧‍👦</span><div><strong>Shared family calendar</strong><p>One appointment, everyone has it.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+        </div>
+        <div class="features-more" id="features-more" style="display:none;">
+            <div class="features-grid">
+                <div class="feature-item"><span class="feature-icon">🎤</span><div><strong>Voice messages</strong><p>Just speak your appointment.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">⏰</span><div><strong>Reminders</strong><p>Individually selectable per appointment.</p></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">👥</span><div><strong>Multiple calendars</strong><p>Each family member gets appointments in their own calendar — or all in a shared one.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item"><span class="feature-icon">🗑️</span><div><strong>Waste collection calendar</strong><p>Photograph once, never check again.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">🍽️</span><div><strong>Meal plan</strong><p>Photo of the daycare or school menu — meals in a weekly overview.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">📄</span><div><strong>PDFs & documents</strong><p>Game schedules, club newsletters, Outlook invitations — just forward them.</p></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">🏟️</span><div><strong>Game schedules</strong><p>Link your favorite team, game days automatically land in your calendar.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">↔️</span><div><strong>Reschedule detection</strong><p>"Propose new time" from Outlook? flomily updates automatically.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item"><span class="feature-icon">📸</span><div><strong>Photo = appointment</strong><p>Notice, flyer, business card — just take a photo.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">🗓️</span><div><strong>Public holidays</strong><p>Just say your region — flomily adds all holidays to your calendar.</p></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">📋</span><div><strong>Digitize wall calendars</strong><p>Still have a paper calendar on the wall? Photograph it — flomily takes over all appointments.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+                <div class="feature-item coming-soon"><span class="feature-icon">🖥️</span><div><strong>Family dashboard</strong><p>All appointments at a glance — e.g. on a tablet in the kitchen. The digital replacement for the wall calendar.</p><span class="coming-soon-badge">Coming soon</span></div></div>
+            </div>
+        </div>
+        <button class="features-toggle" id="features-toggle" onclick="var m=document.getElementById('features-more'),b=document.getElementById('features-toggle');if(m.style.display==='none'){m.style.display='block';b.textContent='Show less';}else{m.style.display='none';b.textContent='And much more...';}">And much more...</button>
+    </div>
+</section>
+
+<!-- Why flomily -->
+<section class="why-flomily" id="why">
+    <div class="container">
+        <h2>Why flomily?</h2>
+        <div class="why-content">
+            <p><strong>flomily</strong> stands for <strong>flow + family</strong> — because managing a family should flow, not drown in chaos.</p>
+            <div class="why-more" id="why-more" style="display:none;">
+                <p>The idea was born from everyday madness: three kids, five clubs, school notices in backpacks, practice times in WhatsApp groups, doctor's appointments over the phone. And always the same question at the end: <em>"Is that in the calendar?"</em></p>
+                <blockquote>"Managing a family is complex enough — don't let your appointments add to the stress."</blockquote>
+                <p>So I started building a solution. First just for us — a little helper that reads messages, finds appointments, and simply puts them in our calendar. No typing, no forgetting.</p>
+                <p>And then it grew: a tablet in the kitchen showing the family calendar. Meal plans from daycare, automatically recognized. A waste collection calendar that reminds you to take out the bins. Game schedules from the club landing straight in the calendar. And that's just the beginning — there's more I can't tell you about yet.</p>
+                <p>Built for our family — but made for everyone who feels the same way.</p>
+                <p>That's why flomily exists. Not as the next app fighting for attention. But as a quiet helper in the background, making sure appointments end up where they belong.</p>
+                <p>I want to make all these features available to you — step by step, feature by feature. flomily grows with your needs.</p>
+            </div>
+            <button class="why-toggle" id="why-toggle" onclick="var m=document.getElementById('why-more'),b=document.getElementById('why-toggle');if(m.style.display==='none'){m.style.display='block';b.textContent='Show less';}else{m.style.display='none';b.textContent='Read the full story...';}">Read the full story...</button>
+        </div>
+    </div>
+</section>
+
+<!-- Trust -->
+<section class="trust" id="trust">
+    <div class="container">
+        <h2>Your data in good hands.</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <span class="trust-icon">🔒</span>
+                <div>
+                    <strong>GDPR compliant</strong>
+                    <p>We take privacy seriously and follow European standards.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🔐</span>
+                <div>
+                    <strong>Encrypted transmission</strong>
+                    <p>Your data is exclusively transmitted encrypted.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🚫</span>
+                <div>
+                    <strong>No sharing</strong>
+                    <p>Your data is never shared with third parties for advertising purposes.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🔒</span>
+                <div>
+                    <strong>No calendar access</strong>
+                    <p>flomily only sends invitations via email. It has no access to your existing calendar — nobody can view your appointments.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">📋</span>
+                <div>
+                    <strong>Transparent</strong>
+                    <p>All details about data processing can be found in our privacy policy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Requirements -->
+<section class="requirements" id="requirements">
+    <div class="container">
+        <h2>What do you need?</h2>
+        <p class="requirements-sub">Just two things — and you're good to go.</p>
+        <div class="requirements-grid">
+            <div class="requirement-card">
+                <div class="requirement-icon">💬</div>
+                <h3>Telegram</h3>
+                <p>flomily runs on Telegram — free, available on every device. That's where you send appointments and get confirmations.</p>
+                <a href="https://telegram.org" class="requirement-link" target="_blank">Download Telegram →</a>
+            </div>
+            <div class="requirement-card">
+                <div class="requirement-icon">📧</div>
+                <h3>An email address</h3>
+                <p>That's where flomily sends calendar invitations. Works with any provider — Gmail, GMX, Outlook, Apple Mail, and all others.</p>
+            </div>
+        </div>
+        <p class="requirements-note">No subscription, no app, no installation. Just open Telegram and go.</p>
+        <div class="homescreen-hint">
+            <div class="homescreen-hint-content">
+                <div class="homescreen-hint-text">
+                    <h3>📱 Tip: Add flomily to your home screen</h3>
+                    <p>You can put flomily on your home screen like a regular app — one tap and you're in. Works on Android (3 taps) and iPhone (via Shortcuts).</p>
+                </div>
+                <div class="homescreen-hint-img">
+                    <img src="../img/homescreen-iphone.jpg" alt="flomily on iPhone home screen" loading="lazy">
+                    <img src="../img/homescreen-android.jpg" alt="flomily on Android home screen" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Waitlist -->
+<section class="waitlist" id="warteliste">
+    <div class="container">
+        <h2>Coming soon.</h2>
+        <p class="waitlist-sub">Sign up and be the first to get project updates — and access to the beta when it's ready.</p>
+        <div class="fomo-badge">🎁 The first 100 flo'ers start with 100 credits — use flomily exclusively before it's available to everyone.</div>
+        <form class="waitlist-form" id="waitlist-form">
+            <input type="email" name="email" id="waitlist-email" placeholder="Your email address" required>
+            <button type="submit" class="cta-button" id="waitlist-btn">Secure your spot</button>
+        </form>
+        <script>
+        (function(){
+            var ref = new URLSearchParams(location.search).get('ref');
+            document.getElementById('waitlist-form').addEventListener('submit', function(e){
+                e.preventDefault();
+                var email = document.getElementById('waitlist-email').value;
+                var btn = document.getElementById('waitlist-btn');
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+                sessionStorage.setItem('flomily_email', email);
+                if(ref) sessionStorage.setItem('flomily_ref', ref);
+                fetch('https://formspree.io/f/xaqpkvpd', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                    body: JSON.stringify({email: email, ref: ref || ''})
+                }).then(function(){ location.href = '/danke.html'; })
+                  .catch(function(){ location.href = '/danke.html'; });
+            });
+        })();
+        </script>
+        <p class="waitlist-fomo">30+ flo'ers are already waiting. Be there when flomily launches.</p>
+        <p class="waitlist-note">No spam. An update every few weeks, that's it.</p>
+    </div>
+</section>
+
+<!-- Credits -->
+<section class="credits-section" id="credits">
+    <div class="container">
+        <h2>Collect credits — before flomily even launches 🎁</h2>
+        <div class="credits-grid">
+            <div class="credits-card">
+                <div class="credits-number">100</div>
+                <div class="credits-label">Starting credits</div>
+                <p>Every spot on the waitlist earns you <strong>100 credits</strong> to start.</p>
+            </div>
+            <div class="credits-card">
+                <div class="credits-number">+25</div>
+                <div class="credits-label">per referral</div>
+                <p>For every friend who signs up through your personal link, you get <strong>+25 credits</strong> extra.</p>
+            </div>
+        </div>
+        <p class="credits-teaser">Credits are your balance at flomily. The more you collect, the more you can unlock — from appointments to exclusive extras.</p>
+        <a href="#warteliste" class="cta-button cta-secondary">Get your spot and start collecting</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Can someone access my calendar through flomily?</summary>
+                <p>No. flomily sends appointments exclusively as calendar invitations via email — just like when a colleague sends you an Outlook meeting. flomily has no access to your existing calendar and can neither read nor modify appointments.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How secure is my data?</summary>
+                <p>Your messages are transmitted encrypted and only processed for appointment recognition. We don't share data with third parties for advertising. You decide which appointments are saved — and can request deletion of your data at any time. All details in our <a href="/datenschutz.html">privacy policy</a>.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is flomily in the App Store?</summary>
+                <p>No — and that's intentional. flomily runs directly in Telegram, which you probably already have. No download, no app store, no installation. You can add flomily to your home screen like an app though — then it's one tap away.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Do I have to enter each appointment individually?</summary>
+                <p>No! You can send a photo of a school notice, letter, or poster — flomily recognizes all appointments on it and creates them individually. Also works with PDFs, voice messages, and forwarded texts.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can multiple family members use flomily?</summary>
+                <p>Currently each user receives their own appointments via email. Shared family calendars and inviting others to appointments are coming soon — that's one of our next features.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What does flomily cost?</summary>
+                <p>flomily is currently free during the beta phase.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What are credits for?</summary>
+                <p>Credits are your balance at flomily — 100 to start, +25 for each referral. The more you collect, the more you can unlock — from appointments to exclusive extras.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Does flomily work with TimeTree?</summary>
+                <p>flomily and TimeTree follow different approaches: TimeTree is its own calendar where everyone has to migrate. flomily is not a calendar — it puts appointments in the calendar you already use (Outlook, Google, Apple, GMX). No migration, no second system, no lock-in.</p>
+                <p>TimeTree currently doesn't support ICS import. A direct integration is planned so appointments can also arrive in shared TimeTree calendars.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What commands are available in the bot?</summary>
+                <p>You can use these commands anytime in the chat with the flomily bot:</p>
+                <ul style="margin: 8px 0; padding-left: 20px;">
+                    <li><strong>/help</strong> — Overview of all commands</li>
+                    <li><strong>/credits</strong> — Show your available credits</li>
+                    <li><strong>/referral</strong> — Invite friends and earn credits</li>
+                    <li><strong>/stop</strong> — Leave flomily</li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Feedback -->
+<section class="feedback-section" id="feedback">
+    <div class="container">
+        <h2>What would you wish for?</h2>
+        <p class="feedback-sub">flomily is being built right now — and your opinion helps shape it. Tell us what would help you most with appointments.</p>
+        <form class="feedback-form" action="https://formspree.io/f/xaqpkvpd" method="POST">
+            <input type="hidden" name="_type" value="feedback">
+            <input type="hidden" name="_next" value="https://flomily.de/danke.html">
+            <div class="feedback-field">
+                <label for="main-wish">My biggest wish:</label>
+                <textarea id="main-wish" name="wish" rows="3" placeholder='e.g. "Never having to type in appointments from WhatsApp again"'></textarea>
+            </div>
+            <div class="feedback-field">
+                <label for="main-pain">What annoys me most about appointments today:</label>
+                <textarea id="main-pain" name="pain" rows="3" placeholder='e.g. "Nobody knows when which kid needs to be where"'></textarea>
+            </div>
+            <div class="feedback-field">
+                <label for="main-name">Your name: <span class="feedback-optional">(optional, for follow-up)</span></label>
+                <input type="text" id="main-name" name="name" placeholder="First name is enough">
+            </div>
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-brand">
+            <img src="../logo.svg" alt="flomily" class="footer-logo">
+            <p>Appointment management that thinks ahead.</p>
+        </div>
+        <nav>
+            <a href="/impressum">Imprint</a>
+            <a href="/datenschutz">Privacy</a>
+            <a href="mailto:mail@flomily.de?subject=Unsubscribe">Unsubscribe</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 flomily</p>
+    </div>
+</footer>
+
+<script>
+let current = 0;
+const total = 3;
+let autoTimer = null;
+let paused = false;
+
+function startAutoplay() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() { if (!paused) goSlide(1); }, 15000);
+}
+
+function setSlide(n) {
+    document.getElementById('slide-' + current).classList.remove('slide-active');
+    current = ((n % total) + total) % total;
+    document.getElementById('track').style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+    });
+    var slide = document.getElementById('slide-' + current);
+    slide.querySelectorAll('.anim').forEach(function(el) {
+        el.style.animation = 'none';
+        void el.offsetHeight;
+        el.style.animation = '';
+    });
+    slide.classList.add('slide-active');
+    startAutoplay();
+}
+
+function goSlide(dir) {
+    setSlide(current + dir);
+}
+
+var carousel = document.querySelector('.carousel');
+var touchStartX = 0;
+var touchEndX = 0;
+carousel.addEventListener('mouseenter', function() { paused = true; });
+carousel.addEventListener('mouseleave', function() { paused = false; startAutoplay(); });
+carousel.addEventListener('touchstart', function(e) {
+    paused = true; clearInterval(autoTimer);
+    touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+carousel.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) goSlide(1);
+        else goSlide(-1);
+    }
+    setTimeout(function() { paused = false; startAutoplay(); }, 20000);
+}, {passive: true});
+
+startAutoplay();
+var betaCurrent = 0;
+var betaCards = document.querySelectorAll('.beta-quote-card');
+var betaDots = document.querySelectorAll('.beta-dot');
+
+function setBetaSlide(i) {
+    betaCards.forEach(function(c) { c.classList.remove('active'); });
+    betaDots.forEach(function(d) { d.classList.remove('active'); });
+    betaCurrent = i;
+    betaCards[i].classList.add('active');
+    betaDots[i].classList.add('active');
+}
+
+if (betaCards.length > 1) {
+    setInterval(function() {
+        setBetaSlide((betaCurrent + 1) % betaCards.length);
+    }, 5000);
+
+    var bqTrack = document.querySelector('.beta-quotes-track');
+    var bqStartX = 0;
+    bqTrack.addEventListener('touchstart', function(e) { bqStartX = e.changedTouches[0].screenX; }, {passive: true});
+    bqTrack.addEventListener('touchend', function(e) {
+        var diff = bqStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) setBetaSlide((betaCurrent + 1) % betaCards.length);
+            else setBetaSlide((betaCurrent - 1 + betaCards.length) % betaCards.length);
+        }
+    }, {passive: true});
+}
+
+var scCurrent = 0;
+var scTotal = 2;
+var scAutoTimer = null;
+
+function setShowcase(n) {
+    document.getElementById('showcase-slide-' + scCurrent).classList.remove('showcase-slide-active');
+    scCurrent = ((n % scTotal) + scTotal) % scTotal;
+    document.getElementById('showcase-track').style.transform = 'translateX(-' + (scCurrent * 100) + '%)';
+    document.querySelectorAll('.showcase-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === scCurrent);
+    });
+    document.getElementById('showcase-slide-' + scCurrent).classList.add('showcase-slide-active');
+    clearInterval(scAutoTimer);
+    scAutoTimer = setInterval(function() { goShowcase(1); }, 12000);
+}
+
+function goShowcase(dir) {
+    setShowcase(scCurrent + dir);
+}
+
+scAutoTimer = setInterval(function() { goShowcase(1); }, 12000);
+
+var scEl = document.querySelector('.showcase-carousel');
+var scTouchX = 0;
+scEl.addEventListener('touchstart', function(e) { scTouchX = e.changedTouches[0].screenX; clearInterval(scAutoTimer); }, {passive: true});
+scEl.addEventListener('touchend', function(e) {
+    var diff = scTouchX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) { if (diff > 0) goShowcase(1); else goShowcase(-1); }
+    scAutoTimer = setInterval(function() { goShowcase(1); }, 12000);
+}, {passive: true});
+</script>
+
+</body>
+</html>
