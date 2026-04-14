@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — Termine rein, ohne Tippen.</title>
+    <meta name="description" content="Reinsprechen, Foto schicken, weiterleiten — der Termin ist im Kalender. Ohne App, ohne Abtippen.">
+    <meta property="og:title" content="flomily — Termine rein, ohne Tippen.">
+    <meta property="og:description" content="Reinsprechen, Foto schicken, weiterleiten — der Termin ist im Kalender.">
+    <meta property="og:image" content="https://flomily.de/og-image.png">
+    <meta property="og:url" content="https://flomily.de/pitch">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        :root {
+            --primary: #2A9D8F;
+            --primary-dark: #238B7E;
+            --accent: #E76F51;
+            --slate: #2D3748;
+            --muted: #718096;
+            --snow: #FAFCFB;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Quicksand', system-ui, sans-serif;
+            color: var(--slate);
+            background: var(--snow);
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        /* Header */
+        .pitch-header {
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .pitch-header img { height: 28px; }
+        .pitch-header a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+        /* Hero */
+        .pitch-hero {
+            text-align: center;
+            padding: 60px 24px 40px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .pitch-hero h1 {
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .pitch-hero h1 span { color: var(--primary); }
+        .pitch-hero .subline {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 550px;
+            margin: 0 auto 32px;
+        }
+
+        /* Examples */
+        .pitch-examples {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 48px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .pitch-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: 0 2px 16px rgba(45, 55, 72, 0.07);
+            transition: transform 0.2s;
+        }
+        .pitch-card:hover { transform: translateY(-3px); }
+        .pitch-card .card-emoji { font-size: 2rem; margin-bottom: 12px; }
+        .pitch-card .card-input {
+            background: #f1f5f9;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            color: var(--slate);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        .pitch-card .card-arrow {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .pitch-card .card-result {
+            background: linear-gradient(135deg, #f0fdfa, #e8f6f4);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        .pitch-card h3 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: var(--slate);
+        }
+
+        /* How */
+        .pitch-how {
+            background: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .pitch-how h2 { font-size: 1.5rem; margin-bottom: 32px; }
+        .pitch-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pitch-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 140px;
+        }
+        .pitch-step .step-num {
+            width: 40px; height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .pitch-step h3 { font-size: 0.95rem; }
+        .pitch-step p { font-size: 0.85rem; color: var(--muted); }
+        .pitch-arrow { font-size: 1.5rem; color: var(--primary); flex-shrink: 0; }
+        @media (max-width: 500px) { .pitch-arrow { display: none; } }
+
+        /* Trust line */
+        .pitch-trust {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--muted);
+            font-size: 0.95rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .pitch-trust strong { color: var(--slate); }
+
+        /* CTA */
+        .pitch-cta {
+            text-align: center;
+            padding: 24px 24px 64px;
+        }
+        .pitch-cta .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: inherit;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 16px rgba(231, 111, 81, 0.25);
+        }
+        .pitch-cta .cta-btn:hover { background: var(--accent); transform: translateY(-2px); }
+        .pitch-cta .cta-sub {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .pitch-cta .more-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .pitch-footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            border-top: 1px solid #e8ecf0;
+        }
+        .pitch-footer a { color: var(--muted); }
+    </style>
+</head>
+<body>
+
+<header class="pitch-header">
+    <a href="/"><img src="logo.svg" alt="flomily"></a>
+    <a href="/">Alle Features →</a>
+</header>
+
+<section class="pitch-hero">
+    <h1>Termine rein.<br><span>Ohne Tippen.</span></h1>
+    <p class="subline">Reinsprechen, Foto schicken oder Nachricht weiterleiten — der Termin ist im Kalender. In deinem. Outlook, Google, Apple, GMX.</p>
+</section>
+
+<section class="pitch-examples">
+    <div class="pitch-card">
+        <div class="card-emoji">🎤</div>
+        <h3>Reinsprechen</h3>
+        <div class="card-input">„Zahnarzt nächsten Donnerstag um zehn"</div>
+        <div class="card-arrow">↓</div>
+        <div class="card-result">📅 Do 17.04. — 10:00<br>Zahnarzt</div>
+    </div>
+    <div class="pitch-card">
+        <div class="card-emoji">📸</div>
+        <h3>Foto schicken</h3>
+        <div class="card-input">📋 Elternbrief mit 5 Terminen abfotografiert</div>
+        <div class="card-arrow">↓</div>
+        <div class="card-result">📅 5 Termine erkannt<br>Einzeln bestätigen oder alle auf einmal</div>
+    </div>
+    <div class="pitch-card">
+        <div class="card-emoji">📱</div>
+        <h3>Weiterleiten</h3>
+        <div class="card-input">WhatsApp: „Training ab sofort Dienstags 17:30 statt 17:00!"</div>
+        <div class="card-arrow">↓</div>
+        <div class="card-result">📅 Di 17:30 — Training<br>Serie automatisch erkannt</div>
+    </div>
+</section>
+
+<section class="pitch-how">
+    <h2>So funktioniert's</h2>
+    <div class="pitch-steps">
+        <div class="pitch-step">
+            <div class="step-num">1</div>
+            <h3>Schicken</h3>
+            <p>Text, Sprache, Foto oder PDF an den Telegram-Bot</p>
+        </div>
+        <div class="pitch-arrow">→</div>
+        <div class="pitch-step">
+            <div class="step-num">2</div>
+            <h3>Prüfen</h3>
+            <p>flomily zeigt dir den erkannten Termin zur Kontrolle</p>
+        </div>
+        <div class="pitch-arrow">→</div>
+        <div class="pitch-step">
+            <div class="step-num">3</div>
+            <h3>Fertig</h3>
+            <p>Normale Kalendereinladung per E-Mail — zusagen, fertig</p>
+        </div>
+    </div>
+</section>
+
+<div class="pitch-trust">
+    🔒 <strong>Kein Zugriff auf deinen Kalender.</strong> Keine App. Kein Abo. Nichts wird ohne deine Bestätigung eingetragen.
+</div>
+
+<section class="pitch-cta">
+    <a href="/#warteliste" class="cta-btn">Platz in der Beta sichern</a>
+    <span class="cta-sub">Kostenlos. Kein Spam. Sofort 100 Credits.</span>
+    <br>
+    <a href="/" class="more-link">Mehr erfahren auf flomily.de →</a>
+</section>
+
+<footer class="pitch-footer">
+    <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily
+</footer>
+
+</body>
+</html>
