@@ -32,98 +32,154 @@
             font-weight: 500;
         }
 
-        /* Header */
-        .pitch-header {
-            padding: 16px 24px;
+        /* Hero */
+        .pitch-hero {
+            background: linear-gradient(150deg, #2A9D8F 0%, #3DBBAD 40%, #5CC9BA 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 24px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pitch-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 80%;
+            height: 160%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .pitch-hero-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 0 auto 32px;
+            position: relative;
         }
-        .pitch-header img { height: 28px; }
-        .pitch-header a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-
-        /* Hero */
-        .pitch-hero {
-            text-align: center;
-            padding: 60px 24px 40px;
-            max-width: 750px;
-            margin: 0 auto;
-        }
+        .pitch-hero-bar img { height: 28px; filter: brightness(0) invert(1); }
+        .pitch-hero-bar a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .pitch-hero h1 {
-            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            position: relative;
         }
-        .pitch-hero h1 span { color: var(--primary); }
         .pitch-hero .subline {
-            font-size: 1.2rem;
-            color: var(--muted);
-            max-width: 550px;
-            margin: 0 auto 32px;
+            font-size: 1.15rem;
+            opacity: 0.92;
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .pitch-wave {
+            display: block;
+            margin-top: -1px;
+        }
+        .pitch-wave svg {
+            display: block;
+            width: 100%;
+            height: 50px;
         }
 
-        /* Examples */
+        /* Examples — compact horizontal */
         .pitch-examples {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 24px 48px;
+            padding: 40px 24px 32px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 700px) {
+            .pitch-examples { grid-template-columns: 1fr; gap: 12px; }
         }
         .pitch-card {
             background: white;
-            border-radius: 16px;
-            padding: 28px 24px;
-            box-shadow: 0 2px 16px rgba(45, 55, 72, 0.07);
-            transition: transform 0.2s;
+            border-radius: 14px;
+            padding: 20px 18px;
+            box-shadow: 0 2px 12px rgba(45, 55, 72, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
-        .pitch-card:hover { transform: translateY(-3px); }
-        .pitch-card .card-emoji { font-size: 2rem; margin-bottom: 12px; }
+        .pitch-card h3 {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pitch-card h3 span { font-size: 1.3rem; }
         .pitch-card .card-input {
             background: #f1f5f9;
-            border-radius: 10px;
-            padding: 12px 16px;
-            font-size: 0.95rem;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
             color: var(--slate);
-            margin-bottom: 12px;
             font-style: italic;
-        }
-        .pitch-card .card-arrow {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 8px;
         }
         .pitch-card .card-result {
             background: linear-gradient(135deg, #f0fdfa, #e8f6f4);
-            border-radius: 10px;
-            padding: 12px 16px;
-            font-size: 0.95rem;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
             font-weight: 600;
             color: var(--primary-dark);
         }
-        .pitch-card h3 {
-            font-size: 1rem;
-            margin-bottom: 12px;
-            color: var(--slate);
-        }
 
-        /* How */
-        .pitch-how {
+        /* Real example */
+        .pitch-real {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8px 24px 40px;
+        }
+        .pitch-real h2 {
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .pitch-real-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        @media (max-width: 600px) {
+            .pitch-real-grid { grid-template-columns: 1fr; }
+        }
+        .pitch-real-item {
             background: white;
-            padding: 48px 24px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(45, 55, 72, 0.06);
+        }
+        .pitch-real-item img {
+            width: 100%;
+            display: block;
+        }
+        .pitch-real-label {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--muted);
             text-align: center;
         }
-        .pitch-how h2 { font-size: 1.5rem; margin-bottom: 32px; }
+
+        /* How — inline */
+        .pitch-how {
+            background: white;
+            padding: 36px 24px;
+            text-align: center;
+        }
+        .pitch-how h2 { font-size: 1.3rem; margin-bottom: 24px; }
         .pitch-steps {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             flex-wrap: wrap;
             max-width: 700px;
             margin: 0 auto;
@@ -132,12 +188,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             flex: 1;
-            min-width: 140px;
+            min-width: 130px;
         }
         .pitch-step .step-num {
-            width: 40px; height: 40px;
+            width: 36px; height: 36px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -145,20 +201,20 @@
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
-        .pitch-step h3 { font-size: 0.95rem; }
-        .pitch-step p { font-size: 0.85rem; color: var(--muted); }
-        .pitch-arrow { font-size: 1.5rem; color: var(--primary); flex-shrink: 0; }
+        .pitch-step h3 { font-size: 0.9rem; }
+        .pitch-step p { font-size: 0.82rem; color: var(--muted); }
+        .pitch-arrow { font-size: 1.3rem; color: var(--primary); flex-shrink: 0; }
         @media (max-width: 500px) { .pitch-arrow { display: none; } }
 
-        /* Trust line */
+        /* Trust */
         .pitch-trust {
             text-align: center;
-            padding: 32px 24px;
+            padding: 24px 24px 16px;
             color: var(--muted);
-            font-size: 0.95rem;
-            max-width: 650px;
+            font-size: 0.9rem;
+            max-width: 600px;
             margin: 0 auto;
         }
         .pitch-trust strong { color: var(--slate); }
@@ -166,41 +222,59 @@
         /* CTA */
         .pitch-cta {
             text-align: center;
-            padding: 24px 24px 64px;
+            padding: 16px 24px 56px;
         }
-        .pitch-cta .cta-btn {
-            display: inline-block;
+        .pitch-cta-form {
+            display: flex;
+            gap: 10px;
+            max-width: 440px;
+            margin: 0 auto 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .pitch-cta-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .pitch-cta-form input:focus { border-color: var(--primary); }
+        .pitch-cta-form button {
+            padding: 14px 28px;
             background: var(--accent);
             color: white;
-            text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-size: 1.15rem;
-            font-weight: 700;
+            border: none;
+            border-radius: 10px;
             font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
             transition: background 0.2s, transform 0.2s;
             box-shadow: 0 4px 16px rgba(231, 111, 81, 0.25);
         }
-        .pitch-cta .cta-btn:hover { background: var(--accent); transform: translateY(-2px); }
+        .pitch-cta-form button:hover { transform: translateY(-2px); }
         .pitch-cta .cta-sub {
-            display: block;
-            margin-top: 12px;
             font-size: 0.85rem;
             color: var(--muted);
+            margin-bottom: 16px;
         }
         .pitch-cta .more-link {
-            display: inline-block;
-            margin-top: 20px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         .pitch-footer {
             text-align: center;
-            padding: 24px;
+            padding: 20px;
             font-size: 0.8rem;
             color: var(--muted);
             border-top: 1px solid #e8ecf0;
@@ -210,37 +284,49 @@
 </head>
 <body>
 
-<header class="pitch-header">
-    <a href="/"><img src="logo.svg" alt="flomily"></a>
-    <a href="/">Alle Features →</a>
-</header>
-
 <section class="pitch-hero">
-    <h1>Termine rein.<br><span>Ohne Tippen.</span></h1>
+    <div class="pitch-hero-bar">
+        <a href="/"><img src="logo.svg" alt="flomily"></a>
+        <a href="/">Alle Features →</a>
+    </div>
+    <h1>Termine rein.<br>Ohne Tippen.</h1>
     <p class="subline">Reinsprechen, Foto schicken oder Nachricht weiterleiten — der Termin ist im Kalender. In deinem. Outlook, Google, Apple, GMX.</p>
 </section>
+<div class="pitch-wave">
+    <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none">
+        <path d="M0 25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0V25Z" fill="var(--snow)"/>
+    </svg>
+</div>
 
 <section class="pitch-examples">
     <div class="pitch-card">
-        <div class="card-emoji">🎤</div>
-        <h3>Reinsprechen</h3>
+        <h3><span>🎤</span> Reinsprechen</h3>
         <div class="card-input">„Zahnarzt nächsten Donnerstag um zehn"</div>
-        <div class="card-arrow">↓</div>
-        <div class="card-result">📅 Do 17.04. — 10:00<br>Zahnarzt</div>
+        <div class="card-result">📅 Do 17.04. — 10:00 Zahnarzt</div>
     </div>
     <div class="pitch-card">
-        <div class="card-emoji">📸</div>
-        <h3>Foto schicken</h3>
-        <div class="card-input">📋 Elternbrief mit 5 Terminen abfotografiert</div>
-        <div class="card-arrow">↓</div>
-        <div class="card-result">📅 5 Termine erkannt<br>Einzeln bestätigen oder alle auf einmal</div>
+        <h3><span>📸</span> Foto schicken</h3>
+        <div class="card-input">Aushang mit 5 Terminen abfotografiert</div>
+        <div class="card-result">📅 5 Termine erkannt — alle auf einmal bestätigen</div>
     </div>
     <div class="pitch-card">
-        <div class="card-emoji">📱</div>
-        <h3>Weiterleiten</h3>
-        <div class="card-input">WhatsApp: „Training ab sofort Dienstags 17:30 statt 17:00!"</div>
-        <div class="card-arrow">↓</div>
-        <div class="card-result">📅 Di 17:30 — Training<br>Serie automatisch erkannt</div>
+        <h3><span>📱</span> Weiterleiten</h3>
+        <div class="card-input">„Training ab sofort Di 17:30 statt 17:00!"</div>
+        <div class="card-result">📅 Di 17:30 — Training (Serie erkannt)</div>
+    </div>
+</section>
+
+<section class="pitch-real">
+    <h2>Echtes Beispiel: Spielplan → Kalender</h2>
+    <div class="pitch-real-grid">
+        <div class="pitch-real-item">
+            <div class="pitch-real-label">📸 Screenshot geschickt</div>
+            <img src="img/spielplan-original.jpg" alt="Spielplan Screenshot" loading="lazy">
+        </div>
+        <div class="pitch-real-item">
+            <div class="pitch-real-label">✨ Von flomily erkannt</div>
+            <img src="img/spielplan-telegram.jpg" alt="flomily erkennt 4 Spiele" loading="lazy">
+        </div>
     </div>
 </section>
 
@@ -256,13 +342,13 @@
         <div class="pitch-step">
             <div class="step-num">2</div>
             <h3>Prüfen</h3>
-            <p>flomily zeigt dir den erkannten Termin zur Kontrolle</p>
+            <p>flomily zeigt den Termin zur Kontrolle</p>
         </div>
         <div class="pitch-arrow">→</div>
         <div class="pitch-step">
             <div class="step-num">3</div>
             <h3>Fertig</h3>
-            <p>Normale Kalendereinladung per E-Mail — zusagen, fertig</p>
+            <p>Kalendereinladung per E-Mail — zusagen, fertig</p>
         </div>
     </div>
 </section>
@@ -271,12 +357,30 @@
     🔒 <strong>Kein Zugriff auf deinen Kalender.</strong> Keine App. Kein Abo. Nichts wird ohne deine Bestätigung eingetragen.
 </div>
 
-<section class="pitch-cta">
-    <a href="/#warteliste" class="cta-btn">Platz in der Beta sichern</a>
-    <span class="cta-sub">Kostenlos. Kein Spam. Sofort 100 Credits.</span>
-    <br>
+<section class="pitch-cta" id="warteliste">
+    <form class="pitch-cta-form" id="pitch-form">
+        <input type="email" name="email" id="pitch-email" placeholder="Deine E-Mail-Adresse" required>
+        <button type="submit" id="pitch-btn">Platz sichern</button>
+    </form>
+    <p class="cta-sub">Kostenlos. Kein Spam. Sofort 100 Credits.</p>
     <a href="/" class="more-link">Mehr erfahren auf flomily.de →</a>
 </section>
+<script>
+document.getElementById('pitch-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('pitch-email').value;
+    var btn = document.getElementById('pitch-btn');
+    btn.textContent = 'Wird gesendet...';
+    btn.disabled = true;
+    sessionStorage.setItem('flomily_email', email);
+    fetch('https://formspree.io/f/xaqpkvpd', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({email: email, ref: ''})
+    }).then(function(){ location.href = '/danke.html'; })
+      .catch(function(){ location.href = '/danke.html'; });
+});
+</script>
 
 <footer class="pitch-footer">
     <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily
