@@ -399,7 +399,7 @@ document.getElementById('pitch-form').addEventListener('submit', function(e) {
     fetch('https://formspree.io/f/xaqpkvpd', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify({email: email, ref: ''})
+        body: JSON.stringify({email: email, ref: '', source: 'pitch'})
     }).then(function(){ location.href = '/danke.html'; })
       .catch(function(){ location.href = '/danke.html'; });
 });
