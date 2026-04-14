@@ -32,12 +32,36 @@
             font-weight: 500;
         }
 
+        /* Sticky Header */
+        .pitch-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            box-shadow: 0 1px 8px rgba(45, 55, 72, 0.06);
+            padding: 12px 24px;
+        }
+        .pitch-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .pitch-header img { height: 26px; }
+        .pitch-header a.header-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         /* Hero */
         .pitch-hero {
             background: linear-gradient(150deg, #2A9D8F 0%, #3DBBAD 40%, #5CC9BA 100%);
             color: white;
             text-align: center;
-            padding: 40px 24px 48px;
+            padding: 52px 24px 48px;
             position: relative;
             overflow: hidden;
         }
@@ -51,16 +75,6 @@
             background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 65%);
             pointer-events: none;
         }
-        .pitch-hero-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto 32px;
-            position: relative;
-        }
-        .pitch-hero-bar img { height: 28px; filter: brightness(0) invert(1); }
-        .pitch-hero-bar a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .pitch-hero h1 {
             font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 800;
@@ -75,143 +89,147 @@
             margin: 0 auto;
             position: relative;
         }
-        .pitch-wave {
-            display: block;
-            margin-top: -1px;
-        }
         .pitch-wave svg {
             display: block;
             width: 100%;
-            height: 50px;
+            height: 40px;
+            margin-top: -1px;
         }
 
-        /* Examples — compact horizontal */
+        /* Examples — compact */
         .pitch-examples {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 24px 32px;
+            padding: 36px 24px 28px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 14px;
         }
         @media (max-width: 700px) {
-            .pitch-examples { grid-template-columns: 1fr; gap: 12px; }
+            .pitch-examples { grid-template-columns: 1fr; gap: 10px; }
         }
         .pitch-card {
             background: white;
-            border-radius: 14px;
-            padding: 20px 18px;
-            box-shadow: 0 2px 12px rgba(45, 55, 72, 0.06);
+            border-radius: 12px;
+            padding: 16px 14px;
+            box-shadow: 0 2px 10px rgba(45, 55, 72, 0.06);
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
         .pitch-card h3 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
-        .pitch-card h3 span { font-size: 1.3rem; }
+        .pitch-card h3 span { font-size: 1.2rem; }
         .pitch-card .card-input {
             background: #f1f5f9;
             border-radius: 8px;
-            padding: 10px 12px;
-            font-size: 0.88rem;
+            padding: 8px 10px;
+            font-size: 0.84rem;
             color: var(--slate);
             font-style: italic;
         }
         .pitch-card .card-result {
             background: linear-gradient(135deg, #f0fdfa, #e8f6f4);
             border-radius: 8px;
-            padding: 10px 12px;
-            font-size: 0.88rem;
+            padding: 8px 10px;
+            font-size: 0.84rem;
             font-weight: 600;
             color: var(--primary-dark);
         }
 
-        /* Real example */
+        /* Flow line */
+        .pitch-flow {
+            text-align: center;
+            padding: 20px 24px 8px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pitch-flow p {
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        .pitch-flow strong { color: var(--slate); }
+        .pitch-flow .flow-steps {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(45, 55, 72, 0.06);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--slate);
+            margin-top: 8px;
+        }
+        .pitch-flow .flow-arrow { color: var(--primary); }
+
+        /* Real examples */
         .pitch-real {
             max-width: 900px;
             margin: 0 auto;
-            padding: 8px 24px 40px;
+            padding: 28px 24px 32px;
         }
         .pitch-real h2 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         .pitch-real-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            align-items: start;
         }
         @media (max-width: 600px) {
             .pitch-real-grid { grid-template-columns: 1fr; }
         }
-        .pitch-real-item {
+        .pitch-real-pair {
             background: white;
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 12px rgba(45, 55, 72, 0.06);
+            box-shadow: 0 2px 10px rgba(45, 55, 72, 0.06);
         }
-        .pitch-real-item img {
-            width: 100%;
-            display: block;
-        }
-        .pitch-real-label {
-            padding: 10px 16px;
-            font-size: 0.85rem;
+        .pitch-real-pair-label {
+            padding: 10px 14px;
+            font-size: 0.82rem;
             font-weight: 700;
             color: var(--muted);
             text-align: center;
+            border-bottom: 1px solid #f1f5f9;
         }
-
-        /* How — inline */
-        .pitch-how {
+        .pitch-real-pair-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: #f1f5f9;
+        }
+        .pitch-real-pair-images img {
+            width: 100%;
+            display: block;
             background: white;
-            padding: 36px 24px;
+        }
+        .pitch-real-pair-images .img-label {
+            font-size: 0.72rem;
             text-align: center;
+            padding: 4px;
+            color: var(--muted);
+            font-weight: 600;
+            background: white;
         }
-        .pitch-how h2 { font-size: 1.3rem; margin-bottom: 24px; }
-        .pitch-steps {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .pitch-step {
+        .pitch-real-pair-images .img-col {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            flex: 1;
-            min-width: 130px;
         }
-        .pitch-step .step-num {
-            width: 36px; height: 36px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1rem;
-        }
-        .pitch-step h3 { font-size: 0.9rem; }
-        .pitch-step p { font-size: 0.82rem; color: var(--muted); }
-        .pitch-arrow { font-size: 1.3rem; color: var(--primary); flex-shrink: 0; }
-        @media (max-width: 500px) { .pitch-arrow { display: none; } }
 
         /* Trust */
         .pitch-trust {
             text-align: center;
-            padding: 24px 24px 16px;
+            padding: 24px 24px 12px;
             color: var(--muted);
             font-size: 0.9rem;
             max-width: 600px;
@@ -222,20 +240,20 @@
         /* CTA */
         .pitch-cta {
             text-align: center;
-            padding: 16px 24px 56px;
+            padding: 12px 24px 52px;
         }
         .pitch-cta-form {
             display: flex;
             gap: 10px;
-            max-width: 440px;
-            margin: 0 auto 12px;
+            max-width: 420px;
+            margin: 0 auto 10px;
             flex-wrap: wrap;
             justify-content: center;
         }
         .pitch-cta-form input {
             flex: 1;
             min-width: 200px;
-            padding: 14px 18px;
+            padding: 13px 16px;
             border: 2px solid #e2e8f0;
             border-radius: 10px;
             font-family: inherit;
@@ -246,7 +264,7 @@
         }
         .pitch-cta-form input:focus { border-color: var(--primary); }
         .pitch-cta-form button {
-            padding: 14px 28px;
+            padding: 13px 24px;
             background: var(--accent);
             color: white;
             border: none;
@@ -255,14 +273,14 @@
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
+            transition: transform 0.2s;
             box-shadow: 0 4px 16px rgba(231, 111, 81, 0.25);
         }
         .pitch-cta-form button:hover { transform: translateY(-2px); }
         .pitch-cta .cta-sub {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--muted);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         .pitch-cta .more-link {
             color: var(--primary);
@@ -274,8 +292,8 @@
         /* Footer */
         .pitch-footer {
             text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
+            padding: 18px;
+            font-size: 0.78rem;
             color: var(--muted);
             border-top: 1px solid #e8ecf0;
         }
@@ -284,17 +302,20 @@
 </head>
 <body>
 
-<section class="pitch-hero">
-    <div class="pitch-hero-bar">
+<header class="pitch-header">
+    <div class="pitch-header-inner">
         <a href="/"><img src="logo.svg" alt="flomily"></a>
-        <a href="/">Alle Features →</a>
+        <a href="/" class="header-link">Mehr erfahren →</a>
     </div>
+</header>
+
+<section class="pitch-hero">
     <h1>Termine rein.<br>Ohne Tippen.</h1>
     <p class="subline">Reinsprechen, Foto schicken oder Nachricht weiterleiten — der Termin ist im Kalender. In deinem. Outlook, Google, Apple, GMX.</p>
 </section>
 <div class="pitch-wave">
-    <svg viewBox="0 0 1440 50" fill="none" preserveAspectRatio="none">
-        <path d="M0 25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0V25Z" fill="var(--snow)"/>
+    <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
+        <path d="M0 20C240 40 480 0 720 20C960 40 1200 0 1440 20V40H0V20Z" fill="var(--snow)"/>
     </svg>
 </div>
 
@@ -307,48 +328,50 @@
     <div class="pitch-card">
         <h3><span>📸</span> Foto schicken</h3>
         <div class="card-input">Aushang mit 5 Terminen abfotografiert</div>
-        <div class="card-result">📅 5 Termine erkannt — alle auf einmal bestätigen</div>
+        <div class="card-result">📅 5 Termine erkannt — alle auf einmal</div>
     </div>
     <div class="pitch-card">
         <h3><span>📱</span> Weiterleiten</h3>
         <div class="card-input">„Training ab sofort Di 17:30 statt 17:00!"</div>
-        <div class="card-result">📅 Di 17:30 — Training (Serie erkannt)</div>
+        <div class="card-result">📅 Di 17:30 Training (Serie erkannt)</div>
     </div>
 </section>
+
+<div class="pitch-flow">
+    <div class="flow-steps">
+        Schicken <span class="flow-arrow">→</span> Prüfen <span class="flow-arrow">→</span> Kalendereinladung <span class="flow-arrow">→</span> <strong>Fertig.</strong>
+    </div>
+    <p>Nichts landet ohne dein OK im Kalender.</p>
+</div>
 
 <section class="pitch-real">
-    <h2>Echtes Beispiel: Spielplan → Kalender</h2>
+    <h2>Echte Beispiele aus der App</h2>
     <div class="pitch-real-grid">
-        <div class="pitch-real-item">
-            <div class="pitch-real-label">📸 Screenshot geschickt</div>
-            <img src="img/spielplan-original.jpg" alt="Spielplan Screenshot" loading="lazy">
+        <div class="pitch-real-pair">
+            <div class="pitch-real-pair-label">⚽ Spielplan → 4 Termine</div>
+            <div class="pitch-real-pair-images">
+                <div class="img-col">
+                    <img src="img/spielplan-original.jpg" alt="Spielplan Screenshot" loading="lazy">
+                    <div class="img-label">📸 Screenshot</div>
+                </div>
+                <div class="img-col">
+                    <img src="img/spielplan-telegram.jpg" alt="flomily erkennt 4 Spiele" loading="lazy">
+                    <div class="img-label">✨ Erkannt</div>
+                </div>
+            </div>
         </div>
-        <div class="pitch-real-item">
-            <div class="pitch-real-label">✨ Von flomily erkannt</div>
-            <img src="img/spielplan-telegram.jpg" alt="flomily erkennt 4 Spiele" loading="lazy">
-        </div>
-    </div>
-</section>
-
-<section class="pitch-how">
-    <h2>So funktioniert's</h2>
-    <div class="pitch-steps">
-        <div class="pitch-step">
-            <div class="step-num">1</div>
-            <h3>Schicken</h3>
-            <p>Text, Sprache, Foto oder PDF an den Telegram-Bot</p>
-        </div>
-        <div class="pitch-arrow">→</div>
-        <div class="pitch-step">
-            <div class="step-num">2</div>
-            <h3>Prüfen</h3>
-            <p>flomily zeigt den Termin zur Kontrolle</p>
-        </div>
-        <div class="pitch-arrow">→</div>
-        <div class="pitch-step">
-            <div class="step-num">3</div>
-            <h3>Fertig</h3>
-            <p>Kalendereinladung per E-Mail — zusagen, fertig</p>
+        <div class="pitch-real-pair">
+            <div class="pitch-real-pair-label">📋 Veranstaltungsplan → 36 Termine</div>
+            <div class="pitch-real-pair-images">
+                <div class="img-col">
+                    <img src="img/veranstaltungstabelle-original.jpg" alt="Veranstaltungsplan" loading="lazy">
+                    <div class="img-label">📸 Foto</div>
+                </div>
+                <div class="img-col">
+                    <img src="img/veranstaltungstabelle-telegram.jpg" alt="36 Termine erkannt" loading="lazy">
+                    <div class="img-label">✨ Erkannt</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
