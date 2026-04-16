@@ -382,6 +382,10 @@
 
 <section class="pitch-cta" id="warteliste">
     <form class="pitch-cta-form" id="pitch-form">
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <input type="text" name="vorname" id="pitch-vorname" placeholder="Vorname" required style="flex:1;">
+            <input type="text" name="nachname" id="pitch-nachname" placeholder="Nachname" required style="flex:1;">
+        </div>
         <input type="email" name="email" id="pitch-email" placeholder="Deine E-Mail-Adresse" required>
         <button type="submit" id="pitch-btn">Platz sichern</button>
     </form>
@@ -391,15 +395,18 @@
 <script>
 document.getElementById('pitch-form').addEventListener('submit', function(e) {
     e.preventDefault();
+    var vorname = document.getElementById('pitch-vorname').value;
+    var nachname = document.getElementById('pitch-nachname').value;
     var email = document.getElementById('pitch-email').value;
     var btn = document.getElementById('pitch-btn');
     btn.textContent = 'Wird gesendet...';
     btn.disabled = true;
     sessionStorage.setItem('flomily_email', email);
+    sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
     fetch('https://formspree.io/f/xaqpkvpd', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify({email: email, ref: '', source: 'pitch'})
+        body: JSON.stringify({email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'pitch'})
     }).then(function(){ location.href = '/danke.html'; })
       .catch(function(){ location.href = '/danke.html'; });
 });

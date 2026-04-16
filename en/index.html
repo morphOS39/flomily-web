@@ -650,6 +650,10 @@ document.getElementById('burger').addEventListener('click',function(){document.g
         <p class="waitlist-sub">Sign up and be the first to get project updates — and access to the beta when it's ready.</p>
         <div class="fomo-badge">🎁 The first 100 flo'ers start with 100 credits — use flomily exclusively before it's available to everyone.</div>
         <form class="waitlist-form" id="waitlist-form">
+            <div style="display:flex;gap:8px;margin-bottom:8px;">
+                <input type="text" name="vorname" id="waitlist-vorname" placeholder="First name" required style="flex:1;">
+                <input type="text" name="nachname" id="waitlist-nachname" placeholder="Last name" required style="flex:1;">
+            </div>
             <input type="email" name="email" id="waitlist-email" placeholder="Your email address" required>
             <button type="submit" class="cta-button" id="waitlist-btn">Secure your spot</button>
         </form>
@@ -658,16 +662,19 @@ document.getElementById('burger').addEventListener('click',function(){document.g
             var ref = new URLSearchParams(location.search).get('ref');
             document.getElementById('waitlist-form').addEventListener('submit', function(e){
                 e.preventDefault();
+                var vorname = document.getElementById('waitlist-vorname').value;
+                var nachname = document.getElementById('waitlist-nachname').value;
                 var email = document.getElementById('waitlist-email').value;
                 var btn = document.getElementById('waitlist-btn');
                 btn.textContent = 'Sending...';
                 btn.disabled = true;
                 sessionStorage.setItem('flomily_email', email);
+                sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
                 if(ref) sessionStorage.setItem('flomily_ref', ref);
                 fetch('https://formspree.io/f/xaqpkvpd', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                    body: JSON.stringify({email: email, ref: ref || ''})
+                    body: JSON.stringify({email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: ref || ''})
                 }).then(function(){ location.href = '/danke.html'; })
                   .catch(function(){ location.href = '/danke.html'; });
             });
