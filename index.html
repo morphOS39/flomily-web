@@ -158,6 +158,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                     <span class="proof-author">— Beta-Tester</span>
                 </div>
             </div>
+            <div class="beta-quotes-dots" id="beta-dots"></div>
         </div>
     </div>
 </section>
@@ -866,6 +867,13 @@ startAutoplay();
 // Beta quotes carousel
 var betaCurrent = 0;
 var betaCards = document.querySelectorAll('.beta-quote-card');
+var betaDotsContainer = document.getElementById('beta-dots');
+betaCards.forEach(function(_, i) {
+    var dot = document.createElement('span');
+    dot.className = 'beta-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', function() { setBetaSlide(i); });
+    betaDotsContainer.appendChild(dot);
+});
 var betaDots = document.querySelectorAll('.beta-dot');
 
 function setBetaSlide(i) {
