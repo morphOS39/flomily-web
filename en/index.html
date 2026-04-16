@@ -889,6 +889,9 @@ if (betaCards.length > 1) {
     }, 5000);
 
     var bqTrack = document.querySelector('.beta-quotes-track');
+    bqTrack.addEventListener('click', function() {
+        setBetaSlide((betaCurrent + 1) % betaCards.length);
+    });
     var bqStartX = 0;
     bqTrack.addEventListener('touchstart', function(e) { bqStartX = e.changedTouches[0].screenX; }, {passive: true});
     bqTrack.addEventListener('touchend', function(e) {
