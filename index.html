@@ -392,6 +392,15 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                     <p class="showcase-disclaimer">*Beispiel eines öffentlichen Veranstaltungsplans. Kein Bezug zu flomily — einfach ein zufälliger Fund, der zeigt, was möglich ist.</p>
                 </div>
 
+                <!-- Slide 3: Schaukasten -->
+                <div class="showcase-slide" id="showcase-slide-2">
+                    <h3>🚶 Schaukasten im Vorbeigehen — 3 Termine</h3>
+                    <p class="showcase-sub">Am Dorfplatz vorbeigelaufen, Aushang gesehen — Foto an flomily und alle Termine sind im Kalender. Kein Abtippen, kein Vergessen.</p>
+                    <div style="text-align: center;">
+                        <img src="img/schaukasten-example.jpg" alt="Schaukasten abfotografiert — 3 Termine erkannt" loading="lazy" style="max-width: 400px; width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+                    </div>
+                </div>
+
             </div>
 
             <button class="showcase-nav showcase-prev" onclick="goShowcase(-1)">&lsaquo;</button>
@@ -400,6 +409,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
             <div class="showcase-dots">
                 <button class="showcase-dot active" onclick="setShowcase(0)"></button>
                 <button class="showcase-dot" onclick="setShowcase(1)"></button>
+                <button class="showcase-dot" onclick="setShowcase(2)"></button>
             </div>
         </div>
         <a href="#warteliste" class="cta-button cta-secondary">Das will ich auch!</a>
@@ -906,7 +916,7 @@ if (betaCards.length > 1) {
 
 // Showcase carousel
 var scCurrent = 0;
-var scTotal = 2;
+var scTotal = 3;
 var scAutoTimer = null;
 
 function setShowcase(n) {

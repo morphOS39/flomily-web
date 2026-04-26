@@ -392,6 +392,15 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                     <p class="showcase-disclaimer">*Example of a public event schedule. No affiliation with flomily — just a random find showing what's possible.</p>
                 </div>
 
+                <!-- Slide 3: Notice board -->
+                <div class="showcase-slide" id="showcase-slide-2">
+                    <h3>🚶 Notice board in passing — 3 events</h3>
+                    <p class="showcase-sub">Walked past a community notice board, snapped a photo — flomily recognized all events. No typing, no forgetting.</p>
+                    <div style="text-align: center;">
+                        <img src="../img/schaukasten-example.jpg" alt="Notice board photographed — 3 events recognized" loading="lazy" style="max-width: 400px; width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+                    </div>
+                </div>
+
             </div>
 
             <button class="showcase-nav showcase-prev" onclick="goShowcase(-1)">&lsaquo;</button>
@@ -400,6 +409,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
             <div class="showcase-dots">
                 <button class="showcase-dot active" onclick="setShowcase(0)"></button>
                 <button class="showcase-dot" onclick="setShowcase(1)"></button>
+                <button class="showcase-dot" onclick="setShowcase(2)"></button>
             </div>
         </div>
         <a href="#warteliste" class="cta-button cta-secondary">I want that too!</a>
@@ -904,7 +914,7 @@ if (betaCards.length > 1) {
 }
 
 var scCurrent = 0;
-var scTotal = 2;
+var scTotal = 3;
 var scAutoTimer = null;
 
 function setShowcase(n) {
