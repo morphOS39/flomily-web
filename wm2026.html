@@ -17,163 +17,82 @@
     <link rel="icon" type="image/svg+xml" href="icon.svg">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
-        :root {
-            --primary: #2A9D8F;
-            --primary-dark: #238B7E;
-            --accent: #E76F51;
-            --slate: #2D3748;
-            --muted: #718096;
-            --snow: #FAFCFB;
-        }
+        :root { --primary: #2A9D8F; --primary-dark: #238B7E; --accent: #E76F51; --slate: #2D3748; --muted: #718096; --snow: #FAFCFB; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Quicksand', system-ui, sans-serif;
-            color: var(--slate);
-            background: var(--snow);
-            line-height: 1.65;
-            font-weight: 500;
-        }
-        .header {
-            position: sticky; top: 0; z-index: 100;
-            background: white;
-            box-shadow: 0 1px 8px rgba(45, 55, 72, 0.06);
-            padding: 12px 24px;
-        }
-        .header-inner {
-            display: flex; justify-content: space-between; align-items: center;
-            max-width: 900px; margin: 0 auto;
-        }
+        body { font-family: 'Quicksand', system-ui, sans-serif; color: var(--slate); background: var(--snow); line-height: 1.65; font-weight: 500; }
+        .header { position: sticky; top: 0; z-index: 100; background: white; box-shadow: 0 1px 8px rgba(45,55,72,0.06); padding: 12px 24px; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; }
         .header img { height: 26px; }
         .header a.link { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-
-        .hero {
-            background: linear-gradient(150deg, #1a6b3c 0%, #2A9D8F 40%, #3DBBAD 100%);
-            color: white; text-align: center;
-            padding: 32px 24px 28px;
-        }
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            font-weight: 800; line-height: 1.15; margin-bottom: 10px;
-        }
-        .hero .subline {
-            font-size: 1.15rem; opacity: 0.92;
-            max-width: 560px; margin: 0 auto;
-        }
-
+        .hero { background: linear-gradient(150deg, #1a6b3c 0%, #2A9D8F 40%, #3DBBAD 100%); color: white; text-align: center; padding: 36px 24px 30px; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+        .hero .subline { font-size: 1.1rem; opacity: 0.92; max-width: 580px; margin: 0 auto; }
+        .hero .cta-top { display: inline-block; margin-top: 18px; background: var(--accent); color: white; padding: 13px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 16px rgba(231,111,81,0.3); }
+        .hero .cta-top:hover { transform: translateY(-2px); }
         .wave svg { display: block; width: 100%; height: 40px; margin-top: -1px; }
+        .sec { max-width: 720px; margin: 0 auto; padding: 24px 24px 0; }
+        .sec h2 { font-size: 1.2rem; margin-bottom: 12px; }
+        .sec-center { text-align: center; }
 
-        .content { max-width: 700px; margin: 0 auto; padding: 20px 24px; }
+        /* Options */
+        .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+        .opt { background: white; border-radius: 12px; padding: 16px 14px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); text-align: center; }
+        .opt-emoji { font-size: 1.8rem; margin-bottom: 6px; }
+        .opt h3 { font-size: 0.92rem; margin-bottom: 4px; }
+        .opt p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+        @media (max-width: 600px) { .options { grid-template-columns: 1fr; } }
 
-        .options {
-            display: grid; grid-template-columns: 1fr; gap: 14px;
-            margin: 16px 0;
-        }
-        .option {
-            background: white; border-radius: 12px; padding: 14px;
-            box-shadow: 0 2px 10px rgba(45, 55, 72, 0.06);
-            display: flex; align-items: center; gap: 14px;
-        }
-        .option-emoji { font-size: 2rem; }
-        .option h3 { font-size: 1rem; margin-bottom: 4px; }
-        .option p { font-size: 0.88rem; color: var(--muted); margin: 0; }
-
-        .matches {
-            margin: 20px 0;
-        }
-        .matches h2 {
-            font-size: 1.1rem; margin-bottom: 10px; text-align: center;
-        }
-        .match-group { margin-bottom: 16px; }
-        .match-group h3 {
-            font-size: 0.9rem; color: var(--primary); font-weight: 700;
-            margin-bottom: 8px; padding-bottom: 4px;
-            border-bottom: 2px solid #e8f6f4;
-        }
-        .match {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 8px 0; border-bottom: 1px solid #f1f5f9;
-            font-size: 0.9rem;
-        }
+        /* Matches */
+        .match { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.88rem; }
         .match-teams { font-weight: 600; }
-        .match-meta { color: var(--muted); font-size: 0.82rem; text-align: right; }
+        .match-meta { color: var(--muted); font-size: 0.8rem; text-align: right; }
+        .match-group { margin-bottom: 14px; }
+        .match-group h3 { font-size: 0.88rem; color: var(--primary); font-weight: 700; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2px solid #e8f6f4; }
 
-        .how {
-            background: white; border-radius: 16px; padding: 20px;
-            box-shadow: 0 2px 10px rgba(45, 55, 72, 0.06);
-            margin: 20px 0; text-align: center;
-        }
-        .how h2 { font-size: 1.2rem; margin-bottom: 16px; }
-        .how-steps {
-            display: flex; justify-content: center; align-items: center;
-            gap: 12px; flex-wrap: wrap; font-size: 1rem; font-weight: 600;
-            margin: 16px 0;
-        }
-        .how-arrow { color: var(--primary); }
-        .how-keyword {
-            background: #f0faf8; border: 2px solid var(--primary);
-            border-radius: 10px; padding: 10px 20px;
-            font-size: 1.3rem; font-weight: 700; color: var(--primary);
-        }
+        /* Steps */
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .step { background: white; border-radius: 12px; padding: 16px 12px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); text-align: center; position: relative; }
+        .step-num { display: inline-block; background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; font-weight: 800; font-size: 0.85rem; line-height: 28px; margin-bottom: 8px; }
+        .step h3 { font-size: 0.88rem; margin-bottom: 4px; }
+        .step p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+        .step-time { font-size: 0.75rem; color: var(--primary); font-weight: 700; margin-top: 6px; }
+        @media (max-width: 600px) { .steps { grid-template-columns: repeat(2, 1fr); } }
 
-        .calendars {
-            text-align: center; padding: 4px 0 12px;
-            color: var(--muted); font-size: 0.9rem;
-        }
+        /* Honest box */
+        .honest { background: white; border-radius: 14px; padding: 20px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); margin: 20px 0; }
+        .honest h2 { font-size: 1.1rem; margin-bottom: 10px; }
+        .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .honest-col h3 { font-size: 0.92rem; margin-bottom: 8px; }
+        .honest-col ul { list-style: none; font-size: 0.88rem; }
+        .honest-col ul li { padding: 3px 0; }
+        @media (max-width: 500px) { .honest-grid { grid-template-columns: 1fr; } }
 
-        .cta {
-            text-align: center; padding: 12px 24px 36px;
-        }
-        .cta h2 { font-size: 1.2rem; margin-bottom: 16px; }
-        .cta-form {
-            display: flex; gap: 10px; max-width: 420px;
-            margin: 0 auto 10px; flex-wrap: wrap; justify-content: center;
-        }
-        .cta-form input {
-            flex: 1; min-width: 200px; padding: 13px 16px;
-            border: 2px solid #e2e8f0; border-radius: 10px;
-            font-family: inherit; font-size: 1rem; font-weight: 500; outline: none;
-        }
-        .cta-form input:focus { border-color: var(--primary); }
-        .cta-form button {
-            padding: 13px 24px; background: var(--accent); color: white;
-            border: none; border-radius: 10px;
-            font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer;
-            box-shadow: 0 4px 16px rgba(231, 111, 81, 0.25);
-        }
-        .cta-form button:hover { transform: translateY(-2px); }
-        .cta-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+        /* USPs */
+        .usps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+        .usp { display: flex; align-items: flex-start; gap: 10px; background: white; border-radius: 12px; padding: 14px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); }
+        .usp-emoji { font-size: 1.4rem; flex-shrink: 0; }
+        .usp h3 { font-size: 0.88rem; margin-bottom: 2px; }
+        .usp p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+        @media (max-width: 500px) { .usps { grid-template-columns: 1fr; } }
 
-        .footer {
-            text-align: center; padding: 18px;
-            font-size: 0.78rem; color: var(--muted);
-            border-top: 1px solid #e8ecf0;
-        }
+        /* Quote */
+        .quote { text-align: center; padding: 16px 20px; font-style: italic; color: var(--slate); font-size: 1.05rem; line-height: 1.6; }
+        .quote-author { font-style: normal; font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
+
+        /* Calendars */
+        .calendars { text-align: center; padding: 4px 0 8px; color: var(--muted); font-size: 0.88rem; }
+
+        /* CTA */
+        .cta { text-align: center; padding: 16px 24px 36px; }
+        .cta h2 { font-size: 1.2rem; margin-bottom: 6px; }
+        .cta-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
+        .footer { text-align: center; padding: 18px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid #e8ecf0; }
         .footer a { color: var(--muted); }
-
-        @media (max-width: 600px) {
-            .how-steps { flex-direction: column; }
-        }
     </style>
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "WM 2026 Spielplan im Kalender",
-        "description": "Alle 104 WM-Spiele oder nur Deutschland mit einem Klick in deinen Kalender importieren.",
-        "url": "https://flomily.de/wm2026",
-        "mainEntity": {
-            "@type": "SportsEvent",
-            "name": "FIFA Fußball-Weltmeisterschaft 2026",
-            "startDate": "2026-06-11",
-            "endDate": "2026-07-19",
-            "location": {
-                "@type": "Place",
-                "name": "USA, Mexiko, Kanada"
-            }
-        }
-    }
+    {"@context":"https://schema.org","@type":"WebPage","name":"WM 2026 Spielplan im Kalender","description":"Alle 104 WM-Spiele oder nur Deutschland mit einem Klick in deinen Kalender importieren.","url":"https://flomily.de/wm2026","mainEntity":{"@type":"SportsEvent","name":"FIFA Fußball-Weltmeisterschaft 2026","startDate":"2026-06-11","endDate":"2026-07-19","location":{"@type":"Place","name":"USA, Mexiko, Kanada"}}}
     </script>
 </head>
 <body>
@@ -185,9 +104,11 @@
     </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-    <h1>⚽ WM 2026 Spielplan<br>in deinen Kalender</h1>
-    <p class="subline">Alle 104 Spiele oder nur Deutschland — ein Klick und sie sind im Kalender. Outlook, Google, Apple, GMX.</p>
+    <h1>⚽ WM 2026<br>Alle Spiele in deinen Kalender</h1>
+    <p class="subline">Deutschland-Spiele, K.O.-Runde oder alle 104 Spiele — in 2 Minuten eingerichtet, danach ein Klick. Outlook, Google, Apple, GMX.</p>
+    <a href="#warteliste" class="cta-top">Kostenlos starten</a>
 </section>
 <div class="wave">
     <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
@@ -195,87 +116,179 @@
     </svg>
 </div>
 
-<div class="content">
-
+<!-- WAS DU BEKOMMST -->
+<div class="sec">
+    <h2 class="sec-center">Was du bekommst</h2>
     <div class="options">
-        <div class="option">
-            <div class="option-emoji">🌍</div>
-            <div>
-                <h3>Alle 104 Spiele</h3>
-                <p>Jedes Gruppenspiel, jedes K.O.-Spiel, das Finale. Für die, die nichts verpassen wollen.</p>
-            </div>
+        <div class="opt">
+            <div class="opt-emoji">🌍</div>
+            <h3>Alle 104 Spiele</h3>
+            <p>Jede Gruppe, jedes K.O.-Spiel, das Finale.</p>
         </div>
-        <div class="option">
-            <div class="option-emoji">🇩🇪</div>
-            <div>
-                <h3>Deutschland komplett</h3>
-                <p>3 Gruppenspiele + möglicher K.O.-Weg bis zum Finale. 8 Termine, ein Klick.</p>
-            </div>
+        <div class="opt">
+            <div class="opt-emoji">🇩🇪</div>
+            <h3>Deutschland komplett</h3>
+            <p>Gruppenspiele + K.O.-Weg bis zum Finale.</p>
         </div>
-        <div class="option">
-            <div class="option-emoji">⚽</div>
-            <div>
-                <h3>Nur Gruppenspiele</h3>
-                <p>Die 3 sicheren Deutschland-Termine. Erstmal schauen, wie's läuft.</p>
-            </div>
+        <div class="opt">
+            <div class="opt-emoji">⚽</div>
+            <h3>Nur Gruppenspiele</h3>
+            <p>Die 3 sicheren Termine.</p>
         </div>
     </div>
+    <p style="text-align:center;font-size:0.88rem;color:var(--muted);">Jeder Termin mit Datum, Anstoßzeit (MESZ), Stadion und Gegner.</p>
+</div>
 
-    <div class="matches">
-        <h2>🇩🇪 Deutschlands Gruppe E</h2>
-        <div class="match-group">
-            <div class="match">
-                <div class="match-teams">🇩🇪 Deutschland vs 🇨🇼 Curaçao</div>
-                <div class="match-meta">14. Juni, 19:00 MESZ<br>NRG Stadium, Houston</div>
-            </div>
-            <div class="match">
-                <div class="match-teams">🇩🇪 Deutschland vs 🇨🇮 Elfenbeinküste</div>
-                <div class="match-meta">20. Juni, 22:00 MESZ<br>BMO Field, Toronto</div>
-            </div>
-            <div class="match">
-                <div class="match-teams">🇪🇨 Ecuador vs 🇩🇪 Deutschland</div>
-                <div class="match-meta">25. Juni, 22:00 MESZ<br>MetLife Stadium, New York</div>
-            </div>
+<!-- DEUTSCHLANDS GRUPPE -->
+<div class="sec">
+    <h2 class="sec-center">🇩🇪 Deutschlands Gruppe E</h2>
+    <div class="match-group">
+        <div class="match">
+            <div class="match-teams">🇩🇪 Deutschland vs 🇨🇼 Curaçao</div>
+            <div class="match-meta">14. Juni, 19:00 MESZ<br>NRG Stadium, Houston</div>
         </div>
-
-        <h2>Möglicher K.O.-Weg</h2>
-        <div class="match-group">
-            <div class="match">
-                <div class="match-teams">🏆 Achtelfinale</div>
-                <div class="match-meta">29. Juni, 22:30 MESZ · Boston</div>
-            </div>
-            <div class="match">
-                <div class="match-teams">🏆 Viertelfinale</div>
-                <div class="match-meta">4. Juli, 23:00 MESZ · Philadelphia</div>
-            </div>
-            <div class="match">
-                <div class="match-teams">🏆 Halbfinale</div>
-                <div class="match-meta">14. Juli, 21:00 MESZ · Dallas</div>
-            </div>
-            <div class="match">
-                <div class="match-teams">🏆 Finale</div>
-                <div class="match-meta">19. Juli, 21:00 MESZ · New York</div>
-            </div>
+        <div class="match">
+            <div class="match-teams">🇩🇪 Deutschland vs 🇨🇮 Elfenbeinküste</div>
+            <div class="match-meta">20. Juni, 22:00 MESZ<br>BMO Field, Toronto</div>
+        </div>
+        <div class="match">
+            <div class="match-teams">🇪🇨 Ecuador vs 🇩🇪 Deutschland</div>
+            <div class="match-meta">25. Juni, 22:00 MESZ<br>MetLife Stadium, New York</div>
         </div>
     </div>
-
-    <div class="how">
-        <h2>So geht's</h2>
-        <div class="how-steps">
-            flomily öffnen <span class="how-arrow">→</span>
-            <div class="how-keyword">WM 2026</div>
-            <span class="how-arrow">→</span> fertig
-        </div>
-        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">Spiele wählen, bestätigen — alle Termine landen in deinem Kalender.<br>Mit Datum, Uhrzeit (MESZ), Stadion und Gegner.</p>
-    </div>
-
-    <div class="calendars">
-        📅 Funktioniert mit Google Calendar, Outlook, Apple Kalender, GMX, Thunderbird und jedem anderen Kalender.
+    <div class="match-group">
+        <h3>Möglicher K.O.-Weg</h3>
+        <div class="match"><div class="match-teams">🏆 Achtelfinale</div><div class="match-meta">29. Juni · Boston</div></div>
+        <div class="match"><div class="match-teams">🏆 Viertelfinale</div><div class="match-meta">4. Juli · Philadelphia</div></div>
+        <div class="match"><div class="match-teams">🏆 Halbfinale</div><div class="match-meta">14. Juli · Dallas</div></div>
+        <div class="match"><div class="match-teams">🏆 Finale</div><div class="match-meta">19. Juli · New York</div></div>
     </div>
 </div>
 
+<!-- SO GEHT'S — EHRLICHE 4 SCHRITTE -->
+<div class="sec">
+    <h2 class="sec-center">So geht's — in 4 Schritten</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <h3>Anmelden</h3>
+            <p>E-Mail eingeben, Zugang erhalten.</p>
+            <div class="step-time">30 Sekunden</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <h3>Telegram öffnen</h3>
+            <p>flomily-Bot starten, Code eingeben.</p>
+            <div class="step-time">1 Minute</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <h3>„WM 2026" tippen</h3>
+            <p>Spiele wählen: alle, Deutschland oder Gruppe.</p>
+            <div class="step-time">10 Sekunden</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <h3>Fertig</h3>
+            <p>Alle Spiele sind in deinem Kalender.</p>
+            <div class="step-time">✅</div>
+        </div>
+    </div>
+</div>
+
+<!-- EHRLICHKEITS-BLOCK -->
+<div class="sec">
+    <div class="honest">
+        <h2>Ehrliche Ansage: Beim ersten Mal dauert's 2 Minuten.</h2>
+        <div class="honest-grid">
+            <div class="honest-col">
+                <h3 style="color:var(--muted);">⏱️ Einmalig</h3>
+                <ul>
+                    <li>✉️ E-Mail bestätigen</li>
+                    <li>📱 Telegram-Bot starten</li>
+                    <li>🔑 Code eingeben</li>
+                </ul>
+            </div>
+            <div class="honest-col">
+                <h3 style="color:var(--primary);">🚀 Ab dann — für immer</h3>
+                <ul>
+                    <li>⚽ „WM 2026" → alle Spiele im Kalender</li>
+                    <li>🎤 Termin einsprechen → im Kalender</li>
+                    <li>📸 Foto vom Aushang → im Kalender</li>
+                    <li>📱 WhatsApp weiterleiten → im Kalender</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:14px;color:var(--primary);font-weight:700;font-size:0.95rem;">Die WM ist der Anfang. Danach wird flomily dein schnellster Weg in den Kalender.</p>
+    </div>
+</div>
+
+<!-- WAS FLOMILY NOCH KANN -->
+<div class="sec">
+    <h2 class="sec-center">Die WM ist nur der Anfang</h2>
+    <div class="usps">
+        <div class="usp">
+            <div class="usp-emoji">🎤</div>
+            <div>
+                <h3>Reinsprechen</h3>
+                <p>„Zahnarzt Donnerstag zehn Uhr" — Sprachnachricht reicht.</p>
+            </div>
+        </div>
+        <div class="usp">
+            <div class="usp-emoji">📸</div>
+            <div>
+                <h3>Foto schicken</h3>
+                <p>Elternbrief, Aushang, Flyer — alle Termine auf einmal.</p>
+            </div>
+        </div>
+        <div class="usp">
+            <div class="usp-emoji">📱</div>
+            <div>
+                <h3>Weiterleiten</h3>
+                <p>WhatsApp-Nachricht mit Termin? Einmal tippen.</p>
+            </div>
+        </div>
+        <div class="usp">
+            <div class="usp-emoji">✏️</div>
+            <div>
+                <h3>Eintippen</h3>
+                <p>„Grillen Samstag 18 Uhr bei Max" — das reicht.</p>
+            </div>
+        </div>
+        <div class="usp">
+            <div class="usp-emoji">📋</div>
+            <div>
+                <h3>Spielpläne</h3>
+                <p>Screenshot → alle Spiele im Kalender. Verein, Liga, egal.</p>
+            </div>
+        </div>
+        <div class="usp">
+            <div class="usp-emoji">🔒</div>
+            <div>
+                <h3>Dein Kalender bleibt deiner</h3>
+                <p>Kein Zugriff auf deinen Kalender. Normale ICS-Einladung per Mail.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="sec">
+    <div class="quote">
+        „Ein klasse Produkt für Personen, die sozial sehr aktiv sind und viele Termine koordinieren."
+        <div class="quote-author">— Beta-Tester</div>
+    </div>
+</div>
+
+<!-- KALENDER-KOMPATIBILITÄT -->
+<div class="calendars">
+    📅 Funktioniert mit Google Calendar, Outlook, Apple Kalender, GMX, Thunderbird und jedem anderen Kalender.
+</div>
+
+<!-- CTA -->
 <section class="cta" id="warteliste">
-    <h2>Jetzt Zugang sichern</h2>
+    <h2>Jetzt kostenlos starten</h2>
+    <p class="cta-sub">Einmal anmelden — WM-Spiele und alle zukünftigen Termine in Sekunden im Kalender.</p>
     <form id="wm-form" style="max-width: 420px; margin: 0 auto 10px;">
         <div style="display:flex;gap:8px;margin-bottom:8px;">
             <input type="text" name="vorname" id="wm-vorname" placeholder="Vorname" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
@@ -286,8 +299,8 @@
             <button type="submit" id="wm-btn" style="padding:12px 20px;background:#E76F51;color:white;border:none;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;">Anmelden</button>
         </div>
     </form>
-    <p class="cta-sub">Kostenlos. Kein Spam. Sofort 100 Credits. Zugang innerhalb von 24h.</p>
-    <a href="/pitch" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem;">Was kann flomily noch? →</a>
+    <p class="cta-sub">Kostenlos. Kein Abo. Kein Spam. Zugang innerhalb von 24h.</p>
+    <a href="/pitch" style="color:var(--primary);text-decoration:none;font-weight:600;font-size:0.9rem;">Mehr über flomily →</a>
 </section>
 
 <script>
