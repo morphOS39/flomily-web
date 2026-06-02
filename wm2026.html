@@ -343,7 +343,7 @@ document.getElementById('wm-form').addEventListener('submit', function(e) {
     btn.disabled = true;
     sessionStorage.setItem('flomily_email', email);
     sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
-    fetch('https://formspree.io/f/xaqpkvpd', {
+    fetch('https://mail.flomily.de/api/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         body: JSON.stringify({email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'wm2026'})

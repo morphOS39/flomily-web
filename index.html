@@ -732,7 +732,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 sessionStorage.setItem('flomily_email', email);
                 sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
                 if(ref) sessionStorage.setItem('flomily_ref', ref);
-                fetch('https://formspree.io/f/xaqpkvpd', {
+                fetch('https://mail.flomily.de/api/signup', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
                     body: JSON.stringify({email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: ref || ''})
@@ -838,7 +838,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
     <div class="container">
         <h2>Was würdest du dir wünschen?</h2>
         <p class="feedback-sub">flomily entsteht gerade — und deine Meinung baut mit. Sag uns, was dir bei Terminen am meisten helfen würde.</p>
-        <form class="feedback-form" action="https://formspree.io/f/xaqpkvpd" method="POST">
+        <form class="feedback-form" action="https://mail.flomily.de/api/signup" method="POST">
             <input type="hidden" name="_type" value="feedback">
             <input type="hidden" name="_next" value="https://flomily.de/danke.html">
             <div class="feedback-field">
