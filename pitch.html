@@ -469,6 +469,7 @@
             <input type="text" name="vorname" id="pitch-vorname" placeholder="Vorname" required style="flex:1;">
             <input type="text" name="nachname" id="pitch-nachname" placeholder="Nachname" required style="flex:1;">
         </div>
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
         <input type="email" name="email" id="pitch-email" placeholder="Deine E-Mail-Adresse" required>
         <button type="submit" id="pitch-btn">Platz sichern</button>
     </form>
@@ -489,7 +490,7 @@ document.getElementById('pitch-form').addEventListener('submit', function(e) {
     fetch('https://mail.flomily.de/api/signup', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify({email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'pitch'})
+        body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'pitch'})
     }).then(function(){ location.href = '/danke.html'; })
       .catch(function(){ location.href = '/danke.html'; });
 });

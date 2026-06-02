@@ -701,7 +701,8 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <input type="text" name="vorname" id="waitlist-vorname" placeholder="First name" required style="flex:1;">
                 <input type="text" name="nachname" id="waitlist-nachname" placeholder="Last name" required style="flex:1;">
             </div>
-            <input type="email" name="email" id="waitlist-email" placeholder="Your email address" required>
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="email" name="email" id="waitlist-email" placeholder="Your email address" required>
             <button type="submit" class="cta-button" id="waitlist-btn">Secure your spot</button>
         </form>
         <script>
@@ -721,7 +722,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 fetch('https://mail.flomily.de/api/signup', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-                    body: JSON.stringify({email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: ref || ''})
+                    body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: ref || ''})
                 }).then(function(){ location.href = '/danke.html'; })
                   .catch(function(){ location.href = '/danke.html'; });
             });

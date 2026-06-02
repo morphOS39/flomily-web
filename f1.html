@@ -109,7 +109,8 @@
             <input type="text" name="nachname" id="f1-nachname" placeholder="Nachname" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
         </div>
         <div style="display:flex;gap:8px;">
-            <input type="email" name="email" id="f1-email" placeholder="Deine E-Mail-Adresse" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="email" name="email" id="f1-email" placeholder="Deine E-Mail-Adresse" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
             <button type="submit" id="f1-btn" style="padding:12px 20px;background:#E76F51;color:white;border:none;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;">Anmelden</button>
         </div>
     </form>
@@ -118,7 +119,7 @@
 </section>
 
 <script>
-document.getElementById('f1-form').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('f1-vorname').value,n=document.getElementById('f1-nachname').value,em=document.getElementById('f1-email').value,b=document.getElementById('f1-btn');b.textContent='Wird gesendet...';b.disabled=true;sessionStorage.setItem('flomily_email',em);sessionStorage.setItem('flomily_name',v+' '+n);fetch('https://mail.flomily.de/api/signup',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:em,vorname:v,nachname:n,name:v+' '+n,ref:'',source:'f1'})}).then(function(){location.href='/danke.html';}).catch(function(){location.href='/danke.html';});});
+document.getElementById('f1-form').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('f1-vorname').value,n=document.getElementById('f1-nachname').value,em=document.getElementById('f1-email').value,b=document.getElementById('f1-btn');b.textContent='Wird gesendet...';b.disabled=true;sessionStorage.setItem('flomily_email',em);sessionStorage.setItem('flomily_name',v+' '+n);fetch('https://mail.flomily.de/api/signup',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({website:'',email:em,vorname:v,nachname:n,name:v+' '+n,ref:'',source:'f1'})}).then(function(){location.href='/danke.html';}).catch(function(){location.href='/danke.html';});});
 </script>
 
 <footer class="footer"><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily</footer>
