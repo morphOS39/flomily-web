@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily starten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <style>
+        :root { --primary: #2A9D8F; --slate: #2D3748; --muted: #718096; --snow: #FAFCFB; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Quicksand', system-ui, sans-serif; color: var(--slate); background: var(--snow); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+        .logo { font-size: 32px; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-bottom: 32px; }
+        .mobile { display: none; }
+        .desktop { display: block; text-align: center; max-width: 480px; }
+        .desktop h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 16px; }
+        .desktop p { color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+        .qr-box { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); display: inline-block; margin-bottom: 20px; }
+        .desktop .hint { font-size: 0.88rem; color: var(--muted); margin-top: 16px; }
+        .desktop .btn { display: inline-block; margin-top: 20px; background: var(--primary); color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; }
+        .desktop .btn-secondary { display: inline-block; margin-top: 12px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .footer { margin-top: 40px; font-size: 0.78rem; color: var(--muted); }
+        .footer a { color: var(--muted); }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183386921"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18183386921');</script>
+</head>
+<body>
+    <div class="logo">flomily</div>
+
+    <!-- Desktop view -->
+    <div class="desktop" id="desktop">
+        <h1>Fast geschafft!</h1>
+        <p>flomily läuft über Telegram auf deinem Handy.<br>Scanne den QR-Code mit deinem Handy — dann geht's direkt los.</p>
+        <div class="qr-box">
+            <canvas id="qr-canvas"></canvas>
+        </div>
+        <p class="hint">Oder öffne diese Mail auf deinem Handy und klicke dort den Button.</p>
+        <div>
+            <a class="btn" id="desktop-btn" href="#">Trotzdem am PC öffnen</a>
+        </div>
+        <div>
+            <a class="btn-secondary" href="/pitch">Was ist flomily? →</a>
+        </div>
+    </div>
+
+    <!-- Mobile view (hidden, used for redirect) -->
+    <div class="mobile" id="mobile">
+        <p>Weiterleitung zu Telegram...</p>
+    </div>
+
+    <div class="footer">
+        <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a>
+    </div>
+
+    <script>
+    var params = new URLSearchParams(window.location.search);
+    var code = params.get('code') || '';
+    var deeplink = 'https://t.me/flomily_bot?start=' + code;
+
+    // Track click
+    var img = new Image();
+    img.src = 'https://mail.flomily.de/pt/t?p=start_click&u=' + encodeURIComponent(code);
+
+    // Mobile detection
+    var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Mobile: show page briefly, then redirect (so user can come back)
+        document.getElementById('mobile').style.display = 'block';
+        document.getElementById('mobile').innerHTML = '<div style="text-align:center;padding:40px 20px;">' +
+            '<h1 style="font-size:1.5rem;font-weight:800;margin-bottom:16px;">Weiterleitung zu Telegram...</h1>' +
+            '<p style="color:#718096;margin-bottom:24px;">Falls Telegram sich nicht öffnet:<br>Installiere Telegram und klicke dann nochmal den Button in der Mail.</p>' +
+            '<a href="' + deeplink + '" style="display:inline-block;background:#2A9D8F;color:#fff;padding:14px 32px;border-radius:50px;text-decoration:none;font-weight:700;">Nochmal versuchen</a>' +
+            '</div>';
+        setTimeout(function() { window.location.href = deeplink; }, 1500);
+    } else {
+        // Desktop: show QR code
+        document.getElementById('desktop').style.display = 'block';
+        document.getElementById('desktop-btn').href = deeplink;
+
+        // Generate QR
+        var qr = qrcode(0, 'M');
+        qr.addData(deeplink);
+        qr.make();
+        var canvas = document.getElementById('qr-canvas');
+        var size = 250;
+        var cellSize = Math.floor(size / qr.getModuleCount());
+        canvas.width = size;
+        canvas.height = size;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, size, size);
+        var modules = qr.getModuleCount();
+        for (var row = 0; row < modules; row++) {
+            for (var col = 0; col < modules; col++) {
+                if (qr.isDark(row, col)) {
+                    ctx.fillStyle = '#2A9D8F';
+                    ctx.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>
