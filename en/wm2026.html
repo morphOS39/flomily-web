@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2026 Schedule in Your Calendar | flomily</title>
+    <meta name="description" content="FIFA World Cup 2026: All 104 matches or just your team — directly in your calendar. Google, Outlook, Apple. Free.">
+    <meta name="keywords" content="World Cup 2026 calendar, FIFA 2026 schedule Google Calendar, World Cup 2026 ICS, FIFA 2026 calendar import, World Cup fixtures calendar">
+    <meta property="og:title" content="World Cup 2026 — All matches in your calendar">
+    <meta property="og:description" content="All 104 World Cup matches or just your team — one click and they're in your calendar.">
+    <meta property="og:url" content="https://flomily.de/en/wm2026">
+    <link rel="canonical" href="https://flomily.de/en/wm2026">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../icon.svg">
+    <style>
+        :root { --primary: #2A9D8F; --accent: #E76F51; --slate: #2D3748; --muted: #718096; --snow: #FAFCFB; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Quicksand', system-ui, sans-serif; color: var(--slate); background: var(--snow); line-height: 1.65; font-weight: 500; }
+        .header { position: sticky; top: 0; z-index: 100; background: white; box-shadow: 0 1px 8px rgba(45,55,72,0.06); padding: 12px 24px; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; }
+        .header img { height: 26px; }
+        .header a.link { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .hero { background: linear-gradient(150deg, #1a6b3c 0%, #2A9D8F 40%, #3DBBAD 100%); color: white; text-align: center; padding: 36px 24px 30px; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+        .hero .subline { font-size: 1.1rem; opacity: 0.92; max-width: 580px; margin: 0 auto; }
+        .hero .cta-top { display: inline-block; margin-top: 18px; background: var(--accent); color: white; padding: 13px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; }
+        .wave svg { display: block; width: 100%; height: 40px; margin-top: -1px; }
+        .sec { max-width: 720px; margin: 0 auto; padding: 24px 24px 0; }
+        .sec h2 { font-size: 1.2rem; margin-bottom: 12px; text-align: center; }
+        .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+        .opt { background: white; border-radius: 12px; padding: 16px 14px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); text-align: center; }
+        .opt-emoji { font-size: 1.8rem; margin-bottom: 6px; }
+        .opt h3 { font-size: 0.92rem; margin-bottom: 4px; }
+        .opt p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+        @media (max-width: 600px) { .options { grid-template-columns: 1fr; } }
+        .match { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.88rem; }
+        .match-teams { font-weight: 600; }
+        .match-meta { color: var(--muted); font-size: 0.8rem; text-align: right; }
+        .match-group { margin-bottom: 14px; }
+        .match-group h3 { font-size: 0.88rem; color: var(--primary); font-weight: 700; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2px solid #e8f6f4; }
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .step { background: white; border-radius: 12px; padding: 16px 12px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); text-align: center; }
+        .step-num { display: inline-block; background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; font-weight: 800; font-size: 0.85rem; line-height: 28px; margin-bottom: 8px; }
+        .step h3 { font-size: 0.88rem; margin-bottom: 4px; }
+        .step p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+        .step-time { font-size: 0.75rem; color: var(--primary); font-weight: 700; margin-top: 6px; }
+        @media (max-width: 600px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+        .honest { background: white; border-radius: 14px; padding: 20px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); margin: 20px 0; }
+        .honest h2 { font-size: 1.1rem; margin-bottom: 10px; }
+        .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .honest-col h3 { font-size: 0.92rem; margin-bottom: 8px; }
+        .honest-col ul { list-style: none; font-size: 0.88rem; }
+        .honest-col ul li { padding: 3px 0; }
+        @media (max-width: 500px) { .honest-grid { grid-template-columns: 1fr; } }
+        .calendars { text-align: center; padding: 4px 0 8px; color: var(--muted); font-size: 0.88rem; }
+        .cta { text-align: center; padding: 16px 24px 36px; }
+        .cta h2 { font-size: 1.2rem; margin-bottom: 6px; }
+        .cta-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
+        .footer { text-align: center; padding: 18px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid #e8ecf0; }
+        .footer a { color: var(--muted); }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","name":"World Cup 2026 Calendar","url":"https://flomily.de/en/wm2026","mainEntity":{"@type":"SportsEvent","name":"FIFA World Cup 2026","startDate":"2026-06-11","endDate":"2026-07-19","location":{"@type":"Place","name":"USA, Mexico, Canada"}}}
+    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183386921"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18183386921');</script>
+</head>
+<body>
+
+<header class="header"><div class="header-inner"><a href="/en/"><img src="../logo.svg" alt="flomily"></a><a href="/en/" class="link">What is flomily? →</a></div></header>
+
+<section class="hero">
+    <h1>⚽ World Cup 2026<br>Every match in your calendar</h1>
+    <p class="subline">All 104 matches or just your team — set up in 2 minutes. Works with any calendar.</p>
+    <a href="#waitlist" class="cta-top">Get started free</a>
+</section>
+<div class="wave"><svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none"><path d="M0 20C240 40 480 0 720 20C960 40 1200 0 1440 20V40H0V20Z" fill="var(--snow)"/></svg></div>
+
+<div class="sec">
+    <h2>You choose</h2>
+    <div class="options">
+        <div class="opt"><div class="opt-emoji">🌍</div><h3>All 104 matches</h3><p>Every group match, knockout game, and the final.</p></div>
+        <div class="opt"><div class="opt-emoji">🏆</div><h3>Your team's matches</h3><p>Group stage + possible knockout path.</p></div>
+        <div class="opt"><div class="opt-emoji">⚽</div><h3>Group stage only</h3><p>Just the confirmed group matches.</p></div>
+    </div>
+</div>
+
+<div class="sec">
+    <h2>Opening matches</h2>
+    <div class="match-group">
+        <div class="match"><div class="match-teams">Mexico vs South Africa <strong>(1)</strong></div><div class="match-meta">Jun 11 · Mexico City</div></div>
+        <div class="match"><div class="match-teams">USA vs Paraguay <strong>(4)</strong></div><div class="match-meta">Jun 12 · Los Angeles</div></div>
+        <div class="match"><div class="match-teams">Brazil vs Morocco <strong>(7)</strong></div><div class="match-meta">Jun 13 · New York</div></div>
+        <div class="match"><div class="match-teams">Germany vs Curaçao <strong>(10)</strong></div><div class="match-meta">Jun 14 · Houston</div></div>
+        <div class="match"><div class="match-teams">England vs Croatia <strong>(22)</strong></div><div class="match-meta">Jun 17 · Dallas</div></div>
+        <div class="match"><div class="match-teams">France vs Senegal <strong>(17)</strong></div><div class="match-meta">Jun 16 · New York</div></div>
+        <div class="match"><div class="match-teams">Argentina vs Algeria <strong>(19)</strong></div><div class="match-meta">Jun 16 · Kansas City</div></div>
+        <div class="match" style="border-bottom:none;color:var(--muted);font-size:0.82rem;"><div>... and 97 more matches until the Final on July 19</div></div>
+    </div>
+</div>
+
+<div class="sec">
+    <h2>How it works — 4 steps</h2>
+    <div class="steps">
+        <div class="step"><div class="step-num">1</div><h3>Sign up</h3><p>Enter your email.</p><div class="step-time">30 seconds</div></div>
+        <div class="step"><div class="step-num">2</div><h3>Open flomily</h3><p>Open the channel, enter code.</p><div class="step-time">1 minute</div></div>
+        <div class="step"><div class="step-num">3</div><h3>Type "World Cup"</h3><p>Choose: all, your team, or group stage.</p><div class="step-time">10 seconds</div></div>
+        <div class="step"><div class="step-num">4</div><h3>Done</h3><p>All matches in your calendar.</p><div class="step-time">✅</div></div>
+    </div>
+</div>
+
+<div class="sec">
+    <div class="honest">
+        <h2>Honest note: First-time setup takes 2 minutes.</h2>
+        <div class="honest-grid">
+            <div class="honest-col"><h3 style="color:var(--muted);">⏱️ One time</h3><ul><li>✉️ Confirm email</li><li>📱 Open flomily (runs on Telegram)</li><li>🔑 Enter code</li></ul></div>
+            <div class="honest-col"><h3 style="color:var(--primary);">🚀 Then — forever</h3><ul><li>⚽ "World Cup" → all matches</li><li>🎤 Speak an appointment → in calendar</li><li>📸 Photo of a flyer → in calendar</li><li>📱 Forward a message → in calendar</li></ul></div>
+        </div>
+        <p style="text-align:center;margin-top:14px;color:var(--primary);font-weight:700;font-size:0.95rem;">The World Cup is just the beginning. After that, flomily becomes the fastest way into your calendar.</p>
+    </div>
+</div>
+
+<div style="max-width:700px;margin:0 auto;padding:12px 24px;">
+    <div style="background:#f0fdfa;border-radius:12px;padding:16px 20px;">
+        <p style="margin:0 0 6px;font-weight:700;color:#2A9D8F;font-size:0.9rem;">💡 Good to know</p>
+        <p style="margin:0;color:#334155;font-size:0.88rem;line-height:1.5;">You'll receive a calendar invite for each match by email. No need to accept them individually — they'll appear in your calendar automatically.</p>
+    </div>
+</div>
+
+<div class="calendars">Works with any calendar.<br>(Outlook, Google, Apple, Yahoo, ...)</div>
+
+<section class="cta" id="waitlist">
+    <h2>Get started free</h2>
+    <p class="cta-sub">Sign up once — World Cup matches and all future appointments in your calendar in seconds.</p>
+    <form id="wm-form" style="max-width:420px;margin:0 auto 10px;">
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <input type="text" name="vorname" id="wm-vorname" placeholder="First name" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+            <input type="text" name="nachname" id="wm-nachname" placeholder="Last name" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+        </div>
+        <div style="display:flex;gap:8px;">
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="email" name="email" id="wm-email" placeholder="Your email address" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+            <button type="submit" id="wm-btn" style="padding:12px 20px;background:#E76F51;color:white;border:none;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;">Sign up</button>
+        </div>
+    </form>
+    <p class="cta-sub">Free. No subscription. No spam.</p>
+    <a href="/en/" style="color:var(--primary);text-decoration:none;font-weight:600;font-size:0.9rem;">More about flomily →</a>
+</section>
+
+<script>
+document.getElementById('wm-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var vorname = document.getElementById('wm-vorname').value;
+    var nachname = document.getElementById('wm-nachname').value;
+    var email = document.getElementById('wm-email').value;
+    var btn = document.getElementById('wm-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    sessionStorage.setItem('flomily_email', email);
+    sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
+    fetch('https://mail.flomily.de/api/signup', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'wm2026-en'})
+    }).then(function(){ location.href = '/en/danke.html'; })
+      .catch(function(){ location.href = '/en/danke.html'; });
+});
+</script>
+
+<footer class="footer"><a href="/impressum">Imprint</a> · <a href="/datenschutz">Privacy</a> · © 2026 flomily</footer>
+<img src="https://mail.flomily.de/pt/t?p=wm2026en" style="display:none" alt="">
+</body>
+</html>

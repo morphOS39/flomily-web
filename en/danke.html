@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flomily — You're in!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../icon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .danke {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(150deg, #2A9D8F 0%, #3DBBAD 40%, #5CC9BA 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .danke-content {
+            max-width: 500px;
+            padding: 40px 24px;
+        }
+        .danke-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .danke h1 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+        .danke p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .referral-section {
+            background: #f8fafa;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .referral-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .referral-card h2 {
+            font-size: 1.4rem;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+        .referral-card p {
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .referral-link-box {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .referral-link-box input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.95rem;
+            color: #334155;
+            background: #f8fafa;
+        }
+        .referral-link-box input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+        }
+        .btn-copy {
+            padding: 12px 20px;
+            background: #2A9D8F;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .btn-copy:hover { background: #238577; }
+        .btn-copy.copied { background: #16a34a; }
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #fff;
+            transition: opacity 0.2s;
+        }
+        .share-btn:hover { opacity: 0.85; }
+        .share-btn-wa { background: #25D366; }
+        .share-btn-tg { background: #0088cc; }
+        .share-btn-mail { background: #64748b; }
+        .danke-back {
+            display: inline-block;
+            margin-top: 32px;
+            color: #2A9D8F;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px 28px;
+            border: 2px solid #2A9D8F;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+        .danke-back:hover {
+            background: #2A9D8F;
+            color: #fff;
+        }
+        .no-referral { display: none; }
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183386921"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18183386921');
+</script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="container header-bar">
+        <a href="/en/"><img src="../logo.svg" alt="flomily" class="header-logo"></a>
+    </div>
+</header>
+
+    <section class="danke">
+        <div class="danke-content">
+            <div class="danke-emoji">🎉</div>
+            <h1>You're in!</h1>
+            <p>Welcome aboard. Great to have you!</p>
+            <div style="background:rgba(255,255,255,0.15);border-radius:12px;padding:20px;margin:24px 0;">
+                <p style="margin:0 0 4px;opacity:0.8;font-size:0.9rem;">Your starting balance:</p>
+                <p style="margin:0;font-size:2.5rem;font-weight:700;">100 Credits</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="referral-section" id="referral-section">
+        <div class="referral-card">
+            <h2>Get more credits! 🎁</h2>
+            <p>For every person who signs up through your link, you get <strong>+25 credits</strong>. The more credits you have, the better for you at launch.</p>
+            <div id="danke-credits" style="display:none;margin-bottom:20px;background:#f0fdfa;border-radius:12px;padding:16px;">
+                <span style="font-size:2rem;font-weight:700;color:#2A9D8F;" id="danke-credits-count"></span>
+                <span style="color:#64748b;"> credits total</span>
+                <div style="color:#94a3b8;font-size:0.85rem;margin-top:4px;" id="danke-credits-detail"></div>
+            </div>
+            <h3 style="color:#334155;margin-bottom:12px;font-size:1rem;">Your referral link:</h3>
+            <div class="referral-link-box">
+                <input type="text" id="referral-link" readonly>
+                <button class="btn-copy" id="btn-copy" onclick="copyLink()">Copy</button>
+            </div>
+            <div class="share-buttons">
+                <a class="share-btn share-btn-wa" id="share-wa" href="#" target="_blank">💬 WhatsApp</a>
+                <a class="share-btn share-btn-tg" id="share-tg" href="#" target="_blank">✈️ Telegram</a>
+                <a class="share-btn share-btn-mail" id="share-mail" href="#">✉️ Email</a>
+            </div>
+            <div style="margin-top:24px;padding-top:20px;border-top:1px solid #e2e8f0;">
+                <p style="color:#64748b;font-size:0.9rem;margin-bottom:12px;">Or show the QR code — just scan it:</p>
+                <canvas id="qr-canvas" style="margin:0 auto;display:block;"></canvas>
+            </div>
+        </div>
+        <a href="/en/" class="danke-back">← Back to homepage</a>
+    </section>
+
+    <section class="feedback-section feedback-danke" id="feedback-section">
+        <div class="container">
+            <h2>Help us make flomily even better</h2>
+            <p class="feedback-sub">You're an early adopter — your opinion counts double. What should flomily do for you?</p>
+            <form class="feedback-form" action="https://mail.flomily.de/api/signup" method="POST">
+                <input type="hidden" name="_type" value="feedback">
+                <input type="hidden" name="_next" value="https://flomily.de/en/danke.html">
+                <div class="feedback-field">
+                    <label for="wish">What I wish for most:</label>
+                    <textarea id="wish" name="wish" rows="3" placeholder='e.g. "Never having to manually type appointments from messages again"'></textarea>
+                </div>
+                <div class="feedback-field">
+                    <label for="pain">What annoys me most about scheduling:</label>
+                    <textarea id="pain" name="pain" rows="3" placeholder='e.g. "I always forget to add events from group chats to my calendar"'></textarea>
+                </div>
+                <div class="feedback-field">
+                    <label for="feedback-name">Your name: <span class="feedback-optional">(optional, for follow-up)</span></label>
+                    <input type="text" id="feedback-name" name="name" placeholder="First name is fine">
+                </div>
+                <button type="submit" class="cta-button">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="/qrcode.min.js"></script>
+    <script>
+    (function(){
+        var email = sessionStorage.getItem('flomily_email');
+        if (!email) {
+            document.getElementById('referral-section').style.display = 'none';
+            return;
+        }
+
+        async function sha256(str) {
+            var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+            return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+        }
+
+        sha256(email.toLowerCase().trim()).then(function(hash) {
+            var code = 'REF-' + hash.substring(0, 8).toUpperCase();
+            var link = 'https://flomily.de/einladung/' + code;
+            var shareText = 'Never type appointments again — flomily does it for you. Sign up here: ' + link;
+
+            document.getElementById('referral-link').value = link;
+            document.getElementById('share-wa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+            document.getElementById('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('Never type appointments again — flomily does it for you!');
+            document.getElementById('share-mail').href = 'mailto:?subject=' + encodeURIComponent('flomily — Appointments on autopilot') + '&body=' + encodeURIComponent(shareText);
+
+            if(typeof qrcode !== 'undefined') {
+                var qr = qrcode(0, 'M');
+                qr.addData(link);
+                qr.make();
+                var canvas = document.getElementById('qr-canvas');
+                var size = 180, modules = qr.getModuleCount(), cellSize = size / modules;
+                canvas.width = size; canvas.height = size;
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(0, 0, size, size);
+                for(var r=0; r<modules; r++)
+                    for(var c=0; c<modules; c++)
+                        if(qr.isDark(r, c)) { ctx.fillStyle='#2A9D8F'; ctx.fillRect(c*cellSize, r*cellSize, cellSize+0.5, cellSize+0.5); }
+            }
+            fetch('/credits.json').then(function(r){return r.json()}).then(function(data){
+                var c = data[code];
+                if(c !== undefined) {
+                    document.getElementById('danke-credits-count').textContent = c;
+                    var bonus = c - 100;
+                    if(bonus > 0) {
+                        var friends = bonus / 25;
+                        document.getElementById('danke-credits-detail').textContent = '100 starting credits + ' + bonus + ' from ' + friends + ' referral' + (friends > 1 ? 's' : '');
+                    } else {
+                        document.getElementById('danke-credits-detail').textContent = '100 starting credits — invite friends for +25 per referral!';
+                    }
+                    document.getElementById('danke-credits').style.display = 'block';
+                }
+            }).catch(function(){});
+        });
+    })();
+
+    function copyLink() {
+        var input = document.getElementById('referral-link');
+        navigator.clipboard.writeText(input.value).then(function(){
+            var btn = document.getElementById('btn-copy');
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function(){ btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>
