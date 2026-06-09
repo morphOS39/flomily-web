@@ -1,4 +1,4 @@
-var CACHE = 'flomily-pwa-v8';
+var CACHE = 'flomily-pwa-v9';
 var SHELL = ['/app/', '/app/app.css', '/app/app.js', '/app/manifest.json'];
 
 self.addEventListener('install', function(e) {
