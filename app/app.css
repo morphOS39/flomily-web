@@ -36,7 +36,8 @@ body { font-family: 'Quicksand', system-ui, sans-serif; color: var(--slate); bac
 .event-card .btn-discard { padding: 8px 16px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; font-family: inherit; cursor: pointer; font-size: 0.85rem; }
 .event-card.confirmed { opacity: 0.7; }
 .event-card.confirmed .actions { display: none; }
-.event-card.confirmed::after { content: '\2713 Versendet'; display: block; margin-top: 8px; color: var(--primary); font-weight: 700; font-size: 0.85rem; }
+.event-card.discarded { opacity: 0.5; }
+.event-card.discarded .actions { display: none; }
 
 .batch-actions { display: flex; gap: 8px; margin-top: 8px; align-self: flex-start; }
 .btn-batch { padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 10px; font-family: inherit; font-weight: 700; cursor: pointer; }

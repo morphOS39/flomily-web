@@ -371,8 +371,7 @@
             api('/events/discard', { method: 'POST', body: { event_id: ev.pending_id } });
         }
         if (card) {
-            card.classList.add('confirmed');
-            card.querySelector('.actions').style.display = 'none';
+            card.classList.add('discarded');
             var note = document.createElement('div');
             note.style.cssText = 'margin-top:8px;color:var(--muted);font-size:0.85rem;';
             note.textContent = '✗ Verworfen';
@@ -402,10 +401,16 @@
             removeLoading();
             var ok = 0;
             (data.results || []).forEach(function (r, i) {
+                var card = document.getElementById('event-card-' + i);
                 if (r.ok) {
                     ok++;
-                    var card = document.getElementById('event-card-' + i);
-                    if (card) card.classList.add('confirmed');
+                    if (card) {
+                        card.classList.add('confirmed');
+                        var note = document.createElement('div');
+                        note.style.cssText = 'margin-top:8px;color:var(--primary);font-weight:700;font-size:0.85rem;';
+                        note.textContent = '✓ Versendet';
+                        card.appendChild(note);
+                    }
                 }
             });
             if (state.user) {
