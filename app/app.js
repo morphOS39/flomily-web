@@ -154,10 +154,10 @@
         scrollBottom();
     }
 
-    function addLoading() {
+    function addLoading(text) {
         var div = document.createElement('div');
         div.className = 'loading';
-        div.innerHTML = '<span>flomily denkt nach</span><span class="loading-dots"></span>';
+        div.innerHTML = '<span>' + (text || 'flomily denkt nach') + '</span><span class="loading-dots"></span>';
         div.id = 'loading-indicator';
         document.getElementById('chat-messages').appendChild(div);
         scrollBottom();
@@ -397,7 +397,7 @@
         });
         if (!ids.length) return;
 
-        addLoading();
+        addLoading('Termine werden verschickt (' + ids.length + ')');
         api('/events/confirm-all', { method: 'POST', body: { event_ids: ids } }).then(function (data) {
             removeLoading();
             var ok = 0;
