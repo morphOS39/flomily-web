@@ -158,6 +158,23 @@
     }
 
     // ── Event cards ────────────────────────────────────────────────────────────
+    function formatEventDate(ev) {
+        if (!ev.date) return '';
+        var parts = ev.date.split('-');
+        var d = new Date(+parts[0], +parts[1]-1, +parts[2]);
+        var days = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+        var months = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+        var result = days[d.getDay()] + ', ' + d.getDate() + '. ' + months[d.getMonth()] + ' ' + d.getFullYear();
+        if (ev.start_time) result += ' · ' + ev.start_time + ' Uhr';
+        if (ev.end_time) result += ' – ' + ev.end_time + ' Uhr';
+        if (ev.end_date && ev.end_date !== ev.date) {
+            var ep = ev.end_date.split('-');
+            var ed = new Date(+ep[0], +ep[1]-1, +ep[2]);
+            result += ' bis ' + days[ed.getDay()] + ', ' + ed.getDate() + '. ' + months[ed.getMonth()];
+        }
+        return result;
+    }
+
     function renderEventCard(ev, index) {
         var card = document.createElement('div');
         card.className = 'event-card';
@@ -167,11 +184,11 @@
         title.textContent = ev.title || 'Termin';
         card.appendChild(title);
 
-        if (ev.start) {
+        var dateStr = formatEventDate(ev);
+        if (dateStr) {
             var dateMeta = document.createElement('div');
             dateMeta.className = 'meta';
-            dateMeta.textContent = '📅 ' + fmtDate(ev.start) + (ev.end && ev.start !== ev.end ? ' – ' + fmtDate(ev.end) : '') +
-                (fmtTime(ev.start) ? '  ' + fmtTime(ev.start) : '');
+            dateMeta.textContent = '📅 ' + dateStr;
             card.appendChild(dateMeta);
         }
 
@@ -182,11 +199,18 @@
             card.appendChild(locMeta);
         }
 
-        if (ev.description) {
-            var descMeta = document.createElement('div');
-            descMeta.className = 'meta';
-            descMeta.textContent = ev.description;
-            card.appendChild(descMeta);
+        if (ev.category) {
+            var catMeta = document.createElement('div');
+            catMeta.className = 'meta';
+            catMeta.textContent = '🏷️ ' + ev.category;
+            card.appendChild(catMeta);
+        }
+
+        if (ev.notes) {
+            var notesMeta = document.createElement('div');
+            notesMeta.className = 'meta';
+            notesMeta.textContent = ev.notes;
+            card.appendChild(notesMeta);
         }
 
         var actions = document.createElement('div');
