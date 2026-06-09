@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>flomily</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2A9D8F">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/svg+xml" href="../icon.svg">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="screen active" id="screen-login">
+    <div class="login">
+        <div class="login-box" id="login-form">
+            <h1>flomily</h1>
+            <p>Deine Termine. Sofort im Kalender.<br>Melde dich mit deiner E-Mail an.</p>
+            <input type="email" id="login-email" placeholder="Deine E-Mail-Adresse" autocomplete="email">
+            <button onclick="doLogin()">Anmelden</button>
+        </div>
+        <div class="login-box login-sent" id="login-sent">
+            <h2>Link gesendet!</h2>
+            <p>Wir haben dir einen Login-Link per E-Mail geschickt.<br>Klicke den Link, um flomily zu öffnen.</p>
+        </div>
+    </div>
+</div>
+<div class="screen" id="screen-chat">
+    <header class="header">
+        <img src="../logo.svg" alt="flomily" class="header-logo">
+        <div class="header-nav">
+            <span class="header-credits" id="credits-display"></span>
+            <button class="header-btn active" onclick="showScreen('chat')" title="Chat">💬</button>
+            <button class="header-btn" onclick="showScreen('history')" title="Historie">📋</button>
+            <button class="header-btn" onclick="showScreen('profile')" title="Profil">👤</button>
+        </div>
+    </header>
+    <div class="chat" id="chat-messages"></div>
+    <div class="input-bar">
+        <button class="btn-photo" onclick="takePhoto()">📷</button>
+        <button class="btn-mic" id="btn-mic" onmousedown="startMic()" onmouseup="stopMic()" ontouchstart="startMic()" ontouchend="stopMic()">🎤</button>
+        <input type="text" id="chat-input" placeholder="Nachricht..." onkeydown="if(event.key==='Enter')sendMessage()">
+        <button class="btn-send" onclick="sendMessage()">➤</button>
+    </div>
+    <input type="file" id="photo-input" accept="image/*" capture="environment" style="display:none" onchange="handlePhoto(this)">
+</div>
+<div class="screen" id="screen-history">
+    <header class="header">
+        <img src="../logo.svg" alt="flomily" class="header-logo">
+        <div class="header-nav">
+            <button class="header-btn" onclick="showScreen('chat')" title="Chat">💬</button>
+            <button class="header-btn active" onclick="showScreen('history')" title="Historie">📋</button>
+            <button class="header-btn" onclick="showScreen('profile')" title="Profil">👤</button>
+        </div>
+    </header>
+    <div class="history" id="history-list"></div>
+</div>
+<div class="screen" id="screen-profile">
+    <header class="header">
+        <img src="../logo.svg" alt="flomily" class="header-logo">
+        <div class="header-nav">
+            <button class="header-btn" onclick="showScreen('chat')" title="Chat">💬</button>
+            <button class="header-btn" onclick="showScreen('history')" title="Historie">📋</button>
+            <button class="header-btn active" onclick="showScreen('profile')" title="Profil">👤</button>
+        </div>
+    </header>
+    <div class="profile">
+        <h2>Dein Profil</h2>
+        <div class="profile-field"><label>E-Mail</label><div class="value" id="profile-email"></div></div>
+        <div class="profile-field"><label>Credits</label><div class="value" id="profile-credits"></div></div>
+        <div class="profile-field"><label>Termine diesen Monat</label><div class="value" id="profile-events"></div></div>
+        <button class="btn-logout" onclick="doLogout()">Abmelden</button>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

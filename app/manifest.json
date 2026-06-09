@@ -1,0 +1,13 @@
+{
+    "name": "flomily",
+    "short_name": "flomily",
+    "description": "Deine Termine. Sofort im Kalender.",
+    "start_url": "/app/",
+    "display": "standalone",
+    "background_color": "#FAFCFB",
+    "theme_color": "#2A9D8F",
+    "icons": [
+        {"src": "/icon-teal-full.svg", "sizes": "any", "type": "image/svg+xml"},
+        {"src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
+    ]
+}
