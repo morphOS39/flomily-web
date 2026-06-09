@@ -242,24 +242,27 @@
 
     function confirmEvent(index, card) {
         var ev = state.pendingEvents[index];
-        if (!ev) return;
-        api('/events/confirm', { method: 'POST', body: ev }).then(function (data) {
+        if (!ev || !ev.pending_id) return;
+        api('/events/confirm', { method: 'POST', body: { event_id: ev.pending_id } }).then(function (data) {
             card.classList.add('confirmed');
-            if (data.credits !== undefined) {
-                state.user.credits = data.credits;
+            if (state.user) {
+                state.user.events_count = (state.user.events_count || 0) + 1;
                 updateCreditsDisplay();
             }
             removeBatchIfDone();
-        }).catch(function (err) {
-            addBotMsg('Fehler beim Eintragen: ' + err.message);
+        }).catch(function () {
+            addBotMsg('Fehler beim Eintragen.');
         });
         state.pendingEvents[index] = null;
     }
 
     function discardEvent(index, card) {
+        var ev = state.pendingEvents[index];
+        if (ev && ev.pending_id) {
+            api('/events/discard', { method: 'POST', body: { event_id: ev.pending_id } });
+        }
         card.classList.add('confirmed');
         card.querySelector('.actions').style.display = 'none';
-        // override ::after for discard
         var discardNote = document.createElement('div');
         discardNote.style.marginTop = '8px';
         discardNote.style.color = 'var(--muted)';
@@ -300,7 +303,7 @@
         input.value = '';
         addUserMsg(text);
         var loading = addLoading();
-        api('/chat', { method: 'POST', body: { text: text } }).then(function (data) {
+        api('/events/parse', { method: 'POST', body: { text: text } }).then(function (data) {
             removeLoading();
             if (data.reply) addBotMsg(data.reply);
             if (data.events && data.events.length) {
@@ -310,9 +313,9 @@
                 state.user.credits = data.credits;
                 updateCreditsDisplay();
             }
-        }).catch(function (err) {
+        }).catch(function () {
             removeLoading();
-            addBotMsg('Fehler: ' + err.message);
+            addBotMsg('Fehler beim Verarbeiten. Bitte versuche es erneut.');
         });
     };
 
@@ -326,22 +329,23 @@
         if (!file) return;
         addUserMsg('📷 Foto gesendet');
         var loading = addLoading();
-        var fd = new FormData();
-        fd.append('photo', file);
-        api('/chat/photo', { method: 'POST', body: fd }).then(function (data) {
-            removeLoading();
-            if (data.reply) addBotMsg(data.reply);
-            if (data.events && data.events.length) {
-                renderEventCards(data.events);
-            }
-            if (data.credits !== undefined && state.user) {
-                state.user.credits = data.credits;
-                updateCreditsDisplay();
-            }
-        }).catch(function (err) {
-            removeLoading();
-            addBotMsg('Fehler beim Verarbeiten des Fotos: ' + err.message);
-        });
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var base64 = e.target.result.split(',')[1];
+            var mediaType = file.type || 'image/jpeg';
+            api('/events/parse', { method: 'POST', body: { image: base64, media_type: mediaType } }).then(function (data) {
+                removeLoading();
+                if (data.events && data.events.length) {
+                    renderEventCards(data.events);
+                } else {
+                    addBotMsg('Ich konnte keine Termine im Bild erkennen.');
+                }
+            }).catch(function (err) {
+                removeLoading();
+                addBotMsg('Fehler beim Verarbeiten des Fotos.');
+            });
+        };
+        reader.readAsDataURL(file);
         // Reset so same file can be selected again
         input.value = '';
     };
