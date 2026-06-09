@@ -50,27 +50,24 @@
 
     // ── Auth ───────────────────────────────────────────────────────────────────
     function checkSession() {
-        api('/me').then(function (data) {
-            state.user = data;
-            onLoggedIn();
-        }).catch(function () {
-            // Check for magic-link token in URL
-            var params = new URLSearchParams(window.location.search);
-            var token = params.get('token');
-            if (token) {
-                api('/auth/verify', { method: 'POST', body: { token: token } }).then(function (data) {
-                    state.user = data;
-                    // Clean URL
-                    history.replaceState({}, '', '/app/');
-                    onLoggedIn();
-                }).catch(function (err) {
-                    showScreen('login');
-                    addBotMsg('Login-Link ungültig oder abgelaufen. Bitte neu anmelden.');
-                });
-            } else {
+        var params = new URLSearchParams(window.location.search);
+        var token = params.get('token');
+        var email = params.get('email');
+        if (token && email) {
+            api('/auth/verify', { method: 'POST', body: { email: email, token: token } }).then(function (data) {
+                state.user = data.user || data;
+                history.replaceState({}, '', '/app/');
+                onLoggedIn();
+            }).catch(function () {
                 showScreen('login');
-            }
-        });
+                addBotMsg('Login-Link ungültig oder abgelaufen. Bitte neu anmelden.');
+            });
+        } else {
+            api('/auth/check').then(function (data) {
+                if (data.ok) { state.user = data.user; onLoggedIn(); }
+                else { showScreen('login'); }
+            }).catch(function () { showScreen('login'); });
+        }
     }
 
     window.doLogin = function () {
@@ -450,12 +447,13 @@
     // ── Profile ────────────────────────────────────────────────────────────────
     function loadProfile() {
         if (!state.user) return;
-        api('/me').then(function (data) {
+        api('/user/profile').then(function (data) {
             state.user = data;
             updateCreditsDisplay();
             document.getElementById('profile-email').textContent = data.email || '';
-            document.getElementById('profile-credits').textContent = (data.credits !== undefined ? data.credits : '–') + ' Credits';
-            document.getElementById('profile-events').textContent = (data.events_this_month !== undefined ? data.events_this_month : '–');
+            var remaining = (data.events_limit || 100) - (data.events_count || 0);
+            document.getElementById('profile-credits').textContent = remaining + ' von ' + (data.events_limit || 100);
+            document.getElementById('profile-events').textContent = data.events_count || 0;
         }).catch(function () {
             document.getElementById('profile-email').textContent = state.user.email || '';
         });
