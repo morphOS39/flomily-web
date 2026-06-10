@@ -480,8 +480,13 @@
                     var btn = document.createElement('button');
                     btn.className = 'btn-confirm';
                     btn.style.cssText = 'margin:4px 0;width:100%;text-align:left;';
-                    btn.textContent = o.label + ' (' + o.count + ' Termine)';
-                    btn.onclick = function () { selectSport(sport, o.id); card.remove(); };
+                    if (o.is_team_picker) {
+                        btn.textContent = o.label;
+                        btn.onclick = function () { card.remove(); showTeamPicker(sport, d.teams || []); };
+                    } else {
+                        btn.textContent = o.label + ' (' + o.count + ' Termine)';
+                        btn.onclick = function () { selectSport(sport, o.id); card.remove(); };
+                    }
                     card.appendChild(btn);
                 });
                 document.getElementById('chat-messages').appendChild(card);
@@ -490,9 +495,29 @@
         }).catch(function () { removeLoading(); addBotMsg('Sport-Daten konnten nicht geladen werden.'); });
     }
 
-    function selectSport(sport, option) {
+    function showTeamPicker(sport, teams) {
+        addBotMsg('Wähle deine Mannschaft:');
+        var card = document.createElement('div');
+        card.className = 'event-card';
+        card.style.maxHeight = '300px';
+        card.style.overflowY = 'auto';
+        teams.forEach(function (team) {
+            var btn = document.createElement('button');
+            btn.className = 'btn-discard';
+            btn.style.cssText = 'margin:3px 0;width:100%;text-align:left;padding:10px 14px;';
+            btn.textContent = team;
+            btn.onclick = function () { card.remove(); selectSport(sport, 'team', team); };
+            card.appendChild(btn);
+        });
+        document.getElementById('chat-messages').appendChild(card);
+        scrollBottom();
+    }
+
+    function selectSport(sport, option, team) {
         addLoading();
-        api('/sports/' + sport + '/select', { method: 'POST', body: { option: option } }).then(function (d) {
+        var body = { option: option };
+        if (team) body.team = team;
+        api('/sports/' + sport + '/select', { method: 'POST', body: body }).then(function (d) {
             removeLoading();
             if (d.events && d.events.length > 0) {
                 renderEventCards(d.events);

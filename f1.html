@@ -122,7 +122,7 @@
 document.getElementById('f1-form').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('f1-vorname').value,n=document.getElementById('f1-nachname').value,em=document.getElementById('f1-email').value,b=document.getElementById('f1-btn');b.textContent='Wird gesendet...';b.disabled=true;sessionStorage.setItem('flomily_email',em);sessionStorage.setItem('flomily_name',v+' '+n);fetch('https://mail.flomily.de/api/signup',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({website:'',email:em,vorname:v,nachname:n,name:v+' '+n,ref:'',source:'f1'})}).then(function(){location.href='/danke.html';}).catch(function(){location.href='/danke.html';});});
 </script>
 
-<footer class="footer"><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily</footer>
+<footer class="footer"><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily · flomily befindet sich in der Beta-Phase.</footer>
 <img src="https://mail.flomily.de/pt/t?p=f1" style="display:none" alt="">
 </body>
 </html>
