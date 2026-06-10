@@ -97,6 +97,14 @@
     };
 
     function onLoggedIn() {
+        if (!state.user.consent_given) {
+            showScreen('consent');
+            return;
+        }
+        enterApp();
+    }
+
+    function enterApp() {
         updateCreditsDisplay();
         showScreen('chat');
         if (!document.getElementById('chat-messages').children.length) {
@@ -108,6 +116,24 @@
             navigator.serviceWorker.register('/app/sw.js').catch(function () { });
         }
     }
+
+    window.acceptConsent = function () {
+        api('/auth/consent', { method: 'POST', body: {} }).then(function (data) {
+            state.user = data.user || state.user;
+            state.user.consent_given = 1;
+            enterApp();
+        }).catch(function () {
+            alert('Fehler beim Speichern. Bitte versuche es erneut.');
+        });
+    };
+
+    window.declineConsent = function () {
+        api('/auth/logout', { method: 'POST' }).catch(function () { });
+        state.user = null;
+        showScreen('login');
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('login-sent').style.display = 'none';
+    };
 
     function checkLimitWarning() {
         var remaining = remainingCredits();

@@ -28,6 +28,21 @@
         </div>
     </div>
 </div>
+<div class="screen" id="screen-consent">
+    <div class="login">
+        <div class="login-box" style="text-align:left;max-width:480px;">
+            <h2 style="text-align:center;color:var(--primary);margin-bottom:16px;">Bevor es losgeht</h2>
+            <ul style="list-style:none;font-size:0.92rem;line-height:1.7;color:var(--slate);">
+                <li style="margin-bottom:12px;">• Deine Nachrichten werden von einer KI (Claude, Anthropic) verarbeitet, um Termine zu erkennen. Dafür nutzen wir Server in den USA — das ist bei KI-Diensten Standard und völlig üblich.</li>
+                <li style="margin-bottom:12px;">• Erkannte Termine werden dir erst zur Kontrolle angezeigt. Nur was du bestätigst, wird als Kalendereinladung per E-Mail verschickt.</li>
+                <li style="margin-bottom:12px;">• Bestätigte Termine werden bei flomily gespeichert, damit du sie später abrufen und verwalten kannst. Du kannst die Löschung deiner Daten jederzeit verlangen.</li>
+            </ul>
+            <p style="font-size:0.85rem;color:var(--muted);margin:16px 0;">Alle Details: <a href="https://flomily.de/datenschutz" style="color:var(--primary);">Datenschutz</a> · <a href="https://flomily.de/nutzungsbedingungen" style="color:var(--primary);">Nutzungsbedingungen</a></p>
+            <button onclick="acceptConsent()" style="width:100%;padding:14px;background:var(--primary);color:white;border:none;border-radius:12px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:8px;">Einverstanden</button>
+            <button onclick="declineConsent()" style="width:100%;padding:14px;background:none;border:2px solid var(--border);color:var(--muted);border-radius:12px;font-family:inherit;font-size:0.9rem;cursor:pointer;">Abbrechen</button>
+        </div>
+    </div>
+</div>
 <div class="screen" id="screen-chat">
     <header class="header">
         <a href="https://flomily.de/"><img src="../logo.svg" alt="flomily" class="header-logo"></a>
