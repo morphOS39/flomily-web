@@ -516,8 +516,12 @@
     };
 
     // ── Photo ──────────────────────────────────────────────────────────────────
-    window.takePhoto = function () {
-        document.getElementById('photo-input').click();
+    window.takeCamera = function () {
+        document.getElementById('camera-input').click();
+    };
+
+    window.takeGallery = function () {
+        document.getElementById('gallery-input').click();
     };
 
     window.handlePhoto = function (input) {
