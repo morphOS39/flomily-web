@@ -110,6 +110,13 @@
         if (!document.getElementById('chat-messages').children.length) {
             var name = (state.user.name || state.user.email || '').split('@')[0];
             addBotMsg('Hallo ' + name + '! 👋\nSchick mir einen Termin — als Text, Foto oder Sprachnachricht.\n\nDu kannst auch "WM 2026" oder "F1" tippen für Sporttermine.');
+
+            var params = new URLSearchParams(window.location.search);
+            var autoSport = params.get('sport');
+            if (autoSport) {
+                history.replaceState({}, '', '/app/');
+                loadSportCatalog(autoSport);
+            }
         }
         checkLimitWarning();
         if ('serviceWorker' in navigator) {
@@ -474,9 +481,9 @@
 
     // ── Sport keywords ─────────────────────────────────────────────────────────
     function detectSportKeyword(text) {
-        var t = text.toLowerCase();
-        if (t.indexOf('wm 2026') >= 0 || t.indexOf('wm2026') >= 0 || t.indexOf('world cup') >= 0 || t.indexOf('weltmeisterschaft') >= 0) return 'wm2026';
-        if (t.indexOf('f1') >= 0 || t.indexOf('formel 1') >= 0 || t.indexOf('formula') >= 0) return 'f1';
+        var t = text.toLowerCase().trim();
+        if (t === 'wm' || t.indexOf('wm 2026') >= 0 || t.indexOf('wm2026') >= 0 || t.indexOf('world cup') >= 0 || t.indexOf('weltmeisterschaft') >= 0) return 'wm2026';
+        if (t === 'f1' || t.indexOf('formel 1') >= 0 || t.indexOf('formula') >= 0) return 'f1';
         return null;
     }
 
