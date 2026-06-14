@@ -591,7 +591,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
         <div class="features-more" id="features-more" style="display:none;">
             <div class="features-grid">
                 <div class="feature-item"><span class="feature-icon">🎤</span><div><strong>Sprachnachrichten</strong><p>Termin einfach reinsprechen.</p></div></div>
-                <div class="feature-item"><span class="feature-icon">⏰</span><div><strong>Erinnerungen per Telegram</strong><p>Wähle pro Termin eine Erinnerung — flomily schickt dir rechtzeitig eine Nachricht direkt in Telegram.</p></div></div>
+                <div class="feature-item"><span class="feature-icon">⏰</span><div><strong>Erinnerungen per Push</strong><p>Wähle pro Termin eine Erinnerung — flomily erinnert dich rechtzeitig, direkt auf deinem Gerät.</p></div></div>
 
                 <div class="feature-item"><span class="feature-icon">🗑️</span><div><strong>Müllkalender</strong><p>Einmal abfotografieren, nie wieder nachschauen.</p></div></div>
                 <div class="feature-item"><span class="feature-icon">🍽️</span><div><strong>Speiseplan</strong><p>Foto vom Kita- oder Schulessen — Mahlzeiten im Wochenüberblick.</p></div></div>
@@ -677,10 +677,9 @@ document.getElementById('burger').addEventListener('click',function(){document.g
         <p class="requirements-sub">Nur zwei Dinge — und los geht's.</p>
         <div class="requirements-grid">
             <div class="requirement-card">
-                <div class="requirement-icon">💬</div>
-                <h3>Telegram</h3>
-                <p>flomily nutzt Telegram als Eingangskanal — wie einen Briefkasten. Du brauchst dort keine Kontakte, keine Gruppen. Einfach nur flomily.</p>
-                <a href="https://telegram.org" class="requirement-link" target="_blank">Telegram herunterladen →</a>
+                <div class="requirement-icon">🌐</div>
+                <h3>Einen Browser</h3>
+                <p>flomily läuft direkt im Browser — kein Download, keine App nötig. Einfach <a href="https://flomily.de/app" class="requirement-link-inline">flomily.de/app</a> öffnen und loslegen. Alternativ auch über Telegram nutzbar.</p>
             </div>
             <div class="requirement-card">
                 <div class="requirement-icon">📧</div>
@@ -688,7 +687,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <p>Dorthin schickt flomily die Kalendereinladungen. Funktioniert mit jedem Anbieter — Gmail, GMX, Outlook, Apple Mail und allen anderen.</p>
             </div>
         </div>
-        <p class="requirements-note">Kein Abo, keine App, keine Installation. Einfach Telegram öffnen und loslegen.</p>
+        <p class="requirements-note">Kein Abo, kein Download, keine Installation. Einfach im Browser öffnen und loslegen.</p>
         <div class="homescreen-hint">
             <div class="homescreen-hint-content">
                 <div class="homescreen-hint-text">
@@ -790,14 +789,12 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <p>Deine Nachrichten werden verschlüsselt übertragen und nur zur Termin-Erkennung verarbeitet. Wir geben keine Daten an Dritte zu Werbezwecken weiter. Du bestimmst, welche Termine gespeichert werden — und kannst jederzeit die Löschung deiner Daten verlangen. Alle Details findest du in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
             </details>
             <details class="faq-item">
-                <summary>Warum Telegram?</summary>
-                <p>Telegram ist aktuell die einzige Plattform, die es erlaubt, einen Dienst wie flomily kostenlos und ohne Einschränkungen anzubieten. WhatsApp, Signal und andere bieten diese Möglichkeit für kleine Anbieter leider nicht an.</p>
-                <p>Wichtig: flomily nutzt Telegram nur als Eingangskanal — wie einen Briefkasten. Du brauchst dort keine Kontakte, keine Gruppen, keine Kanäle. Deine Daten werden nicht in Telegram gespeichert, sondern direkt verarbeitet und als normale Kalendereinladung per E-Mail verschickt.</p>
-                <p>Du kannst Telegram ausschließlich für flomily nutzen und sonst komplett ignorieren.</p>
+                <summary>Brauche ich Telegram?</summary>
+                <p>Nein! flomily läuft direkt im Browser unter <a href="https://flomily.de/app">flomily.de/app</a> — kein Download nötig. Alternativ kannst du flomily auch über Telegram nutzen.</p>
             </details>
             <details class="faq-item">
                 <summary>Gibt es flomily im App Store?</summary>
-                <p>Nein — und das ist Absicht. flomily läuft direkt in Telegram. Kein Download, kein App Store, keine Installation. Du kannst flomily aber wie eine App auf deinen Homescreen legen — dann ist es mit einem Tap erreichbar.</p>
+                <p>flomily läuft als Web-App direkt im Browser. Du kannst sie auf deinem Homescreen speichern — dann funktioniert sie wie eine normale App. Eine App-Store-Version ist in Planung.</p>
             </details>
             <details class="faq-item">
                 <summary>Muss ich jeden Termin einzeln eingeben?</summary>
@@ -825,14 +822,8 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <p>Ja. flomily erkennt Zeitzonen automatisch und erstellt Termine in der richtigen lokalen Zeit — egal ob du in Berlin, London oder New York bist.</p>
             </details>
             <details class="faq-item">
-                <summary>Welche Befehle gibt es im Bot?</summary>
-                <p>Du kannst diese Befehle jederzeit im Chat mit dem flomily-Bot verwenden:</p>
-                <ul style="margin: 8px 0; padding-left: 20px;">
-                    <li><strong>/help</strong> — Übersicht aller Befehle</li>
-                    <li><strong>/credits</strong> — Deine verfügbaren Credits anzeigen</li>
-                    <li><strong>/referral</strong> — Freunde einladen und Credits verdienen</li>
-                    <li><strong>/stop</strong> — flomily verlassen</li>
-                </ul>
+                <summary>Wie funktioniert flomily?</summary>
+                <p>Schreibe einfach deinen Termin als Text, fotografiere einen Flyer, oder sprich einen Termin ein. flomily erkennt den Termin automatisch und schickt dir eine Kalendereinladung per Mail.</p>
             </details>
         </div>
     </div>
