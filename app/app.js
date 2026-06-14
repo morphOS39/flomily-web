@@ -190,7 +190,12 @@
     function addLoading(text) {
         var div = document.createElement('div');
         div.className = 'loading';
-        div.innerHTML = '<span>' + (text || 'flomily denkt nach') + '</span><span class="loading-dots"></span>';
+        var span1 = document.createElement('span');
+        span1.textContent = text || 'flomily denkt nach';
+        var span2 = document.createElement('span');
+        span2.className = 'loading-dots';
+        div.appendChild(span1);
+        div.appendChild(span2);
         div.id = 'loading-indicator';
         document.getElementById('chat-messages').appendChild(div);
         scrollBottom();
