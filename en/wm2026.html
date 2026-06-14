@@ -103,7 +103,7 @@
     <h2>How it works — 4 steps</h2>
     <div class="steps">
         <div class="step"><div class="step-num">1</div><h3>Sign up</h3><p>Enter your email.</p><div class="step-time">30 seconds</div></div>
-        <div class="step"><div class="step-num">2</div><h3>Open flomily</h3><p>Open the channel, enter code.</p><div class="step-time">1 minute</div></div>
+        <div class="step"><div class="step-num">2</div><h3>Open flomily</h3><p>In your browser or Telegram — enter your code.</p><div class="step-time">1 minute</div></div>
         <div class="step"><div class="step-num">3</div><h3>Type "World Cup"</h3><p>Choose: all, your team, or group stage.</p><div class="step-time">10 seconds</div></div>
         <div class="step"><div class="step-num">4</div><h3>Done</h3><p>All matches in your calendar.</p><div class="step-time">✅</div></div>
     </div>
@@ -167,7 +167,7 @@ document.getElementById('wm-form').addEventListener('submit', function(e) {
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'wm2026-en'})
     }).then(function(){ location.href = '/en/danke.html'; })
-      .catch(function(){ location.href = '/en/danke.html'; });
+      .catch(function(){ btn.textContent = 'Error — please try again'; btn.disabled = false; btn.style.background = '#dc2626'; });
 });
 </script>
 

@@ -200,7 +200,7 @@
         <div class="step">
             <div class="step-num">2</div>
             <h3>flomily öffnen</h3>
-            <p>Eingangskanal öffnen, Code eingeben.</p>
+            <p>Im Browser oder in Telegram — Code eingeben.</p>
             <div class="step-time">1 Minute</div>
         </div>
         <div class="step">
@@ -329,7 +329,7 @@
             <button type="submit" id="wm-btn" style="padding:12px 20px;background:#E76F51;color:white;border:none;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;">Anmelden</button>
         </div>
     </form>
-    <p class="cta-sub">Kostenlos. Kein Abo. Kein Spam. Zugang innerhalb von 24h.</p>
+    <p class="cta-sub">Kostenlos. Kein Abo. Kein Spam. Zugang sofort.</p>
     <a href="/pitch" style="color:var(--primary);text-decoration:none;font-weight:600;font-size:0.9rem;">Mehr über flomily →</a>
     <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e2e8f0;text-align:center;">
         <p style="font-size:0.88rem;color:#718096;margin-bottom:8px;">Oder direkt im Browser starten:</p>
@@ -353,7 +353,7 @@ document.getElementById('wm-form').addEventListener('submit', function(e) {
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'wm2026'})
     }).then(function(){ location.href = '/danke.html'; })
-      .catch(function(){ location.href = '/danke.html'; });
+      .catch(function(){ btn.textContent = 'Fehler — bitte erneut versuchen'; btn.disabled = false; btn.style.background = '#dc2626'; });
 });
 </script>
 

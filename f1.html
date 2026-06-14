@@ -123,7 +123,7 @@
 </section>
 
 <script>
-document.getElementById('f1-form').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('f1-vorname').value,n=document.getElementById('f1-nachname').value,em=document.getElementById('f1-email').value,b=document.getElementById('f1-btn');b.textContent='Wird gesendet...';b.disabled=true;sessionStorage.setItem('flomily_email',em);sessionStorage.setItem('flomily_name',v+' '+n);fetch('https://mail.flomily.de/api/signup',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({website:'',email:em,vorname:v,nachname:n,name:v+' '+n,ref:'',source:'f1'})}).then(function(){location.href='/danke.html';}).catch(function(){location.href='/danke.html';});});
+document.getElementById('f1-form').addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('f1-vorname').value,n=document.getElementById('f1-nachname').value,em=document.getElementById('f1-email').value,b=document.getElementById('f1-btn');b.textContent='Wird gesendet...';b.disabled=true;sessionStorage.setItem('flomily_email',em);sessionStorage.setItem('flomily_name',v+' '+n);fetch('https://mail.flomily.de/api/signup',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({website:'',email:em,vorname:v,nachname:n,name:v+' '+n,ref:'',source:'f1'})}).then(function(){location.href='/danke.html';}).catch(function(){b.textContent='Fehler — bitte erneut versuchen';b.disabled=false;b.style.background='#dc2626';});});
 </script>
 
 <footer class="footer"><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily · flomily befindet sich in der Beta-Phase.</footer>

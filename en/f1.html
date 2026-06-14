@@ -137,7 +137,7 @@ document.getElementById('f1-form').addEventListener('submit', function(e) {
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'f1-en'})
     }).then(function(){ location.href = '/en/danke.html'; })
-      .catch(function(){ location.href = '/en/danke.html'; });
+      .catch(function(){ btn.textContent = 'Error — please try again'; btn.disabled = false; btn.style.background = '#dc2626'; });
 });
 </script>
 

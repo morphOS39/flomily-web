@@ -78,7 +78,11 @@
     <script>
     var params = new URLSearchParams(window.location.search);
     var code = params.get('code') || '';
+    var sport = params.get('sport') || '';
     var deeplink = 'https://t.me/flomily_bot?start=' + code;
+
+    // Pass sport param through to PWA
+    document.getElementById('btn-pwa').href = '/app/' + (sport ? '?sport=' + sport : '');
 
     // Track click
     var img = new Image();

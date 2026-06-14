@@ -68,6 +68,9 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <a href="#warteliste" class="cta-button">Get started free</a>
                 <a href="#demo" class="cta-button cta-ghost">Show me more</a>
             </div>
+            <div style="margin-top:16px;">
+                <a href="/app/" class="cta-button-secondary" style="display:inline-block;margin-left:12px;background:none;border:2px solid white;color:white;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:700;">Start in your browser →</a>
+            </div>
         </div>
 
         <!-- Demo video -->
@@ -692,9 +695,9 @@ document.getElementById('burger').addEventListener('click',function(){document.g
 <!-- Waitlist -->
 <section class="waitlist" id="warteliste">
     <div class="container">
-        <h2>Coming soon.</h2>
-        <p class="waitlist-sub">Sign up and be the first to get project updates — and access to the beta when it's ready.</p>
-        <div class="fomo-badge">🎁 The first 100 flo'ers start with 100 credits — use flomily exclusively before it's available to everyone.</div>
+        <h2>Get started free.</h2>
+        <p class="waitlist-sub">Sign up now and get immediate access to the beta — be there as flomily grows.</p>
+        <div class="fomo-badge">🎁 The first 100 flo'ers start with 100 credits <span style="font-size:0.82rem;color:#718096;">(1 credit = 1 appointment)</span> — use flomily exclusively before it's available to everyone.</div>
         <form class="waitlist-form" id="waitlist-form">
             <div style="display:flex;gap:8px;margin-bottom:8px;">
                 <input type="text" name="vorname" id="waitlist-vorname" placeholder="First name" required style="flex:1;">
@@ -723,7 +726,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
                     body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: ref || ''})
                 }).then(function(){ location.href = '/danke.html'; })
-                  .catch(function(){ location.href = '/danke.html'; });
+                  .catch(function(){ btn.textContent = 'Error — please try again'; btn.disabled = false; btn.style.background = '#dc2626'; });
             });
         })();
         </script>

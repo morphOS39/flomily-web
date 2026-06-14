@@ -55,6 +55,8 @@
     // ── Auth ───────────────────────────────────────────────────────────────────
     function checkSession() {
         var params = new URLSearchParams(window.location.search);
+        var sportParam = params.get('sport');
+        if (sportParam) sessionStorage.setItem('flomily_sport', sportParam);
         var token = params.get('token');
         var email = params.get('email');
         if (token && email) {
@@ -112,8 +114,9 @@
             addBotMsg('Hallo ' + name + '! 👋\nSchick mir einen Termin — als Text, Foto oder Sprachnachricht.\n\nDu kannst auch "WM 2026" oder "F1" tippen für Sporttermine.');
 
             var params = new URLSearchParams(window.location.search);
-            var autoSport = params.get('sport');
+            var autoSport = params.get('sport') || sessionStorage.getItem('flomily_sport');
             if (autoSport) {
+                sessionStorage.removeItem('flomily_sport');
                 history.replaceState({}, '', '/app/');
                 loadSportCatalog(autoSport);
             }

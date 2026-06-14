@@ -68,6 +68,9 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                 <a href="#warteliste" class="cta-button">Kostenlos starten</a>
                 <a href="#demo" class="cta-button cta-ghost">Zeig mir mehr</a>
             </div>
+            <div style="margin-top:16px;">
+                <a href="/app/" class="cta-button-secondary" style="display:inline-block;margin-left:12px;background:none;border:2px solid white;color:white;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:700;">Direkt im Browser starten →</a>
+            </div>
         </div>
 
         <!-- Demo video -->
@@ -706,9 +709,9 @@ document.getElementById('burger').addEventListener('click',function(){document.g
 <!-- Waitlist -->
 <section class="waitlist" id="warteliste">
     <div class="container">
-        <h2>Bald geht's los.</h2>
-        <p class="waitlist-sub">Meld dich an und bekomm als Erste(r) Updates zum Projektfortschritt — und Zugang zur Beta, wenn's soweit ist.</p>
-        <div class="fomo-badge">🎁 Die ersten 100 Flo'er starten mit 100 Credits — damit nutzt du flomily exklusiv, bevor es für alle verfügbar ist.</div>
+        <h2>Kostenlos starten.</h2>
+        <p class="waitlist-sub">Meld dich an und bekomm sofort Zugang zur Beta — und sei dabei, wenn flomily weiterwächst.</p>
+        <div class="fomo-badge">🎁 Die ersten 100 Flo'er starten mit 100 Credits <span style="font-size:0.82rem;color:#718096;">(1 Credit = 1 Termin)</span> — damit nutzt du flomily exklusiv, bevor es für alle verfügbar ist.</div>
         <form class="waitlist-form" id="waitlist-form">
             <div style="display:flex;gap:8px;margin-bottom:8px;">
                 <input type="text" name="vorname" id="waitlist-vorname" placeholder="Vorname" required style="flex:1;">
@@ -737,7 +740,7 @@ document.getElementById('burger').addEventListener('click',function(){document.g
                     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
                     body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: ref || ''})
                 }).then(function(){ location.href = '/danke.html'; })
-                  .catch(function(){ location.href = '/danke.html'; });
+                  .catch(function(){ btn.textContent = 'Fehler — bitte erneut versuchen'; btn.disabled = false; btn.style.background = '#dc2626'; });
             });
         })();
         </script>

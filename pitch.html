@@ -496,7 +496,7 @@ document.getElementById('pitch-form').addEventListener('submit', function(e) {
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'pitch'})
     }).then(function(){ location.href = '/danke.html'; })
-      .catch(function(){ location.href = '/danke.html'; });
+      .catch(function(){ btn.textContent = 'Fehler — bitte erneut versuchen'; btn.disabled = false; btn.style.background = '#dc2626'; });
 });
 </script>
 
