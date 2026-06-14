@@ -298,8 +298,12 @@
     function confirmEvent(index) {
         var ev = state.pendingEvents[index];
         if (!ev || !ev.pending_id) return;
+        state.pendingEvents[index] = null;
         var card = document.getElementById('event-card-' + index);
-        if (card) card.querySelector('.btn-confirm').textContent = '...';
+        if (card) {
+            card.querySelectorAll('button').forEach(function (b) { b.disabled = true; });
+            card.querySelector('.btn-confirm').textContent = '...';
+        }
 
         api('/events/confirm', { method: 'POST', body: { event_id: ev.pending_id } }).then(function (data) {
             if (card) {
@@ -317,9 +321,11 @@
             removeBatchIfDone();
         }).catch(function () {
             addBotMsg('Fehler beim Eintragen. Bitte versuche es erneut.');
-            if (card) card.querySelector('.btn-confirm').textContent = 'Eintragen';
+            if (card) {
+                card.querySelectorAll('button').forEach(function (b) { b.disabled = false; });
+                card.querySelector('.btn-confirm').textContent = 'Eintragen';
+            }
         });
-        state.pendingEvents[index] = null;
     }
 
     function editEvent(index) {
@@ -421,6 +427,12 @@
             if (ev && ev.pending_id) ids.push(ev.pending_id);
         });
         if (!ids.length) return;
+
+        // Disable batch buttons immediately to prevent double-click
+        var batchEl = document.getElementById('batch-actions');
+        if (batchEl) {
+            batchEl.querySelectorAll('button').forEach(function (b) { b.disabled = true; b.style.opacity = '0.5'; });
+        }
 
         addLoading('Termine werden verschickt (' + ids.length + ')');
         api('/events/confirm-all', { method: 'POST', body: { event_ids: ids } }).then(function (data) {
