@@ -397,18 +397,18 @@
     }
 
     function discardEvent(index) {
-        var ev = state.pendingEvents[index];
         var card = document.getElementById('event-card-' + index);
+        if (!card || card.classList.contains('discarded') || card.classList.contains('confirmed')) return;
+
+        var ev = state.pendingEvents[index];
         if (ev && ev.pending_id) {
             api('/events/discard', { method: 'POST', body: { event_id: ev.pending_id } });
         }
-        if (card) {
-            card.classList.add('discarded');
-            var note = document.createElement('div');
-            note.style.cssText = 'margin-top:8px;color:var(--muted);font-size:0.85rem;';
-            note.textContent = '✗ Verworfen';
-            card.appendChild(note);
-        }
+        card.classList.add('discarded');
+        var note = document.createElement('div');
+        note.style.cssText = 'margin-top:8px;color:var(--muted);font-size:0.85rem;';
+        note.textContent = '✗ Verworfen';
+        card.appendChild(note);
         state.pendingEvents[index] = null;
         removeBatchIfDone();
     }
