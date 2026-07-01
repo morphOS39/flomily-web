@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundesliga 2026/27 Spielplan im Kalender — ein Klick | flomily</title>
+    <meta name="description" content="Bundesliga 2026/27: Alle 34 Spieltage deines Vereins direkt in deinen Kalender. Google, Outlook, Apple, GMX. Kostenlos.">
+    <meta name="keywords" content="Bundesliga 2026 Kalender, Bundesliga Spielplan Google Calendar, Bundesliga 2026/27 ICS, Bundesliga Termine Kalender importieren, Bundesliga Kalender Outlook, Fußball Bundesliga Kalender">
+    <meta property="og:title" content="Bundesliga 2026/27 — alle Spiele deines Vereins im Kalender">
+    <meta property="og:description" content="34 Spieltage, 306 Spiele — alle Termine deines Vereins direkt im Kalender. Outlook, Google, Apple, egal.">
+    <meta property="og:image" content="https://flomily.de/og-image.png">
+    <meta property="og:url" content="https://flomily.de/bundesliga">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://flomily.de/bundesliga">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        :root { --primary: #2A9D8F; --primary-dark: #238B7E; --accent: #E76F51; --slate: #2D3748; --muted: #718096; --snow: #FAFCFB; --bl: #2d6a4f; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Quicksand', system-ui, sans-serif; color: var(--slate); background: var(--snow); line-height: 1.65; font-weight: 500; }
+        .header { position: sticky; top: 0; z-index: 100; background: white; box-shadow: 0 1px 8px rgba(45,55,72,0.06); padding: 12px 24px; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; }
+        .header img { height: 26px; }
+        .header a.link { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .hero { background: linear-gradient(150deg, #1a3a2a 0%, #2d6a4f 50%, #40916c 100%); color: white; text-align: center; padding: 36px 24px 30px; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+        .hero .subline { font-size: 1.1rem; opacity: 0.92; max-width: 580px; margin: 0 auto; }
+        .hero .cta-top { display: inline-block; margin-top: 18px; background: var(--accent); color: white; padding: 13px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 16px rgba(231,111,81,0.3); }
+        .hero .cta-top:hover { transform: translateY(-2px); }
+        .wave svg { display: block; width: 100%; height: 40px; margin-top: -1px; }
+        .sec { max-width: 720px; margin: 0 auto; padding: 24px 24px 0; }
+        .sec h2 { font-size: 1.2rem; margin-bottom: 12px; }
+        .sec-center { text-align: center; }
+
+        /* Options */
+        .options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+        .opt { background: white; border-radius: 12px; padding: 16px 14px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); text-align: center; }
+        .opt-emoji { font-size: 1.8rem; margin-bottom: 6px; }
+        .opt h3 { font-size: 0.92rem; margin-bottom: 4px; }
+        .opt p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+        @media (max-width: 600px) { .options { grid-template-columns: 1fr; } }
+
+        /* Matches */
+        .match { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.88rem; }
+        .match-teams { font-weight: 600; }
+        .match-meta { color: var(--muted); font-size: 0.8rem; text-align: right; }
+        .match-group { margin-bottom: 14px; }
+        .match-group h3 { font-size: 0.88rem; color: var(--bl); font-weight: 700; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 2px solid #d8f3e3; }
+
+        /* Steps */
+        .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .step { background: white; border-radius: 12px; padding: 16px 12px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); text-align: center; position: relative; }
+        .step-num { display: inline-block; background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; font-weight: 800; font-size: 0.85rem; line-height: 28px; margin-bottom: 8px; }
+        .step h3 { font-size: 0.88rem; margin-bottom: 4px; }
+        .step p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+        .step-time { font-size: 0.75rem; color: var(--primary); font-weight: 700; margin-top: 6px; }
+        @media (max-width: 600px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Honest box */
+        .honest { background: white; border-radius: 14px; padding: 20px; box-shadow: 0 2px 10px rgba(45,55,72,0.06); margin: 20px 0; }
+        .honest h2 { font-size: 1.1rem; margin-bottom: 10px; }
+        .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .honest-col h3 { font-size: 0.92rem; margin-bottom: 8px; }
+        .honest-col ul { list-style: none; font-size: 0.88rem; }
+        .honest-col ul li { padding: 3px 0; }
+        @media (max-width: 500px) { .honest-grid { grid-template-columns: 1fr; } }
+
+        /* Calendars */
+        .calendars { text-align: center; padding: 4px 0 8px; color: var(--muted); font-size: 0.88rem; }
+
+        /* CTA */
+        .cta { text-align: center; padding: 16px 24px 36px; }
+        .cta h2 { font-size: 1.2rem; margin-bottom: 6px; }
+        .cta-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; }
+        .footer { text-align: center; padding: 18px; font-size: 0.78rem; color: var(--muted); border-top: 1px solid #e8ecf0; }
+        .footer a { color: var(--muted); }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","name":"Bundesliga 2026/27 Spielplan im Kalender","description":"Alle Spiele deines Bundesliga-Vereins mit einem Klick in deinen Kalender importieren.","url":"https://flomily.de/bundesliga","mainEntity":{"@type":"SportsEvent","name":"Bundesliga 2026/27","startDate":"2026-08-01","endDate":"2027-05-31","location":{"@type":"Place","name":"Deutschland"}}}
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183386921"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18183386921');
+</script>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="/"><img src="logo.svg" alt="flomily"></a>
+        <a href="/pitch" class="link">Was ist flomily? →</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>⚽ Bundesliga 2026/27<br>Dein Verein im Kalender</h1>
+    <p class="subline">34 Spieltage, 306 Spiele — alle Termine deines Vereins direkt im Kalender. Kostenlos.</p>
+    <a href="#warteliste" class="cta-top">Kostenlos starten</a>
+</section>
+<div class="wave">
+    <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
+        <path d="M0 20C240 40 480 0 720 20C960 40 1200 0 1440 20V40H0V20Z" fill="var(--snow)"/>
+    </svg>
+</div>
+
+<!-- WAS DU BEKOMMST -->
+<div class="sec">
+    <h2 class="sec-center">Was du bekommst</h2>
+    <div class="options">
+        <div class="opt">
+            <div class="opt-emoji">🏟️</div>
+            <h3>Dein Verein</h3>
+            <p>Alle 34 Spiele — Heim und Auswärts.</p>
+        </div>
+        <div class="opt">
+            <div class="opt-emoji">⚽</div>
+            <h3>Heim- &amp; Auswärtsspiele</h3>
+            <p>17 Heimspiele + 17 Auswärtsspiele getrennt wählbar.</p>
+        </div>
+        <div class="opt">
+            <div class="opt-emoji">📋</div>
+            <h3>Kompletter Spielplan</h3>
+            <p>Alle 306 Spiele der gesamten Saison.</p>
+        </div>
+    </div>
+    <p style="text-align:center;font-size:0.88rem;color:var(--muted);">Jeder Termin mit Datum, Anstoßzeit, Stadion und Gegner.</p>
+</div>
+
+<!-- SPIELTAG 1 -->
+<div class="sec">
+    <h2 class="sec-center">Spieltag 1 — Vorschau</h2>
+    <div class="match-group">
+        <h3>Spieltag 1 (ca. 22.–24. August 2026)</h3>
+        <div class="match">
+            <div class="match-teams">FC Bayern München vs [TBD]</div>
+            <div class="match-meta">Sa, 22.08.2026<br>Allianz Arena, München</div>
+        </div>
+        <div class="match">
+            <div class="match-teams">Borussia Dortmund vs [TBD]</div>
+            <div class="match-meta">Sa, 22.08.2026<br>Signal Iduna Park, Dortmund</div>
+        </div>
+        <div class="match">
+            <div class="match-teams">Bayer 04 Leverkusen vs [TBD]</div>
+            <div class="match-meta">Sa, 22.08.2026<br>BayArena, Leverkusen</div>
+        </div>
+        <div class="match">
+            <div class="match-teams">RB Leipzig vs [TBD]</div>
+            <div class="match-meta">Sa, 22.08.2026<br>Red Bull Arena, Leipzig</div>
+        </div>
+        <div class="match">
+            <div class="match-teams">Eintracht Frankfurt vs [TBD]</div>
+            <div class="match-meta">So, 23.08.2026<br>Deutsche Bank Park, Frankfurt</div>
+        </div>
+        <div class="match" style="border-bottom:none;color:var(--muted);font-size:0.82rem;">
+            <div>... und alle weiteren Spieltag-1-Paarungen</div>
+        </div>
+    </div>
+    <div style="background: #f0fdf4; border-radius: 12px; padding: 14px 18px; margin-top: 4px;">
+        <p style="margin: 0; color: #2d6a4f; font-size: 0.88rem; line-height: 1.5;">📅 <strong>Der offizielle Spielplan wird am 2. Juli von der DFL veröffentlicht</strong> — dann sind hier alle Termine mit genauen Anstoßzeiten und Paarungen.</p>
+    </div>
+</div>
+
+<!-- SO GEHT'S -->
+<div class="sec">
+    <h2 class="sec-center">So geht's — in 4 Schritten</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <h3>Anmelden</h3>
+            <p>E-Mail eingeben, Zugang erhalten.</p>
+            <div class="step-time">30 Sekunden</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <h3>flomily öffnen</h3>
+            <p>Im Browser oder in Telegram — Code eingeben.</p>
+            <div class="step-time">1 Minute</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <h3>Verein tippen</h3>
+            <p>z.&nbsp;B. „Bayern München" — Spiele wählen.</p>
+            <div class="step-time">10 Sekunden</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <h3>Fertig</h3>
+            <p>Alle Spiele sind in deinem Kalender.</p>
+            <div class="step-time">✅</div>
+        </div>
+    </div>
+</div>
+
+<!-- EHRLICHKEITS-BLOCK -->
+<div class="sec">
+    <div class="honest">
+        <h2>Ehrliche Ansage: Beim ersten Mal dauert's 2 Minuten.</h2>
+        <div class="honest-grid">
+            <div class="honest-col">
+                <h3 style="color:var(--muted);">⏱️ Einmalig</h3>
+                <ul>
+                    <li>✉️ E-Mail bestätigen</li>
+                    <li>📱 flomily starten (läuft direkt im Browser — einfach flomily.de/app öffnen. Auch über Telegram nutzbar.)</li>
+                    <li>🔑 Code eingeben</li>
+                </ul>
+            </div>
+            <div class="honest-col">
+                <h3 style="color:var(--bl);">🚀 Ab dann — für immer</h3>
+                <ul>
+                    <li>⚽ „Bayern München" → alle Spiele im Kalender</li>
+                    <li>🎤 Termin einsprechen → im Kalender</li>
+                    <li>📸 Foto vom Aushang → im Kalender</li>
+                    <li>📱 WhatsApp weiterleiten → im Kalender</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:14px;color:var(--bl);font-weight:700;font-size:0.95rem;">Die Bundesliga ist der Anfang. Danach wird flomily dein schnellster Weg in den Kalender.</p>
+    </div>
+</div>
+
+<!-- KALENDER-KOMPATIBILITÄT -->
+<div class="calendars">
+    Funktioniert mit jedem Kalender.<br>(Outlook, Google, Apple, GMX, ...)
+</div>
+
+<div style="max-width: 700px; margin: 0 auto; padding: 12px 24px;">
+    <div style="background: #f0fdf4; border-radius: 12px; padding: 16px 20px;">
+        <p style="margin: 0 0 6px; font-weight: 700; color: #2d6a4f; font-size: 0.9rem;">💡 Gut zu wissen</p>
+        <p style="margin: 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">Du bekommst für jedes Spiel eine Kalendereinladung per Mail. Du musst sie nicht einzeln bestätigen — die Termine erscheinen automatisch in deinem Kalender. Tipp: Erstelle eine Mail-Regel für Absender @flomily.de, um die Einladungen in einen Unterordner zu verschieben.</p>
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="cta" id="warteliste">
+    <h2>Jetzt kostenlos starten</h2>
+    <p class="cta-sub">Einmal anmelden — Bundesliga-Spiele und alle zukünftigen Termine in Sekunden im Kalender.</p>
+    <form id="bl-form" style="max-width: 420px; margin: 0 auto 10px;">
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <input type="text" name="vorname" id="bl-vorname" placeholder="Vorname" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+            <input type="text" name="nachname" id="bl-nachname" placeholder="Nachname" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+        </div>
+        <div style="display:flex;gap:8px;">
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="email" name="email" id="bl-email" placeholder="Deine E-Mail-Adresse" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
+            <button type="submit" id="bl-btn" style="padding:12px 20px;background:#E76F51;color:white;border:none;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;">Anmelden</button>
+        </div>
+    </form>
+    <p class="cta-sub">Kostenlos. Kein Abo. Kein Spam. Zugang sofort.</p>
+    <a href="/pitch" style="color:var(--primary);text-decoration:none;font-weight:600;font-size:0.9rem;">Mehr über flomily →</a>
+    <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e2e8f0;text-align:center;">
+        <p style="font-size:0.88rem;color:#718096;margin-bottom:8px;">Oder direkt im Browser starten:</p>
+        <a href="/app/?sport=bundesliga" style="color:#2A9D8F;text-decoration:none;font-weight:700;font-size:0.95rem;">flomily Web-App öffnen →</a>
+    </div>
+</section>
+
+<script>
+document.getElementById('bl-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var vorname = document.getElementById('bl-vorname').value;
+    var nachname = document.getElementById('bl-nachname').value;
+    var email = document.getElementById('bl-email').value;
+    var btn = document.getElementById('bl-btn');
+    btn.textContent = 'Wird gesendet...';
+    btn.disabled = true;
+    sessionStorage.setItem('flomily_email', email);
+    sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
+    fetch('https://mail.flomily.de/api/signup', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'bundesliga'})
+    }).then(function(){ location.href = '/danke.html'; })
+      .catch(function(){ btn.textContent = 'Fehler — bitte erneut versuchen'; btn.disabled = false; btn.style.background = '#dc2626'; });
+});
+</script>
+
+<footer class="footer">
+    <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily · flomily befindet sich in der Beta-Phase.
+</footer>
+
+<img src="https://mail.flomily.de/pt/t?p=bundesliga" style="display:none" alt="">
+</body>
+</html>
