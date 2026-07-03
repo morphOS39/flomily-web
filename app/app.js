@@ -598,8 +598,39 @@
             if (sport === 'bundesliga' && d.unconfirmed_count > 0) {
                 var tName = d.team || team || '';
                 var n = d.unconfirmed_count;
-                var prefix = d.events && d.events.length > 0 ? '' : '⚽ ' + (tName ? tName + ': ' : '') + n + ' Spiel' + (n !== 1 ? 'e' : '') + ' gefunden.\n\n';
-                addBotMsg(prefix + '🔔 ' + n + ' weitere Spiele ohne bestätigte Anstoßzeit. Du wirst automatisch benachrichtigt, sobald die DFL die Zeiten freigibt — dann kannst du sie mit einem Klick eintragen.');
+                if (!d.events || d.events.length === 0) {
+                    addBotMsg('⚽ ' + (tName || 'Bundesliga') + ': ' + n + ' Spiel' + (n !== 1 ? 'e' : '') + ' in der Saison — Anstoßzeiten werden ab 13. Juli von der DFL offiziell bestätigt.');
+                }
+                var subCard = document.createElement('div');
+                subCard.className = 'event-card';
+                subCard.style.padding = '16px';
+                var subMsg = document.createElement('p');
+                subMsg.style.cssText = 'margin:0 0 14px 0;font-size:14px;color:#2D3748;line-height:1.5;';
+                subMsg.textContent = '🔔 Soll ich dir automatisch Bescheid geben, sobald die Anstoßzeiten bekannt sind?';
+                subCard.appendChild(subMsg);
+                var btnRow = document.createElement('div');
+                btnRow.style.cssText = 'display:flex;gap:10px;';
+                var yesBtn = document.createElement('button');
+                yesBtn.textContent = 'Ja, klar!';
+                yesBtn.style.cssText = 'flex:1;padding:10px;background:#38B2AC;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;';
+                var noBtn = document.createElement('button');
+                noBtn.textContent = 'Nein danke';
+                noBtn.style.cssText = 'flex:1;padding:10px;background:#EDF2F7;color:#4A5568;border:none;border-radius:8px;font-size:14px;cursor:pointer;';
+                var capturedTeam = tName;
+                yesBtn.onclick = function() {
+                    subCard.remove();
+                    api('/sports/bundesliga/subscribe', { method: 'POST', body: { team: capturedTeam } }).then(function() {
+                        addBotMsg('✅ Gespeichert! Sobald die DFL die Anstoßzeiten für ' + capturedTeam + ' freigibt, bekommst du automatisch eine Benachrichtigung.');
+                    }).catch(function() {
+                        addBotMsg('✅ Gespeichert! Du wirst benachrichtigt, sobald die Zeiten bekannt sind.');
+                    });
+                };
+                noBtn.onclick = function() { subCard.remove(); };
+                btnRow.appendChild(yesBtn);
+                btnRow.appendChild(noBtn);
+                subCard.appendChild(btnRow);
+                document.getElementById('chat-messages').appendChild(subCard);
+                scrollBottom();
             } else if (!d.events || d.events.length === 0) {
                 addBotMsg('Keine Termine gefunden.');
             }
