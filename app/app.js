@@ -552,20 +552,37 @@
     }
 
     function showTeamPicker(sport, teams) {
-        addBotMsg('Wähle deine Mannschaft:');
+        addBotMsg('Wähle deinen Verein:');
         var card = document.createElement('div');
         card.className = 'event-card';
-        card.style.maxHeight = '300px';
-        card.style.overflowY = 'auto';
-        teams.forEach(function (team) {
-            var btn = document.createElement('button');
-            btn.className = 'btn-discard';
-            btn.style.cssText = 'margin:3px 0;width:100%;text-align:left;padding:10px 14px;';
-            btn.textContent = team;
-            btn.onclick = function () { card.remove(); selectSport(sport, 'team', team); };
-            card.appendChild(btn);
-        });
+
+        var inp = document.createElement('input');
+        inp.type = 'text';
+        inp.placeholder = 'Verein suchen…';
+        inp.style.cssText = 'width:100%;box-sizing:border-box;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:0.9rem;margin-bottom:8px;outline:none;';
+        card.appendChild(inp);
+
+        var list = document.createElement('div');
+        list.style.cssText = 'max-height:240px;overflow-y:auto;';
+
+        function renderList(q) {
+            list.innerHTML = '';
+            teams.filter(function (t) {
+                return !q || t.toLowerCase().indexOf(q.toLowerCase()) >= 0;
+            }).forEach(function (team) {
+                var btn = document.createElement('button');
+                btn.style.cssText = 'display:block;width:100%;text-align:left;padding:10px 14px;margin:2px 0;background:none;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;font-family:inherit;font-size:0.9rem;color:#2D3748;';
+                btn.textContent = team;
+                btn.onclick = function () { card.remove(); selectSport(sport, 'team', team); };
+                list.appendChild(btn);
+            });
+        }
+        renderList('');
+        inp.oninput = function () { renderList(inp.value); };
+        card.appendChild(list);
+
         document.getElementById('chat-messages').appendChild(card);
+        inp.focus();
         scrollBottom();
     }
 
