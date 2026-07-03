@@ -104,7 +104,7 @@
 <section class="hero">
     <h1>⚽ Bundesliga 2026/27<br>Dein Verein im Kalender</h1>
     <p class="subline">34 Spieltage, 306 Spiele (225 schon verfügbar) — alle Termine deines Vereins direkt im Kalender. Kostenlos.</p>
-    <a href="#warteliste" class="cta-top">Kostenlos starten</a>
+    <a href="/app/?sport=bundesliga" class="cta-top">App öffnen →</a>
 </section>
 <div class="wave">
     <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
@@ -186,14 +186,14 @@
     <div class="steps">
         <div class="step">
             <div class="step-num">1</div>
-            <h3>Anmelden</h3>
-            <p>E-Mail eingeben, Zugang erhalten.</p>
-            <div class="step-time">30 Sekunden</div>
+            <h3>App öffnen</h3>
+            <p>flomily.de/app aufrufen — direkt loslegen.</p>
+            <div class="step-time">5 Sekunden</div>
         </div>
         <div class="step">
             <div class="step-num">2</div>
-            <h3>flomily öffnen</h3>
-            <p>Im Browser oder in Telegram — Code eingeben.</p>
+            <h3>Anmelden</h3>
+            <p>E-Mail eingeben, Code bestätigen.</p>
             <div class="step-time">1 Minute</div>
         </div>
         <div class="step">
@@ -220,7 +220,7 @@
                 <h3 style="color:var(--muted);">⏱️ Einmalig</h3>
                 <ul>
                     <li>✉️ E-Mail bestätigen</li>
-                    <li>📱 flomily starten (läuft direkt im Browser — einfach flomily.de/app öffnen. Auch über Telegram nutzbar.)</li>
+                    <li>📱 flomily öffnen — flomily.de/app direkt im Browser</li>
                     <li>🔑 Code eingeben</li>
                 </ul>
             </div>
@@ -254,44 +254,13 @@
 <section class="cta" id="warteliste">
     <h2>Jetzt kostenlos starten</h2>
     <p class="cta-sub">Einmal anmelden — Bundesliga-Spiele und alle zukünftigen Termine in Sekunden im Kalender.</p>
-    <form id="bl-form" style="max-width: 420px; margin: 0 auto 10px;">
-        <div style="display:flex;gap:8px;margin-bottom:8px;">
-            <input type="text" name="vorname" id="bl-vorname" placeholder="Vorname" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
-            <input type="text" name="nachname" id="bl-nachname" placeholder="Nachname" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
-        </div>
-        <div style="display:flex;gap:8px;">
-            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="email" name="email" id="bl-email" placeholder="Deine E-Mail-Adresse" required style="flex:1;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:1rem;outline:none;">
-            <button type="submit" id="bl-btn" style="padding:12px 20px;background:#E76F51;color:white;border:none;border-radius:10px;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;white-space:nowrap;">Anmelden</button>
-        </div>
-    </form>
-    <p class="cta-sub">Kostenlos. Kein Abo. Kein Spam. Zugang sofort.</p>
-    <a href="/pitch" style="color:var(--primary);text-decoration:none;font-weight:600;font-size:0.9rem;">Mehr über flomily →</a>
+    <a href="/app/?sport=bundesliga" style="display:inline-block;background:#E76F51;color:white;padding:16px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1.1rem;box-shadow:0 4px 16px rgba(231,111,81,0.3);">flomily öffnen →</a>
+    <p class="cta-sub" style="margin-top:10px;">Kostenlos. Kein Abo. Kein Spam. Läuft direkt im Browser.</p>
     <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e2e8f0;text-align:center;">
-        <p style="font-size:0.88rem;color:#718096;margin-bottom:8px;">Oder direkt im Browser starten:</p>
-        <a href="/app/?sport=bundesliga" style="color:#2A9D8F;text-decoration:none;font-weight:700;font-size:0.95rem;">flomily Web-App öffnen →</a>
+        <p style="font-size:0.88rem;color:#718096;margin-bottom:8px;">Lieber über Telegram?</p>
+        <a href="https://t.me/FlomilyBot" style="color:#2A9D8F;text-decoration:none;font-weight:700;font-size:0.95rem;">@FlomilyBot starten →</a>
     </div>
 </section>
-
-<script>
-document.getElementById('bl-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var vorname = document.getElementById('bl-vorname').value;
-    var nachname = document.getElementById('bl-nachname').value;
-    var email = document.getElementById('bl-email').value;
-    var btn = document.getElementById('bl-btn');
-    btn.textContent = 'Wird gesendet...';
-    btn.disabled = true;
-    sessionStorage.setItem('flomily_email', email);
-    sessionStorage.setItem('flomily_name', vorname + ' ' + nachname);
-    fetch('https://mail.flomily.de/api/signup', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-        body: JSON.stringify({website: '', email: email, vorname: vorname, nachname: nachname, name: vorname + ' ' + nachname, ref: '', source: 'bundesliga'})
-    }).then(function(){ location.href = '/danke.html'; })
-      .catch(function(){ btn.textContent = 'Fehler — bitte erneut versuchen'; btn.disabled = false; btn.style.background = '#dc2626'; });
-});
-</script>
 
 <footer class="footer">
     <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · © 2026 flomily · flomily befindet sich in der Beta-Phase.
