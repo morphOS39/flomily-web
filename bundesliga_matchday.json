@@ -2,7 +2,7 @@
   "season_over": false,
   "confirmed_from": "13. Juli",
   "confirmed_from_en": "July 13",
-  "generated_at": "2026-07-03T12:15:02.506528",
+  "generated_at": "2026-07-03T12:18:07.295828",
   "next_matchday": {
     "number": 1,
     "date_range": {
@@ -17,8 +17,8 @@
         "date": "2026-08-28",
         "time": "20:30",
         "confirmed": true,
-        "stadium": "",
-        "city": ""
+        "stadium": "Allianz Arena",
+        "city": "München"
       },
       {
         "team1": "Borussia Dortmund",
@@ -26,8 +26,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "Signal Iduna Park",
+        "city": "Dortmund"
       },
       {
         "team1": "RB Leipzig",
@@ -35,8 +35,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "Red Bull Arena",
+        "city": "Leipzig"
       },
       {
         "team1": "SC Freiburg",
@@ -44,8 +44,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "Europa-Park Stadion",
+        "city": "Freiburg"
       },
       {
         "team1": "FC Augsburg",
@@ -53,8 +53,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "WWK Arena",
+        "city": "Augsburg"
       },
       {
         "team1": "1. FSV Mainz 05",
@@ -62,8 +62,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "MEWA ARENA",
+        "city": "Mainz"
       },
       {
         "team1": "1. FC Union Berlin",
@@ -71,8 +71,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "An der Alten Försterei",
+        "city": "Berlin"
       },
       {
         "team1": "1. FC Köln",
@@ -80,8 +80,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "RheinEnergieStadion",
+        "city": "Köln"
       },
       {
         "team1": "SV 07 Elversberg",
@@ -89,8 +89,8 @@
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "",
-        "city": ""
+        "stadium": "evo:ARENA",
+        "city": "Neunkirchen"
       }
     ]
   }
