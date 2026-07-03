@@ -2,21 +2,96 @@
   "season_over": false,
   "confirmed_from": "13. Juli",
   "confirmed_from_en": "July 13",
-  "generated_at": "2026-07-03T00:00:00",
+  "generated_at": "2026-07-03T12:15:02.506528",
   "next_matchday": {
     "number": 1,
-    "date_range": {"de": "28./29. August 2026", "en": "28/29 August 2026"},
+    "date_range": {
+      "de": "28./29. Aug. 2026",
+      "en": "28/29 August 2026"
+    },
     "opening_date": "2026-08-28",
     "matches": [
-      {"team1": "FC Bayern München", "team2": "VfB Stuttgart",             "date": "2026-08-28", "time": "20:30", "confirmed": true,  "stadium": "Allianz Arena",          "city": "München"},
-      {"team1": "Borussia Dortmund",  "team2": "Hamburger SV",             "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "Signal Iduna Park",      "city": "Dortmund"},
-      {"team1": "RB Leipzig",         "team2": "Borussia Mönchengladbach", "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "Red Bull Arena",         "city": "Leipzig"},
-      {"team1": "SC Freiburg",        "team2": "SV Werder Bremen",         "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "Europa-Park Stadion",    "city": "Freiburg"},
-      {"team1": "1. FC Köln",         "team2": "TSG Hoffenheim",           "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "RheinEnergieStadion",    "city": "Köln"},
-      {"team1": "FC Augsburg",        "team2": "FC Schalke 04",            "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "WWK Arena",              "city": "Augsburg"},
-      {"team1": "1. FC Union Berlin", "team2": "Eintracht Frankfurt",      "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "An der Alten Försterei", "city": "Berlin"},
-      {"team1": "1. FSV Mainz 05",    "team2": "SC Paderborn 07",          "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "MEWA ARENA",             "city": "Mainz"},
-      {"team1": "SV 07 Elversberg",   "team2": "Bayer 04 Leverkusen",      "date": "2026-08-29", "time": "15:30", "confirmed": false, "stadium": "evo:ARENA",              "city": "Neunkirchen"}
+      {
+        "team1": "FC Bayern München",
+        "team2": "VfB Stuttgart",
+        "date": "2026-08-28",
+        "time": "20:30",
+        "confirmed": true,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "Borussia Dortmund",
+        "team2": "Hamburger SV",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "RB Leipzig",
+        "team2": "Borussia Mönchengladbach",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "SC Freiburg",
+        "team2": "SV Werder Bremen",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "FC Augsburg",
+        "team2": "FC Schalke 04",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "1. FSV Mainz 05",
+        "team2": "SC Paderborn 07",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "1. FC Union Berlin",
+        "team2": "Eintracht Frankfurt",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "1. FC Köln",
+        "team2": "TSG Hoffenheim",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      },
+      {
+        "team1": "SV 07 Elversberg",
+        "team2": "Bayer 04 Leverkusen",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "",
+        "city": ""
+      }
     ]
   }
 }
