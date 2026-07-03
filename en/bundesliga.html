@@ -138,50 +138,61 @@
     </div>
 </div>
 
-<!-- MATCHDAY 1 -->
-<div class="sec">
-    <h2 class="sec-center">Matchday 1 — 28/29 August 2026</h2>
-    <div class="match-group">
-        <h3 style="color:#2d6a4f;">🏆 Opening Match</h3>
-        <div class="match" style="background:#f0fdf4;border-radius:10px;padding:10px 14px;margin-bottom:8px;">
-            <div class="match-teams" style="font-size:1.05rem;">FC Bayern München vs VfB Stuttgart</div>
-            <div class="match-meta">Fri, 28 Aug 2026 · 8:30 PM<br>Allianz Arena, Munich</div>
-        </div>
-        <h3 style="color:#2d6a4f;margin-top:14px;">Sat, 29 August <span style="color:#94a3b8;font-size:0.82em;font-weight:normal;">· Kick-off times confirmed from July 13</span></h3>
-        <div class="match">
-            <div class="match-teams">Borussia Dortmund vs Hamburger SV</div>
-            <div class="match-meta">Signal Iduna Park, Dortmund</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">RB Leipzig vs Borussia Mönchengladbach</div>
-            <div class="match-meta">Red Bull Arena, Leipzig</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">SC Freiburg vs SV Werder Bremen</div>
-            <div class="match-meta">Europa-Park Stadion, Freiburg</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">1. FC Köln vs TSG Hoffenheim</div>
-            <div class="match-meta">RheinEnergieStadion, Cologne</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">FC Augsburg vs FC Schalke 04</div>
-            <div class="match-meta">WWK Arena, Augsburg</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">1. FC Union Berlin vs Eintracht Frankfurt</div>
-            <div class="match-meta">An der Alten Försterei, Berlin</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">1. FSV Mainz 05 vs SC Paderborn 07</div>
-            <div class="match-meta">MEWA ARENA, Mainz</div>
-        </div>
-        <div class="match" style="border-bottom:none;">
-            <div class="match-teams">SV 07 Elversberg vs Bayer 04 Leverkusen</div>
-            <div class="match-meta">evo:ARENA, Neunkirchen</div>
-        </div>
-    </div>
+<!-- MATCHDAY DYNAMIC -->
+<div class="sec" id="bl-md-sec">
+    <div id="bl-md-loader" style="text-align:center;color:#94a3b8;padding:24px 0">Loading fixtures…</div>
+    <h2 class="sec-center" id="bl-md-title" style="display:none"></h2>
+    <div class="match-group" id="bl-md-group" style="display:none"></div>
 </div>
+<script>
+(function(){
+var DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function fmtShort(ds){var d=new Date(ds+'T12:00:00');return DAYS[d.getDay()]+', '+d.getDate()+' '+MONTHS[d.getMonth()];}
+function fmtFull(ds){var d=new Date(ds+'T12:00:00');return DAYS[d.getDay()]+', '+d.getDate()+' '+MONTHS[d.getMonth()].substring(0,3)+' '+d.getFullYear();}
+function toAMPM(t){var p=t.split(':');var h=parseInt(p[0]);var m=p[1];return (h>12?h-12:h)+':'+(m)+' '+(h>=12?'PM':'AM');}
+fetch('/bundesliga_matchday.json').then(function(r){return r.json();}).then(function(data){
+    document.getElementById('bl-md-loader').style.display='none';
+    if(data.season_over){document.getElementById('bl-md-sec').style.display='none';return;}
+    var md=data.next_matchday;if(!md)return;
+    document.getElementById('bl-md-title').textContent='Matchday '+md.number+' — '+md.date_range.en;
+    document.getElementById('bl-md-title').style.display='';
+    var byDate={},dates=[];
+    md.matches.forEach(function(m){if(!byDate[m.date]){byDate[m.date]=[];dates.push(m.date);}byDate[m.date].push(m);});
+    dates.sort();
+    var html='';
+    dates.forEach(function(date,di){
+        var ms=byDate[date],isLast=di===dates.length-1;
+        var conf=ms.filter(function(m){return m.confirmed;}),unconf=ms.filter(function(m){return !m.confirmed;});
+        if(date===md.opening_date&&conf.length>0){
+            conf.forEach(function(m){
+                html+='<h3 style="color:#2d6a4f;">🏆 Opening Match</h3>';
+                html+='<div class="match" style="background:#f0fdf4;border-radius:10px;padding:10px 14px;margin-bottom:8px;">';
+                html+='<div class="match-teams" style="font-size:1.05rem;">'+m.team1+' vs '+m.team2+'</div>';
+                html+='<div class="match-meta">'+fmtFull(date)+' · '+toAMPM(m.time)+'<br>'+m.stadium+', '+m.city+'</div></div>';
+            });
+            if(unconf.length>0){
+                html+='<h3 style="color:#2d6a4f;margin-top:14px;">'+fmtShort(date)+' <span style="color:#94a3b8;font-size:0.82em;font-weight:normal;">· Kick-off times confirmed from '+data.confirmed_from_en+'</span></h3>';
+                unconf.forEach(function(m,mi){var lst=(isLast&&mi===unconf.length-1)?' style="border-bottom:none;"':'';html+='<div class="match"'+lst+'><div class="match-teams">'+m.team1+' vs '+m.team2+'</div><div class="match-meta">'+m.stadium+', '+m.city+'</div></div>';});
+            }
+            return;
+        }
+        var allConf=unconf.length===0;
+        var sameTime=allConf&&ms.every(function(m){return m.time===ms[0].time;});
+        var perTime=allConf&&!sameTime;
+        var hdr=allConf?(sameTime?' · '+toAMPM(ms[0].time):''):' <span style="color:#94a3b8;font-size:0.82em;font-weight:normal;">· Kick-off times confirmed from '+data.confirmed_from_en+'</span>';
+        html+='<h3 style="color:#2d6a4f;margin-top:14px;">'+fmtShort(date)+hdr+'</h3>';
+        ms.forEach(function(m,mi){
+            var lst=(isLast&&mi===ms.length-1)?' style="border-bottom:none;"':'';
+            var t=perTime?(toAMPM(m.time)+' · '):'';
+            html+='<div class="match"'+lst+'><div class="match-teams">'+m.team1+' vs '+m.team2+'</div><div class="match-meta">'+t+m.stadium+', '+m.city+'</div></div>';
+        });
+    });
+    document.getElementById('bl-md-group').innerHTML=html;
+    document.getElementById('bl-md-group').style.display='';
+}).catch(function(){document.getElementById('bl-md-loader').style.display='none';});
+})();
+</script>
 
 <!-- HOW IT WORKS -->
 <div class="sec">

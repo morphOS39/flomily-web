@@ -496,6 +496,34 @@
         return null;
     }
 
+    var BL_TEAMS = [
+        ['fc bayern', 'FC Bayern München'], ['fcb', 'FC Bayern München'], ['münchen', 'FC Bayern München'],
+        ['bvb', 'Borussia Dortmund'], ['dortmund', 'Borussia Dortmund'],
+        ['vfb', 'VfB Stuttgart'], ['stuttgart', 'VfB Stuttgart'],
+        ['hsv', 'Hamburger SV'], ['hamburger sv', 'Hamburger SV'],
+        ['werder', 'SV Werder Bremen'], ['bremen', 'SV Werder Bremen'],
+        ['leverkusen', 'Bayer 04 Leverkusen'],
+        ['rb leipzig', 'RB Leipzig'], ['leipzig', 'RB Leipzig'],
+        ['eintracht frankfurt', 'Eintracht Frankfurt'], ['eintracht', 'Eintracht Frankfurt'],
+        ['sc freiburg', 'SC Freiburg'], ['freiburg', 'SC Freiburg'],
+        ['mainz', '1. FSV Mainz 05'],
+        ['fc augsburg', 'FC Augsburg'], ['augsburg', 'FC Augsburg'],
+        ['fc köln', '1. FC Köln'], ['köln', '1. FC Köln'], ['koeln', '1. FC Köln'],
+        ['union berlin', '1. FC Union Berlin'],
+        ['gladbach', 'Borussia Mönchengladbach'], ['mönchengladbach', 'Borussia Mönchengladbach'],
+        ['hoffenheim', 'TSG Hoffenheim'],
+        ['paderborn', 'SC Paderborn 07'],
+        ['elversberg', 'SV 07 Elversberg'],
+        ['schalke', 'FC Schalke 04'], ['s04', 'FC Schalke 04'],
+    ];
+    function detectBundesligaTeam(text) {
+        var t = text.toLowerCase().trim();
+        for (var i = 0; i < BL_TEAMS.length; i++) {
+            if (t.indexOf(BL_TEAMS[i][0]) >= 0) return BL_TEAMS[i][1];
+        }
+        return null;
+    }
+
     function loadSportCatalog(sport) {
         addLoading();
         api('/sports/' + sport).then(function (d) {
@@ -549,6 +577,10 @@
             removeLoading();
             if (d.events && d.events.length > 0) {
                 renderEventCards(d.events);
+            } else if (sport === 'bundesliga' && d.unconfirmed_count > 0) {
+                var tName = d.team || team || '';
+                var n = d.unconfirmed_count;
+                addBotMsg('⚽ ' + (tName ? tName + ': ' : '') + n + ' Spiel' + (n !== 1 ? 'e' : '') + ' gefunden.\n\n🔔 Anstoßzeiten noch nicht bestätigt — du wirst automatisch benachrichtigt, sobald die DFL die genauen Zeiten freigibt. Dann kannst du die Termine mit einem Klick eintragen.');
             } else {
                 addBotMsg('Keine Termine gefunden.');
             }
@@ -567,6 +599,13 @@
         var sport = detectSportKeyword(text);
         if (sport) {
             loadSportCatalog(sport);
+            return;
+        }
+        // Check Bundesliga team names
+        var blTeam = detectBundesligaTeam(text);
+        if (blTeam) {
+            addBotMsg('⚽ ' + blTeam + ' (1. Bundesliga) — einen Moment…');
+            selectSport('bundesliga', 'team', blTeam);
             return;
         }
 

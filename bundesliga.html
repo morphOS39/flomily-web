@@ -138,50 +138,60 @@
     </div>
 </div>
 
-<!-- SPIELTAG 1 -->
-<div class="sec">
-    <h2 class="sec-center">Spieltag 1 — 28./29. August 2026</h2>
-    <div class="match-group">
-        <h3 style="color:#2d6a4f;">🏆 Eröffnungsspiel</h3>
-        <div class="match" style="background:#f0fdf4;border-radius:10px;padding:10px 14px;margin-bottom:8px;">
-            <div class="match-teams" style="font-size:1.05rem;">FC Bayern München vs VfB Stuttgart</div>
-            <div class="match-meta">Fr, 28.08.2026 · 20:30 Uhr<br>Allianz Arena, München</div>
-        </div>
-        <h3 style="color:#2d6a4f;margin-top:14px;">Sa, 29. August <span style="color:#94a3b8;font-size:0.82em;font-weight:normal;">· Anstoßzeiten folgen ab 13. Juli</span></h3>
-        <div class="match">
-            <div class="match-teams">Borussia Dortmund vs Hamburger SV</div>
-            <div class="match-meta">Signal Iduna Park, Dortmund</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">RB Leipzig vs Borussia Mönchengladbach</div>
-            <div class="match-meta">Red Bull Arena, Leipzig</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">SC Freiburg vs SV Werder Bremen</div>
-            <div class="match-meta">Europa-Park Stadion, Freiburg</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">1. FC Köln vs TSG Hoffenheim</div>
-            <div class="match-meta">RheinEnergieStadion, Köln</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">FC Augsburg vs FC Schalke 04</div>
-            <div class="match-meta">WWK Arena, Augsburg</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">1. FC Union Berlin vs Eintracht Frankfurt</div>
-            <div class="match-meta">An der Alten Försterei, Berlin</div>
-        </div>
-        <div class="match">
-            <div class="match-teams">1. FSV Mainz 05 vs SC Paderborn 07</div>
-            <div class="match-meta">MEWA ARENA, Mainz</div>
-        </div>
-        <div class="match" style="border-bottom:none;">
-            <div class="match-teams">SV 07 Elversberg vs Bayer 04 Leverkusen</div>
-            <div class="match-meta">evo:ARENA, Neunkirchen</div>
-        </div>
-    </div>
+<!-- SPIELTAG DYNAMISCH -->
+<div class="sec" id="bl-md-sec">
+    <div id="bl-md-loader" style="text-align:center;color:#94a3b8;padding:24px 0">Lade Spielplan…</div>
+    <h2 class="sec-center" id="bl-md-title" style="display:none"></h2>
+    <div class="match-group" id="bl-md-group" style="display:none"></div>
 </div>
+<script>
+(function(){
+var DAYS=['So','Mo','Di','Mi','Do','Fr','Sa'];
+var MONTHS=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+function fmtShort(ds){var d=new Date(ds+'T12:00:00');return DAYS[d.getDay()]+', '+d.getDate()+'. '+MONTHS[d.getMonth()];}
+function fmtFull(ds){var d=new Date(ds+'T12:00:00');var m=d.getMonth()+1;return DAYS[d.getDay()]+', '+d.getDate()+'.'+(m<10?'0'+m:m)+'.'+d.getFullYear();}
+fetch('/bundesliga_matchday.json').then(function(r){return r.json();}).then(function(data){
+    document.getElementById('bl-md-loader').style.display='none';
+    if(data.season_over){document.getElementById('bl-md-sec').style.display='none';return;}
+    var md=data.next_matchday;if(!md)return;
+    document.getElementById('bl-md-title').textContent='Spieltag '+md.number+' — '+md.date_range.de;
+    document.getElementById('bl-md-title').style.display='';
+    var byDate={},dates=[];
+    md.matches.forEach(function(m){if(!byDate[m.date]){byDate[m.date]=[];dates.push(m.date);}byDate[m.date].push(m);});
+    dates.sort();
+    var html='';
+    dates.forEach(function(date,di){
+        var ms=byDate[date],isLast=di===dates.length-1;
+        var conf=ms.filter(function(m){return m.confirmed;}),unconf=ms.filter(function(m){return !m.confirmed;});
+        if(date===md.opening_date&&conf.length>0){
+            conf.forEach(function(m){
+                html+='<h3 style="color:#2d6a4f;">🏆 Eröffnungsspiel</h3>';
+                html+='<div class="match" style="background:#f0fdf4;border-radius:10px;padding:10px 14px;margin-bottom:8px;">';
+                html+='<div class="match-teams" style="font-size:1.05rem;">'+m.team1+' vs '+m.team2+'</div>';
+                html+='<div class="match-meta">'+fmtFull(date)+' · '+m.time+' Uhr<br>'+m.stadium+', '+m.city+'</div></div>';
+            });
+            if(unconf.length>0){
+                html+='<h3 style="color:#2d6a4f;margin-top:14px;">'+fmtShort(date)+' <span style="color:#94a3b8;font-size:0.82em;font-weight:normal;">· Anstoßzeiten folgen ab '+data.confirmed_from+'</span></h3>';
+                unconf.forEach(function(m,mi){var lst=(isLast&&mi===unconf.length-1)?' style="border-bottom:none;"':'';html+='<div class="match"'+lst+'><div class="match-teams">'+m.team1+' vs '+m.team2+'</div><div class="match-meta">'+m.stadium+', '+m.city+'</div></div>';});
+            }
+            return;
+        }
+        var allConf=unconf.length===0;
+        var sameTime=allConf&&ms.every(function(m){return m.time===ms[0].time;});
+        var perTime=allConf&&!sameTime;
+        var hdr=allConf?(sameTime?' · '+ms[0].time+' Uhr':''):' <span style="color:#94a3b8;font-size:0.82em;font-weight:normal;">· Anstoßzeiten folgen ab '+data.confirmed_from+'</span>';
+        html+='<h3 style="color:#2d6a4f;margin-top:14px;">'+fmtShort(date)+hdr+'</h3>';
+        ms.forEach(function(m,mi){
+            var lst=(isLast&&mi===ms.length-1)?' style="border-bottom:none;"':'';
+            var t=perTime?(m.time+' Uhr · '):'';
+            html+='<div class="match"'+lst+'><div class="match-teams">'+m.team1+' vs '+m.team2+'</div><div class="match-meta">'+t+m.stadium+', '+m.city+'</div></div>';
+        });
+    });
+    document.getElementById('bl-md-group').innerHTML=html;
+    document.getElementById('bl-md-group').style.display='';
+}).catch(function(){document.getElementById('bl-md-loader').style.display='none';});
+})();
+</script>
 
 <!-- SO GEHT'S -->
 <div class="sec">
