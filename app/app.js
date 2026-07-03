@@ -577,11 +577,13 @@
             removeLoading();
             if (d.events && d.events.length > 0) {
                 renderEventCards(d.events);
-            } else if (sport === 'bundesliga' && d.unconfirmed_count > 0) {
+            }
+            if (sport === 'bundesliga' && d.unconfirmed_count > 0) {
                 var tName = d.team || team || '';
                 var n = d.unconfirmed_count;
-                addBotMsg('⚽ ' + (tName ? tName + ': ' : '') + n + ' Spiel' + (n !== 1 ? 'e' : '') + ' gefunden.\n\n🔔 Anstoßzeiten noch nicht bestätigt — du wirst automatisch benachrichtigt, sobald die DFL die genauen Zeiten freigibt. Dann kannst du die Termine mit einem Klick eintragen.');
-            } else {
+                var prefix = d.events && d.events.length > 0 ? '' : '⚽ ' + (tName ? tName + ': ' : '') + n + ' Spiel' + (n !== 1 ? 'e' : '') + ' gefunden.\n\n';
+                addBotMsg(prefix + '🔔 ' + n + ' weitere Spiele ohne bestätigte Anstoßzeit. Du wirst automatisch benachrichtigt, sobald die DFL die Zeiten freigibt — dann kannst du sie mit einem Klick eintragen.');
+            } else if (!d.events || d.events.length === 0) {
                 addBotMsg('Keine Termine gefunden.');
             }
         }).catch(function () { removeLoading(); addBotMsg('Fehler beim Laden der Termine.'); });
