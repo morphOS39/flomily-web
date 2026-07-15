@@ -2,7 +2,7 @@
   "season_over": false,
   "confirmed_from": "13. Juli",
   "confirmed_from_en": "July 13",
-  "generated_at": "2026-07-14T09:00:05.874616",
+  "generated_at": "2026-07-15T09:00:10.143311",
   "next_matchday": {
     "number": 1,
     "date_range": {
@@ -19,6 +19,15 @@
         "confirmed": true,
         "stadium": "Allianz Arena",
         "city": "München"
+      },
+      {
+        "team1": "1. FSV Mainz 05",
+        "team2": "SC Paderborn 07",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "MEWA ARENA",
+        "city": "Mainz"
       },
       {
         "team1": "Borussia Dortmund",
@@ -55,15 +64,6 @@
         "confirmed": false,
         "stadium": "WWK Arena",
         "city": "Augsburg"
-      },
-      {
-        "team1": "1. FSV Mainz 05",
-        "team2": "SC Paderborn 07",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "MEWA ARENA",
-        "city": "Mainz"
       },
       {
         "team1": "1. FC Union Berlin",
