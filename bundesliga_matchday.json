@@ -2,12 +2,12 @@
   "season_over": false,
   "confirmed_from": "13. Juli",
   "confirmed_from_en": "July 13",
-  "generated_at": "2026-07-15T09:00:10.143311",
+  "generated_at": "2026-07-16T09:00:06.378665",
   "next_matchday": {
     "number": 1,
     "date_range": {
-      "de": "28./29. Aug. 2026",
-      "en": "28/29 August 2026"
+      "de": "28./30. Aug. 2026",
+      "en": "28/30 August 2026"
     },
     "opening_date": "2026-08-28",
     "matches": [
@@ -21,24 +21,6 @@
         "city": "München"
       },
       {
-        "team1": "1. FSV Mainz 05",
-        "team2": "SC Paderborn 07",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "MEWA ARENA",
-        "city": "Mainz"
-      },
-      {
-        "team1": "Borussia Dortmund",
-        "team2": "Hamburger SV",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "Signal Iduna Park",
-        "city": "Dortmund"
-      },
-      {
         "team1": "RB Leipzig",
         "team2": "Borussia Mönchengladbach",
         "date": "2026-08-29",
@@ -48,22 +30,13 @@
         "city": "Leipzig"
       },
       {
-        "team1": "SC Freiburg",
-        "team2": "SV Werder Bremen",
+        "team1": "1. FSV Mainz 05",
+        "team2": "SC Paderborn 07",
         "date": "2026-08-29",
         "time": "15:30",
         "confirmed": false,
-        "stadium": "Europa-Park Stadion",
-        "city": "Freiburg"
-      },
-      {
-        "team1": "FC Augsburg",
-        "team2": "FC Schalke 04",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "WWK Arena",
-        "city": "Augsburg"
+        "stadium": "MEWA ARENA",
+        "city": "Mainz"
       },
       {
         "team1": "1. FC Union Berlin",
@@ -91,6 +64,33 @@
         "confirmed": false,
         "stadium": "evo:ARENA",
         "city": "Neunkirchen"
+      },
+      {
+        "team1": "Borussia Dortmund",
+        "team2": "Hamburger SV",
+        "date": "2026-08-29",
+        "time": "18:30",
+        "confirmed": true,
+        "stadium": "Signal Iduna Park",
+        "city": "Dortmund"
+      },
+      {
+        "team1": "SC Freiburg",
+        "team2": "SV Werder Bremen",
+        "date": "2026-08-30",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "Europa-Park Stadion",
+        "city": "Freiburg"
+      },
+      {
+        "team1": "FC Augsburg",
+        "team2": "FC Schalke 04",
+        "date": "2026-08-30",
+        "time": "17:30",
+        "confirmed": true,
+        "stadium": "WWK Arena",
+        "city": "Augsburg"
       }
     ]
   }
