@@ -2,7 +2,7 @@
   "season_over": false,
   "confirmed_from": "13. Juli",
   "confirmed_from_en": "July 13",
-  "generated_at": "2026-07-22T09:00:05.634739",
+  "generated_at": "2026-07-23T09:00:05.544475",
   "next_matchday": {
     "number": 1,
     "date_range": {
@@ -19,6 +19,15 @@
         "confirmed": true,
         "stadium": "Allianz Arena",
         "city": "München"
+      },
+      {
+        "team1": "1. FC Köln",
+        "team2": "TSG Hoffenheim",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "RheinEnergieStadion",
+        "city": "Köln"
       },
       {
         "team1": "RB Leipzig",
@@ -46,15 +55,6 @@
         "confirmed": false,
         "stadium": "An der Alten Försterei",
         "city": "Berlin"
-      },
-      {
-        "team1": "1. FC Köln",
-        "team2": "TSG Hoffenheim",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "RheinEnergieStadion",
-        "city": "Köln"
       },
       {
         "team1": "SV 07 Elversberg",
