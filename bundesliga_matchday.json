@@ -2,7 +2,7 @@
   "season_over": false,
   "confirmed_from": "13. Juli",
   "confirmed_from_en": "July 13",
-  "generated_at": "2026-07-24T09:00:06.139332",
+  "generated_at": "2026-07-25T09:00:06.913550",
   "next_matchday": {
     "number": 1,
     "date_range": {
@@ -21,24 +21,6 @@
         "city": "München"
       },
       {
-        "team1": "1. FSV Mainz 05",
-        "team2": "SC Paderborn 07",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "MEWA ARENA",
-        "city": "Mainz"
-      },
-      {
-        "team1": "SV 07 Elversberg",
-        "team2": "Bayer 04 Leverkusen",
-        "date": "2026-08-29",
-        "time": "15:30",
-        "confirmed": false,
-        "stadium": "evo:ARENA",
-        "city": "Neunkirchen"
-      },
-      {
         "team1": "RB Leipzig",
         "team2": "Borussia Mönchengladbach",
         "date": "2026-08-29",
@@ -46,6 +28,15 @@
         "confirmed": false,
         "stadium": "Red Bull Arena",
         "city": "Leipzig"
+      },
+      {
+        "team1": "1. FSV Mainz 05",
+        "team2": "SC Paderborn 07",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "MEWA ARENA",
+        "city": "Mainz"
       },
       {
         "team1": "1. FC Union Berlin",
@@ -64,6 +55,15 @@
         "confirmed": false,
         "stadium": "RheinEnergieStadion",
         "city": "Köln"
+      },
+      {
+        "team1": "SV 07 Elversberg",
+        "team2": "Bayer 04 Leverkusen",
+        "date": "2026-08-29",
+        "time": "15:30",
+        "confirmed": false,
+        "stadium": "evo:ARENA",
+        "city": "Neunkirchen"
       },
       {
         "team1": "Borussia Dortmund",
